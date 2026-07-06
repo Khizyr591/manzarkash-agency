@@ -6,6 +6,7 @@ import styles from "@/app/styles/styles";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const footerRef = useRef<HTMLElement>(null);
   const bannerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -26,39 +27,61 @@ export default function Footer() {
           setIsVisible(true);
         }
       },
-      { threshold: 0 }
+      { threshold: 0 },
     );
 
-    if (bannerRef.current) {
-      observer.observe(bannerRef.current);
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
     }
 
     return () => {
-      if (bannerRef.current) {
-        observer.unobserve(bannerRef.current);
+      if (footerRef.current) {
+        observer.unobserve(footerRef.current);
       }
     };
   }, []);
 
   return (
-    <footer className="border-t border-zinc-200/50 dark:border-zinc-800/50 bg-white dark:bg-black transition-colors duration-300 w-full">
+    <footer
+      ref={footerRef}
+      className="border-t border-zinc-200/50 dark:border-zinc-800/50 bg-white dark:bg-black transition-colors duration-300 w-full"
+    >
       <div className={`${styles.container} py-12 md:py-16`}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-8 items-start">
           <div className="lg:col-span-5 space-y-6">
-            <a href="#" className="font-michroma text-xl md:text-2xl tracking-widest text-black dark:text-white">
+            <a
+              href="#"
+              className={`${styles.heading_5} !text-xl md:!text-2xl !tracking-widest text-black dark:text-white`}
+            >
               MANZARKASH<span className="text-primary font-bold">.</span>
             </a>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 font-poppins italic max-w-sm">
-              We are a Karachi-based creative digital agency specializing in high-end product photography, marketing campaigns, custom e-commerce & portfolio websites, and WhatsApp automation.
+            <p
+              className={`${styles.paragraph_sm} text-zinc-500 dark:text-zinc-400 italic max-w-sm`}
+            >
+              We are a Karachi-based creative digital agency specializing in
+              high-end product photography, marketing campaigns, custom
+              e-commerce & portfolio websites, and WhatsApp automation.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="text-zinc-400 hover:text-primary transition-colors" aria-label="LinkedIn">
+              <a
+                href="#"
+                className="text-zinc-400 hover:text-primary transition-colors"
+                aria-label="LinkedIn"
+              >
                 <FaLinkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-zinc-400 hover:text-primary transition-colors" aria-label="Twitter">
+              <a
+                href="#"
+                className="text-zinc-400 hover:text-primary transition-colors"
+                aria-label="Twitter"
+              >
                 <FaTwitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-zinc-400 hover:text-primary transition-colors" aria-label="Instagram">
+              <a
+                href="#"
+                className="text-zinc-400 hover:text-primary transition-colors"
+                aria-label="Instagram"
+              >
                 <FaInstagram className="w-5 h-5" />
               </a>
             </div>
@@ -66,48 +89,152 @@ export default function Footer() {
 
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div className="space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-black dark:text-white">Services</h4>
-              <ul className="space-y-2 text-sm text-zinc-500 dark:text-zinc-400">
-                <li><a href="/#services" className="hover:text-primary transition-colors">Product Photography</a></li>
-                <li><a href="/#services" className="hover:text-primary transition-colors">Ads & Marketing</a></li>
-                <li><a href="/#services" className="hover:text-primary transition-colors">Social Media & Content</a></li>
-                <li><a href="/#services" className="hover:text-primary transition-colors">SEO & Custom Sites</a></li>
-                <li><a href="/#services" className="hover:text-primary transition-colors">WhatsApp Automation</a></li>
+              <h4
+                className={`${styles.caption_text} !font-bold uppercase tracking-wider text-black dark:text-white`}
+              >
+                Services
+              </h4>
+              <ul
+                className={`space-y-2 text-zinc-500 dark:text-zinc-400 ${styles.span_text} !text-sm`}
+              >
+                <li>
+                  <a
+                    href="/#services"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Product Photography
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/#services"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Ads & Marketing
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/#services"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Social Media & Content
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/#services"
+                    className="hover:text-primary transition-colors"
+                  >
+                    SEO & Custom Sites
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/#services"
+                    className="hover:text-primary transition-colors"
+                  >
+                    WhatsApp Automation
+                  </a>
+                </li>
               </ul>
             </div>
 
             <div className="space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-black dark:text-white">Agency</h4>
-              <ul className="space-y-2 text-sm text-zinc-500 dark:text-zinc-400">
-                <li><a href="/about" className="hover:text-primary transition-colors">About Us</a></li>
-                <li><a href="/#market-focus" className="hover:text-primary transition-colors">United States Focus</a></li>
-                <li><a href="/#market-focus" className="hover:text-primary transition-colors">United Kingdom Focus</a></li>
-                <li><a href="/#market-focus" className="hover:text-primary transition-colors">Pakistan Domestic Focus</a></li>
+              <h4
+                className={`${styles.caption_text} !font-bold uppercase tracking-wider text-black dark:text-white`}
+              >
+                Agency
+              </h4>
+              <ul
+                className={`space-y-2 text-zinc-500 dark:text-zinc-400 ${styles.span_text} !text-sm`}
+              >
+                <li>
+                  <a
+                    href="/about"
+                    className="hover:text-primary transition-colors"
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/#market-focus"
+                    className="hover:text-primary transition-colors"
+                  >
+                    United States Focus
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/#market-focus"
+                    className="hover:text-primary transition-colors"
+                  >
+                    United Kingdom Focus
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/#market-focus"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Pakistan Domestic Focus
+                  </a>
+                </li>
               </ul>
             </div>
 
-            <div className="space-y-4 col-span-2 sm:col-span-1 font-poppins">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-black dark:text-white font-michroma">Contact</h4>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                UK Office: 85 Great Portland St, London<br />
+            <div className="space-y-4 col-span-2 sm:col-span-1">
+              <h4
+                className={`${styles.caption_text} !font-bold uppercase tracking-wider text-black dark:text-white`}
+              >
+                Contact
+              </h4>
+              <p
+                className={`text-zinc-500 dark:text-zinc-400 leading-relaxed ${styles.span_text} !text-sm`}
+              >
+                UK Office: 85 Great Portland St, London
+                <br />
                 PK Office: Shahrah-e-Faisal, Karachi
               </p>
-              <div className="space-y-1.5 text-sm pt-2">
-                <p className="text-zinc-500 dark:text-zinc-400">
-                  Email: <a href="mailto:hello@manzarkash.com" className="hover:text-primary transition-colors text-black dark:text-white font-semibold">hello@manzarkash.com</a>
+              <div
+                className={`space-y-1.5 pt-2 text-zinc-500 dark:text-zinc-400 ${styles.span_text} !text-sm`}
+              >
+                <p>
+                  Email:{" "}
+                  <a
+                    href="mailto:hello@manzarkash.com"
+                    className="hover:text-primary transition-colors text-black dark:text-white font-semibold"
+                  >
+                    hello@manzarkash.com
+                  </a>
                 </p>
-                <p className="text-zinc-500 dark:text-zinc-400">
-                  Phone: <a href="https://wa.me/923313936011" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-black dark:text-white font-semibold font-poppins">+92 331 3936011</a>
+                <p>
+                  Phone:{" "}
+                  <a
+                    href="https://wa.me/923313936011"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors text-black dark:text-white font-semibold"
+                  >
+                    +92 331 3936011
+                  </a>
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <div ref={bannerRef} className="mt-16 border-t border-zinc-100 dark:border-zinc-900/60 pt-16 overflow-hidden select-none">
+        <div
+          ref={bannerRef}
+          className="mt-16 border-t border-zinc-100 dark:border-zinc-900/60 pt-16 overflow-hidden select-none"
+        >
           <div
-            className={`text-[8.2vw] font-bold tracking-tighter leading-none text-zinc-200/50 dark:text-zinc-900/30 font-michroma text-center uppercase transition-all duration-1000 ease-out flex justify-center gap-[0.2vw] ${isVisible ? "translate-y-0 opacity-100 scale-100 skew-y-0" : "translate-y-full opacity-0 scale-95 skew-y-6"
-              }`}
+            className={`text-[8.2vw] font-bold tracking-tighter leading-none text-primary/40 dark:text-primary/30 font-michroma text-center uppercase transition-all duration-1000 ease-out flex justify-center gap-[0.2vw] ${
+              isVisible
+                ? "translate-y-0 opacity-100 scale-100 skew-y-0"
+                : "translate-y-full opacity-0 scale-95 skew-y-6"
+            }`}
             style={{ transformOrigin: "center top" }}
           >
             {words[wordIndex].split("").map((letter, index) => (
@@ -131,7 +258,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 md:mt-16 pt-8 border-t border-zinc-200/50 dark:border-zinc-800/50 text-center text-xs text-zinc-500">
+        <div
+          className={`mt-12 md:mt-16 pt-8 border-t border-zinc-200/50 dark:border-zinc-800/50 text-center text-zinc-500 ${styles.caption_text}`}
+        >
           <p>© {currentYear} Manzarkash Production. All rights reserved.</p>
         </div>
       </div>

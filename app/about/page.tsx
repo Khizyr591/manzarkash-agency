@@ -56,7 +56,7 @@ export default function AboutPage() {
         <section className="py-24 md:py-32 relative overflow-hidden w-full flex items-center justify-center bg-zinc-50/50 dark:bg-zinc-950/20">
           <div className={`${styles.container} text-center space-y-6 max-w-4xl relative z-10`}>
             <Eyebrow>WHO WE ARE</Eyebrow>
-            <h1 className="font-michroma text-4xl sm:text-6xl text-zinc-900 dark:text-white leading-[1.1] tracking-tight font-normal uppercase">
+            <h1 className={`${styles.heading_1} !text-4xl sm:!text-6xl !leading-[1.1] text-zinc-900 dark:text-white uppercase`}>
               DEFINING THE <span className="text-primary">DIGITAL SCENERY</span>
             </h1>
             <p className={`${styles.paragraph} text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto italic font-light`}>
@@ -95,10 +95,10 @@ export default function AboutPage() {
                 transition={{ duration: 0.7 }}
                 className="lg:col-span-6 bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 rounded-3xl p-8 md:p-10 space-y-6"
               >
-                <h3 className="font-michroma text-lg sm:text-xl text-zinc-900 dark:text-white font-medium">
+                <h3 className={`${styles.heading_4} !text-lg sm:!text-xl text-zinc-900 dark:text-white !font-medium`}>
                   What Sets Us Apart
                 </h3>
-                <ul className="space-y-4 font-poppins text-sm text-zinc-600 dark:text-zinc-350">
+                <ul className={`space-y-4 text-zinc-600 dark:text-zinc-350 ${styles.span_text} !text-sm`}>
                   <li className="flex gap-3">
                     <FiCheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                     <span><strong>Dual Focus Delivery:</strong> Aligning local audience engagement with premium global execution.</span>
@@ -149,10 +149,10 @@ export default function AboutPage() {
                     <div className="w-12 h-12 rounded-2xl bg-primary/5 dark:bg-primary/10 flex items-center justify-center">
                       {pillar.icon}
                     </div>
-                    <h3 className="font-michroma text-lg text-zinc-900 dark:text-white font-semibold">
+                    <h3 className={`${styles.heading_4} !text-lg text-zinc-900 dark:text-white !font-semibold`}>
                       {pillar.title}
                     </h3>
-                    <p className="text-sm font-poppins text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                    <p className={`${styles.span_text} !text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed`}>
                       {pillar.desc}
                     </p>
                   </div>
@@ -165,7 +165,7 @@ export default function AboutPage() {
         <section className="py-20 md:py-28 text-center relative w-full overflow-hidden">
           <div className={`${styles.container} max-w-3xl space-y-8 relative z-10`}>
             <Eyebrow>COLLABORATE WITH US</Eyebrow>
-            <h2 className="font-michroma text-3xl sm:text-5xl text-zinc-900 dark:text-white uppercase leading-tight font-normal">
+            <h2 className={`${styles.heading_2} !text-3xl sm:!text-5xl text-zinc-900 dark:text-white uppercase !leading-tight`}>
               READY TO DEFINE YOUR <span className="text-primary">DIGITAL SCENERY?</span>
             </h2>
             <p className={styles.paragraph}>

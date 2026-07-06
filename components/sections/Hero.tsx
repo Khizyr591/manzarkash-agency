@@ -30,11 +30,54 @@ const itemVariants = {
   },
 } as const;
 
+function AnimatedCounter({
+  value,
+  duration = 2000,
+  suffix = "",
+  decimals = 0,
+}: {
+  value: number;
+  duration?: number;
+  suffix?: string;
+  decimals?: number;
+}) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = value;
+    const startTime = performance.now();
+
+    const updateCounter = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeProgress = progress * (2 - progress);
+      const val = easeProgress * (end - start) + start;
+      setCount(val);
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      }
+    };
+
+    requestAnimationFrame(updateCounter);
+  }, [value, duration]);
+
+  return (
+    <>
+      {count.toFixed(decimals)}
+      {suffix}
+    </>
+  );
+}
+
 export default function Hero() {
   const [activeTooltip, setActiveTooltip] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setMounted(true);
     const timer = setInterval(() => {
       setActiveTooltip((prev) => (prev + 1) % 3);
     }, 2500);
@@ -59,26 +102,93 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative overflow-visible min-h-[calc(140vh)] flex flex-col bg-linear-to-b from-transparent to-zinc-50/50 dark:to-zinc-950/20"
+      className="relative overflow-visible min-h-screen flex flex-col bg-linear-to-b from-transparent to-zinc-50/50 dark:to-zinc-950/20"
     >
-      <div className="absolute inset-0 grid grid-cols-[repeat(auto-fill,minmax(48px,1fr))] grid-rows-[repeat(auto-fill,minmax(48px,1fr))] overflow-hidden mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none z-0">
-        {Array.from({ length: 800 }).map((_, i) => {
-          const delay = (Math.sin(i) * 12).toFixed(2);
-          const duration = (6 + Math.cos(i) * 3).toFixed(2);
-          return (
-            <div
-              key={i}
-              className="border-r border-b border-zinc-200/35 dark:border-zinc-800/15 h-12"
-              style={{
-                animation: `grid-pulse ${duration}s ease-in-out infinite`,
-                animationDelay: `${delay}s`,
-              }}
-            />
-          );
-        })}
+      {/* ─── HERO BACKGROUND ─────────────────────────────────── */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+
+        {/* 1. Sharp grid lines (always visible) */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right,  rgba(245,78,14,0.12) 1px, transparent 1px),
+              linear-gradient(to bottom, rgba(245,78,14,0.12) 1px, transparent 1px)
+            `,
+            backgroundSize: "48px 48px",
+          }}
+        />
+
+        {/* 2. Radial vignette — fades grid to edges */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `radial-gradient(ellipse 80% 60% at 50% 0%, transparent 30%, var(--background, #fff) 100%)`,
+          }}
+        />
+
+        {/* 3. Bright primary glow — top-left */}
+        <motion.div
+          animate={{ x: [0, 50, -20, 0], y: [0, -60, 40, 0], scale: [1, 1.15, 0.92, 1] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute"
+          style={{
+            top: "-10%", left: "0%",
+            width: "55vw", height: "55vw",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(245,78,14,0.35) 0%, rgba(245,78,14,0.08) 50%, transparent 70%)",
+            filter: "blur(40px)",
+          }}
+        />
+
+        {/* 4. Orange secondary glow — bottom-right */}
+        <motion.div
+          animate={{ x: [0, -40, 50, 0], y: [0, 60, -50, 0], scale: [1, 0.88, 1.12, 1] }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute"
+          style={{
+            bottom: "-15%", right: "5%",
+            width: "50vw", height: "50vw",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(251,146,60,0.25) 0%, rgba(251,146,60,0.06) 50%, transparent 70%)",
+            filter: "blur(50px)",
+          }}
+        />
+
+        {/* 5. Accent glow — top-right */}
+        <motion.div
+          animate={{ x: [0, -30, 40, 0], y: [0, 40, -30, 0] }}
+          transition={{ duration: 26, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute"
+          style={{
+            top: "5%", right: "10%",
+            width: "35vw", height: "35vw",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(245,78,14,0.18) 0%, transparent 65%)",
+            filter: "blur(60px)",
+          }}
+        />
+
+        {/* 6. Horizontal scan line that sweeps down */}
+        <motion.div
+          animate={{ y: ["0%", "100%"] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "linear", repeatDelay: 2 }}
+          className="absolute left-0 right-0 h-px"
+          style={{
+            background: "linear-gradient(to right, transparent, rgba(245,78,14,0.6) 30%, rgba(245,78,14,0.6) 70%, transparent)",
+            boxShadow: "0 0 12px 2px rgba(245,78,14,0.4)",
+          }}
+        />
+
+        {/* 7. Top diagonal gradient wash */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(135deg, rgba(245,78,14,0.06) 0%, transparent 45%, rgba(251,146,60,0.05) 100%)",
+          }}
+        />
       </div>
 
-      <div className="absolute top-0 right-1/4 -z-10 h-[300px] w-[300px] rounded-full bg-primary/10 blur-[80px] pointer-events-none" />
 
       <div className={`${styles.container} relative z-10 pt-20 md:pt-28`}>
         <h1 className="sr-only">
@@ -92,7 +202,7 @@ export default function Hero() {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[80px] font-normal text-zinc-900 dark:text-white leading-tight tracking-tight max-w-6xl mx-auto"
+            className={`${styles.heading_1} !text-4xl sm:!text-5xl md:!text-6xl lg:!text-7xl xl:!text-[80px] !leading-tight text-zinc-900 dark:text-white max-w-6xl mx-auto`}
           >
             We{" "}
             <span className="inline-flex items-center gap-1.5 p-1 md:p-1.5 bg-zinc-150/50 dark:bg-zinc-900/50 border border-zinc-250/50 dark:border-zinc-800/50 rounded-2xl mx-1.5 md:mx-3 align-middle shadow-sm">
@@ -149,7 +259,7 @@ export default function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-2xl text-zinc-600 dark:text-zinc-350 max-w-5xl leading-relaxed font-poppins italic font-light"
+            className={`${styles.paragraph_lg} !text-lg md:!text-2xl text-zinc-600 dark:text-zinc-350 max-w-5xl !leading-relaxed italic !font-light`}
           >
             Manzarkash Production is a Karachi-based digital agency scaling brands with premium product photography, high-impact marketing campaigns, custom websites, and WhatsApp automation.
           </motion.p>
@@ -181,26 +291,26 @@ export default function Hero() {
             className="pt-8 grid grid-cols-3 gap-4 sm:gap-8 md:gap-16 border-t border-zinc-200/60 dark:border-zinc-800/60 max-w-xl w-full"
           >
             <div>
-              <p className="text-2xl md:text-3xl font-bold text-black dark:text-white font-michroma">
-                4.2M+
+              <p className={`${styles.heading_3} !text-2xl md:!text-3xl !font-bold text-black dark:text-white`}>
+                <AnimatedCounter value={4.2} decimals={1} suffix="M+" />
               </p>
-              <p className="text-xs text-zinc-500 dark:text-zinc-400">
+              <p className={`${styles.caption_text} !text-xs text-zinc-500 dark:text-zinc-400`}>
                 PKR Ads Revenue Generated
               </p>
             </div>
             <div>
-              <p className="text-2xl md:text-3xl font-bold text-black dark:text-white font-michroma">
-                94%
+              <p className={`${styles.heading_3} !text-2xl md:!text-3xl !font-bold text-black dark:text-white`}>
+                <AnimatedCounter value={94} suffix="%" />
               </p>
-              <p className="text-xs text-zinc-500 dark:text-zinc-400">
+              <p className={`${styles.caption_text} !text-xs text-zinc-500 dark:text-zinc-400`}>
                 Client Retention Rate
               </p>
             </div>
             <div>
-              <p className="text-2xl md:text-3xl font-bold text-black dark:text-white font-michroma">
-                15+
+              <p className={`${styles.heading_3} !text-2xl md:!text-3xl !font-bold text-black dark:text-white`}>
+                <AnimatedCounter value={15} suffix="+" />
               </p>
-              <p className="text-xs text-zinc-500 dark:text-zinc-400">
+              <p className={`${styles.caption_text} !text-xs text-zinc-500 dark:text-zinc-400`}>
                 Global Markets Served
               </p>
             </div>

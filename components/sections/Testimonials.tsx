@@ -82,18 +82,18 @@ export default function Testimonials() {
                     <FiStar key={i} className="w-4 h-4 fill-current" />
                   ))}
                 </div>
-                <p className="font-poppins text-zinc-600 dark:text-zinc-355 italic text-sm md:text-base leading-relaxed whitespace-normal">
+                <p className={`${styles.paragraph} !text-sm md:!text-base text-zinc-600 dark:text-zinc-355 italic !leading-relaxed whitespace-normal`}>
                   "{t.quote}"
                 </p>
               </div>
 
               <div className="pt-6 border-t border-zinc-100 dark:border-zinc-800/80 mt-6 flex flex-col gap-1">
-                <h4 className="font-michroma text-xs md:text-sm text-zinc-900 dark:text-white font-semibold">
+                <h4 className={`${styles.heading_6} !text-xs md:!text-sm text-zinc-900 dark:text-white !font-semibold`}>
                   {t.author}
                 </h4>
-                <div className="flex items-center justify-between text-[10px] md:text-xs text-zinc-500 font-poppins">
+                <div className={`flex items-center justify-between text-zinc-500 ${styles.caption_text} !text-[10px] md:!text-xs`}>
                   <span>{t.role}, {t.company}</span>
-                  <span className="px-2.5 py-1 rounded-full bg-primary/5 text-primary font-medium text-[9px] tracking-wider uppercase shrink-0">
+                  <span className={`px-2.5 py-1 rounded-full bg-primary/5 text-primary shrink-0 ${styles.caption_text} !font-medium !text-[9px] tracking-wider uppercase`}>
                     {t.service}
                   </span>
                 </div>
@@ -112,18 +112,18 @@ export default function Testimonials() {
                     <FiStar key={i} className="w-4 h-4 fill-current" />
                   ))}
                 </div>
-                <p className="font-poppins text-zinc-600 dark:text-zinc-355 italic text-sm md:text-base leading-relaxed whitespace-normal">
+                <p className={`${styles.paragraph} !text-sm md:!text-base text-zinc-600 dark:text-zinc-355 italic !leading-relaxed whitespace-normal`}>
                   "{t.quote}"
                 </p>
               </div>
 
               <div className="pt-6 border-t border-zinc-100 dark:border-zinc-800/80 mt-6 flex flex-col gap-1">
-                <h4 className="font-michroma text-xs md:text-sm text-zinc-900 dark:text-white font-semibold">
+                <h4 className={`${styles.heading_6} !text-xs md:!text-sm text-zinc-900 dark:text-white !font-semibold`}>
                   {t.author}
                 </h4>
-                <div className="flex items-center justify-between text-[10px] md:text-xs text-zinc-500 font-poppins">
+                <div className={`flex items-center justify-between text-zinc-500 ${styles.caption_text} !text-[10px] md:!text-xs`}>
                   <span>{t.role}, {t.company}</span>
-                  <span className="px-2.5 py-1 rounded-full bg-primary/5 text-primary font-medium text-[9px] tracking-wider uppercase shrink-0">
+                  <span className={`px-2.5 py-1 rounded-full bg-primary/5 text-primary shrink-0 ${styles.caption_text} !font-medium !text-[9px] tracking-wider uppercase`}>
                     {t.service}
                   </span>
                 </div>

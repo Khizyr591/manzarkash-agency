@@ -79,7 +79,7 @@ export default function Contact() {
                 href="https://wa.me/923313936011"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold shadow-md shadow-emerald-550/10 transition-all duration-300 transform hover:-translate-y-0.5"
+                className={`inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white shadow-md shadow-emerald-550/10 transition-all duration-300 transform hover:-translate-y-0.5 ${styles.button_text} !normal-case`}
               >
                 <FaWhatsapp className="w-6 h-6" />
                 Chat on WhatsApp
@@ -91,8 +91,8 @@ export default function Contact() {
                     <FiMail className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-zinc-500">Email Us Directly</p>
-                    <a href="mailto:hello@manzarkash.com" className="text-sm font-semibold text-black dark:text-white hover:text-primary transition-colors">
+                    <p className={`${styles.caption_text} !text-zinc-500`}>Email Us Directly</p>
+                    <a href="mailto:hello@manzarkash.com" className={`hover:text-primary transition-colors ${styles.label_text} !text-sm text-black dark:text-white font-semibold`}>
                       hello@manzarkash.com
                     </a>
                   </div>
@@ -103,8 +103,8 @@ export default function Contact() {
                     <FiMapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-zinc-500">Corporate HQ</p>
-                    <p className="text-sm font-semibold text-black dark:text-white">
+                    <p className={`${styles.caption_text} !text-zinc-500`}>Corporate HQ</p>
+                    <p className={`${styles.label_text} !text-sm text-black dark:text-white font-semibold`}>
                       Karachi, Pakistan & London, UK
                     </p>
                   </div>
@@ -129,8 +129,8 @@ export default function Contact() {
                 <div className="inline-flex p-3 rounded-full bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400">
                   <FiCheck className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">Request Received!</h3>
-                <p className="text-zinc-500 dark:text-zinc-400 font-poppins italic max-w-sm mx-auto">
+                <h3 className={`${styles.heading_3} !text-2xl font-bold text-zinc-900 dark:text-white`}>Request Received!</h3>
+                <p className={`${styles.paragraph_sm} text-zinc-500 dark:text-zinc-400 italic max-w-sm mx-auto`}>
                   A senior strategist will audit your site and reach out via email or phone within 12 hours.
                 </p>
               </motion.div>
