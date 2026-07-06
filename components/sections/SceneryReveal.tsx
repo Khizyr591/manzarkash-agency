@@ -72,7 +72,7 @@ export default function SceneryReveal() {
         />
 
         <motion.div
-          className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px] dark:bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"
+          className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[32px_32px] dark:bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"
           style={{ scale: gridScale, opacity: gridOpacity }}
         />
 
@@ -149,7 +149,7 @@ export default function SceneryReveal() {
 
           <h2 className="font-michroma text-4xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.05] max-w-3xl font-semibold uppercase">
             READY TO DEFINE YOUR{" "}
-            <span className="text-primary bg-linear-to-r from-primary to-orange-400 bg-clip-text text-transparent">SCENERY?</span>
+            <span className="text-primary bg-linear-to-r from-primary to-orange-400 bg-clip-text">SCENERY?</span>
           </h2>
 
           <p className="font-poppins text-base md:text-lg text-white/75 italic max-w-lg leading-relaxed">
