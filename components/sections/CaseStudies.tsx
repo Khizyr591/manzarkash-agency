@@ -90,10 +90,10 @@ export default function CaseStudies() {
             >
               <div className="space-y-6">
                 <div className="space-y-1">
-                  <div className="text-4xl md:text-5xl font-bold tracking-tight text-primary font-michroma">
+                  <div className={`${styles.heading_2} !text-4xl md:!text-5xl !font-bold text-primary`}>
                     {c.metric}
                   </div>
-                  <div className="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                  <div className={`${styles.caption_text} !font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400`}>
                     {c.label}
                   </div>
                 </div>
@@ -109,7 +109,7 @@ export default function CaseStudies() {
               </div>
 
               <div className="mt-8 pt-4 border-t border-zinc-200/60 dark:border-zinc-800/60">
-                <span className="text-xs font-bold text-black dark:text-white inline-flex items-center gap-1.5">
+                <span className={`${styles.caption_text} !font-bold text-black dark:text-white inline-flex items-center gap-1.5`}>
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   {c.highlight}
                 </span>

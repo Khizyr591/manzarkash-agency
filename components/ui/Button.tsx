@@ -1,6 +1,8 @@
 import { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
 import { FiLoader } from "react-icons/fi";
 
+import styles from "@/app/styles/styles";
+
 type BaseProps = {
   variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
@@ -30,7 +32,7 @@ export default function Button({
 }: ButtonProps) {
   // Base classes for consistent sizing, rounded border, flex alignment, and micro-interactions
   const baseClasses =
-    "inline-flex items-center justify-center font-poppins font-semibold rounded-full transition-all duration-300 transform active:scale-95 disabled:opacity-50 disabled:pointer-events-none";
+    "inline-flex items-center justify-center rounded-full transition-all duration-300 transform active:scale-95 disabled:opacity-50 disabled:pointer-events-none";
 
   // Variant classes
   const variantClasses = {
@@ -46,9 +48,9 @@ export default function Button({
 
   // Size classes
   const sizeClasses = {
-    sm: "px-4 py-2 text-xs gap-1.5",
-    md: "px-6 py-3 text-sm gap-2",
-    lg: "px-8 py-4 text-base gap-2.5",
+    sm: `px-4 py-2 gap-1.5 ${styles.button_text_sm} !normal-case`,
+    md: `px-6 py-3 gap-2 ${styles.button_text_sm} !normal-case`,
+    lg: `px-8 py-4 gap-2.5 ${styles.button_text} !normal-case`,
   };
 
   const finalClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;

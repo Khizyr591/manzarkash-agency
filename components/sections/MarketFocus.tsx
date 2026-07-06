@@ -68,7 +68,7 @@ export default function MarketFocus() {
                 <FiGlobe className="w-8 h-8" />
               </div>
               <h3 className={styles.heading_3}>
-                Global Standards <span className="font-poppins font-light text-zinc-500 italic block mt-1">International Clients</span>
+                Global Standards <span className={`${styles.caption_text} !text-zinc-500 italic block mt-1`}>International Clients</span>
               </h3>
               <p className={styles.paragraph_sm}>
                 Custom solutions designed to dominate international arenas, utilizing cutting-edge technologies and performance-driven metrics.
@@ -76,11 +76,11 @@ export default function MarketFocus() {
               <div className="space-y-4 pt-4 border-t border-zinc-100 dark:border-zinc-800">
                 {pointsGlobal.map((point) => (
                   <div key={point.title} className="space-y-1">
-                    <h4 className="text-sm font-semibold text-black dark:text-white flex items-center gap-2">
+                    <h4 className={`${styles.label_text} !text-sm text-black dark:text-white flex items-center gap-2`}>
                       <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {point.title}
                     </h4>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400 pl-3.5 leading-relaxed">{point.desc}</p>
+                    <p className={`${styles.caption_text} !text-zinc-500 dark:text-zinc-400 pl-3.5 leading-relaxed`}>{point.desc}</p>
                   </div>
                 ))}
               </div>
@@ -101,7 +101,7 @@ export default function MarketFocus() {
                 <FiMapPin className="w-8 h-8" />
               </div>
               <h3 className={styles.heading_3}>
-                Hyper-Local Nuances <span className="font-poppins font-light text-zinc-500 italic block mt-1">Pakistan Domestic Market</span>
+                Hyper-Local Nuances <span className={`${styles.caption_text} !text-zinc-500 italic block mt-1`}>Pakistan Domestic Market</span>
               </h3>
               <p className={styles.paragraph_sm}>
                 Harnessing deep regional market demographics, regionalized customer funnels, and optimized local digital ad platforms.
@@ -109,11 +109,11 @@ export default function MarketFocus() {
               <div className="space-y-4 pt-4 border-t border-zinc-100 dark:border-zinc-800">
                 {pointsLocal.map((point) => (
                   <div key={point.title} className="space-y-1">
-                    <h4 className="text-sm font-semibold text-black dark:text-white flex items-center gap-2">
+                    <h4 className={`${styles.label_text} !text-sm text-black dark:text-white flex items-center gap-2`}>
                       <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                       {point.title}
                     </h4>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400 pl-3.5 leading-relaxed">{point.desc}</p>
+                    <p className={`${styles.caption_text} !text-zinc-500 dark:text-zinc-400 pl-3.5 leading-relaxed`}>{point.desc}</p>
                   </div>
                 ))}
               </div>

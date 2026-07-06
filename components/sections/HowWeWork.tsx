@@ -20,9 +20,9 @@ import {
 function MetricCard({ label, value, sub }: { label: string; value: string; sub: string }) {
   return (
     <div className="p-3.5 rounded-2xl bg-zinc-50 dark:bg-zinc-900/70 border border-zinc-200/60 dark:border-zinc-700/40 flex flex-col gap-1 transition-all duration-300 hover:scale-[1.02]">
-      <p className="text-[9px] text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-semibold">{label}</p>
-      <p className="text-lg font-bold text-zinc-900 dark:text-white font-michroma">{value}</p>
-      <p className="text-[10px] text-emerald-500 font-semibold">{sub}</p>
+      <p className={`${styles.caption_text} !text-[9px] text-zinc-400 dark:text-zinc-500 uppercase tracking-widest !font-semibold`}>{label}</p>
+      <p className={`${styles.heading_5} !text-lg !font-bold text-zinc-900 dark:text-white`}>{value}</p>
+      <p className={`${styles.caption_text} !text-[10px] text-emerald-500 !font-semibold`}>{sub}</p>
     </div>
   );
 }
@@ -43,10 +43,10 @@ function ScoreRing({ score, label, active }: { score: number; label: string; act
             className="stroke-primary transition-all duration-1200 ease-out" />
         </svg>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-lg font-bold text-zinc-900 dark:text-white font-michroma transition-colors">{score}</span>
+          <span className={`${styles.heading_5} !text-lg !font-bold text-zinc-900 dark:text-white transition-colors`}>{score}</span>
         </div>
       </div>
-      <span className="text-[9px] text-zinc-400 dark:text-zinc-500 uppercase tracking-wider font-semibold group-hover:text-primary transition-colors">{label}</span>
+      <span className={`${styles.caption_text} !text-[9px] text-zinc-400 dark:text-zinc-500 uppercase tracking-wider !font-semibold group-hover:text-primary transition-colors`}>{label}</span>
     </div>
   );
 }
@@ -186,23 +186,23 @@ export default function ParallaxSection() {
                     >
                       <Icon className="w-5 h-5" style={{ color: step.accent }} />
                     </div>
-                    <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full border ${step.pillColor}`}>
+                    <span className={`${styles.caption_text} !text-[10px] !font-bold px-2.5 py-1 rounded-full border ${step.pillColor}`}>
                       {step.tag}
                     </span>
                   </div>
 
                   <div className="flex flex-col flex-1 mb-5">
-                    <span className="text-[10px] text-zinc-400 dark:text-zinc-500 font-michroma uppercase mb-2">Phase {step.number}</span>
+                    <span className={`${styles.heading_6} !text-[10px] text-zinc-400 dark:text-zinc-500 uppercase mb-2`}>Phase {step.number}</span>
                     <h3 className={`${styles.heading_3} mb-2`}>{step.title}</h3>
                     <p className={styles.paragraph_sm}>{step.description}</p>
                   </div>
 
                   <div className="space-y-2 border-t border-zinc-200/50 dark:border-zinc-800/50 pt-4 mt-auto transition-colors duration-700">
-                    <p className="text-[9px] text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-semibold">Deliverables</p>
+                    <p className={`${styles.caption_text} !text-[9px] text-zinc-400 dark:text-zinc-500 uppercase tracking-widest !font-semibold`}>Deliverables</p>
                     {step.deliverables.map((del) => (
                       <div key={del} className="flex items-center gap-2">
                         <FiCheckCircle className="w-3.5 h-3.5 shrink-0" style={{ color: step.accent }} />
-                        <span className="text-xs text-zinc-600 dark:text-zinc-400 font-poppins">{del}</span>
+                        <span className={`${styles.span_text} !text-xs text-zinc-600 dark:text-zinc-400`}>{del}</span>
                       </div>
                     ))}
                   </div>
@@ -212,7 +212,7 @@ export default function ParallaxSection() {
           </div>
 
           <div className="mt-16 text-center">
-            <p className="text-zinc-500 text-sm font-poppins mb-5">
+            <p className={`${styles.span_text} !text-sm text-zinc-500 mb-5`}>
               Ready to start your growth journey?
             </p>
             <Button href="#contact" variant="primary" size="md">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Michroma, Poppins } from "next/font/google";
 import "./styles/globals.css";
+import Preloader from "@/components/ui/Preloader";
 
 const michroma = Michroma({
   weight: "400",
@@ -97,6 +98,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${michroma.variable} ${poppins.variable} h-full antialiased dark`}
+      suppressHydrationWarning
     >
       <head>
         <script
@@ -113,7 +115,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <Preloader>{children}</Preloader>
+      </body>
     </html>
   );
 }

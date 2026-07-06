@@ -1,6 +1,15 @@
 "use client";
 
-import { FiTrendingUp, FiTarget, FiCode, FiCamera, FiMessageSquare, FiShare2, FiCheck, FiArrowRight } from "react-icons/fi";
+import {
+  FiTrendingUp,
+  FiTarget,
+  FiCode,
+  FiCamera,
+  FiMessageSquare,
+  FiShare2,
+  FiCheck,
+  FiArrowRight,
+} from "react-icons/fi";
 import { motion } from "framer-motion";
 import styles from "@/app/styles/styles";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -29,15 +38,15 @@ const itemVariants = {
 export default function Services() {
   const services = [
     {
-      title: "Product Photography",
+      title: "Product Visuals & Creatives",
       desc: "High-end product photography and visual creative production that showcases your products in the best light and drives sales.",
       points: [
         "High-End E-commerce Studio Shoots",
         "Creative Styling & Lighting Setups",
         "Professional Color Grading & Retouching",
-        "Social Media Visual Assets"
+        "Social Media Visual Assets",
       ],
-      icon: <FiCamera className="w-6 h-6" />
+      icon: <FiCamera className="w-6 h-6" />,
     },
     {
       title: "Marketing & Ads Campaigns",
@@ -46,9 +55,9 @@ export default function Services() {
         "High-Conversion Ads Campaigns",
         "Meta (Facebook & Instagram) Advertising",
         "TikTok & Google PPC Marketing",
-        "Targeted Audience & Pixel Setup"
+        "Targeted Audience & Pixel Setup",
       ],
-      icon: <FiTarget className="w-6 h-6" />
+      icon: <FiTarget className="w-6 h-6" />,
     },
     {
       title: "Social Media & Content",
@@ -57,9 +66,9 @@ export default function Services() {
         "Full-Service Social Media Handling",
         "Strategic Brand Content Creation",
         "Engaging Video & Visual Asset Design",
-        "Community Growth & Brand Management"
+        "Community Growth & Brand Management",
       ],
-      icon: <FiShare2 className="w-6 h-6" />
+      icon: <FiShare2 className="w-6 h-6" />,
     },
     {
       title: "Advanced SEO Solutions",
@@ -68,9 +77,9 @@ export default function Services() {
         "Local SEO & Google Maps Domination",
         "Technical SEO & Speed Performance",
         "Strategic Keyword Targeting",
-        "High-Authority Content Building"
+        "High-Authority Content Building",
       ],
-      icon: <FiTrendingUp className="w-6 h-6" />
+      icon: <FiTrendingUp className="w-6 h-6" />,
     },
     {
       title: "E-Commerce & Custom Portfolios",
@@ -79,9 +88,9 @@ export default function Services() {
         "Shopify & WordPress E-commerce Sites",
         "Custom Portfolio & Showcase Sites",
         "Fully Responsive, Mobile-First Layouts",
-        "Rapid Load Times & SEO Optimization"
+        "Rapid Load Times & SEO Optimization",
       ],
-      icon: <FiCode className="w-6 h-6" />
+      icon: <FiCode className="w-6 h-6" />,
     },
     {
       title: "WhatsApp Automation & Support",
@@ -90,14 +99,17 @@ export default function Services() {
         "WhatsApp Business Chatbots & Automation",
         "Automated Order Tracking & Confirmations",
         "Customer Support Routing & Integrations",
-        "CRM Setup & Direct Message Scaling"
+        "CRM Setup & Direct Message Scaling",
       ],
-      icon: <FiMessageSquare className="w-6 h-6" />
-    }
+      icon: <FiMessageSquare className="w-6 h-6" />,
+    },
   ];
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-950/40 relative w-full">
+    <section
+      id="services"
+      className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-950/40 relative w-full"
+    >
       <div className={styles.container}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -107,11 +119,10 @@ export default function Services() {
           className="text-center max-w-3xl mx-auto space-y-4 mb-16 md:mb-24"
         >
           <Eyebrow>OUR SERVICES</Eyebrow>
-          <h2 className={styles.heading_2}>
-            ROI-DRIVEN DIGITAL CAPABILITIES
-          </h2>
+          <h2 className={styles.heading_2}>ROI-DRIVEN DIGITAL CAPABILITIES</h2>
           <p className={styles.paragraph}>
-            Engineered to remove bottlenecks and scale customer acquisition channels smoothly.
+            Engineered to remove bottlenecks and scale customer acquisition
+            channels smoothly.
           </p>
         </motion.div>
 
@@ -126,7 +137,10 @@ export default function Services() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ y: -6, transition: { duration: 0.2, ease: "easeInOut" } }}
+              whileHover={{
+                y: -6,
+                transition: { duration: 0.2, ease: "easeInOut" },
+              }}
               className="group p-8 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200/60 dark:border-zinc-800/60 hover:border-primary/20 transition-all duration-300 shadow-lg flex flex-col justify-between"
             >
               <div className="space-y-6">
@@ -134,17 +148,16 @@ export default function Services() {
                   {service.icon}
                 </div>
                 <div className="space-y-3">
-                  <h3 className={styles.heading_3}>
-                    {service.title}
-                  </h3>
-                  <p className={styles.paragraph_sm}>
-                    {service.desc}
-                  </p>
+                  <h3 className={styles.heading_3}>{service.title}</h3>
+                  <p className={styles.paragraph_sm}>{service.desc}</p>
                 </div>
 
                 <ul className="space-y-3.5 pt-4 border-t border-zinc-100 dark:border-zinc-800/80">
                   {service.points.map((point, pIdx) => (
-                    <li key={pIdx} className="flex items-center gap-3 text-sm text-zinc-700 dark:text-zinc-300">
+                    <li
+                      key={pIdx}
+                      className={`flex items-center gap-3 text-zinc-700 dark:text-zinc-300 ${styles.span_text}`}
+                    >
                       <FiCheck className="w-4 h-4 text-primary shrink-0" />
                       {point}
                     </li>
@@ -155,7 +168,7 @@ export default function Services() {
               <div className="pt-8">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+                  className={`inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors ${styles.label_text}`}
                 >
                   Request Consultation
                   <FiArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 duration-300" />
