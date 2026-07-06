@@ -79,9 +79,16 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
     return () => {
       document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     };
   }, [isOpen]);
 
@@ -181,7 +188,7 @@ export default function Navbar() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.22 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-[998] bg-black/65 backdrop-blur-[2px]"
+              className="fixed inset-0 z-[998] bg-black/65 backdrop-blur-[2px] touch-none"
             />
 
             {/* Panel */}
@@ -217,7 +224,7 @@ export default function Navbar() {
               />
 
               {/* ── HEADER ── */}
-              <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-white/[0.06] shrink-0">
+              <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-white/[0.06] shrink-0 touch-none">
                 <div>
                   <p className="text-[10px] text-zinc-500 font-poppins tracking-[0.18em] uppercase mb-0.5">
                     {greeting}
@@ -246,7 +253,7 @@ export default function Navbar() {
               </div>
 
               {/* ── SCROLLABLE MIDDLE AREA ── */}
-              <div className="flex-1 overflow-y-auto">
+              <div className="flex-1 overflow-y-auto overscroll-contain">
                 {/* ── NAV LINKS ── */}
                 <nav className="flex flex-col px-5 py-3">
                   {navLinks.map((link, i) => (
@@ -287,7 +294,7 @@ export default function Navbar() {
               </div>
 
               {/* ── BOTTOM SECTION ── */}
-              <div className="px-5 pb-6 pt-4 space-y-3 border-t border-white/[0.06] shrink-0 bg-[#0f0f0f]/95 backdrop-blur-[2px]">
+              <div className="px-5 pb-6 pt-4 space-y-3 border-t border-white/[0.06] shrink-0 bg-[#0f0f0f]/95 backdrop-blur-[2px] touch-none">
                 {/* World clocks — side by side cards */}
                 <div className="grid grid-cols-2 gap-2">
                   {offices.map(({ flag, city, tz, offset }) => (
