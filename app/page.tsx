@@ -1,13 +1,14 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
-import Services from "@/components/Services";
-import ParallaxSection from "@/components/ParallaxSection";
-import MarketFocus from "@/components/MarketFocus";
-import CaseStudies from "@/components/CaseStudies";
-import ZoomRevealSection from "@/components/ZoomRevealSection";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/sections/Navbar";
+import Hero from "@/components/sections/Hero";
+import Marquee from "@/components/ui/Marquee";
+import Services from "@/components/sections/Services";
+import HowWeWork from "@/components/sections/HowWeWork";
+import MarketFocus from "@/components/sections/MarketFocus";
+import CaseStudies from "@/components/sections/CaseStudies";
+import Testimonials from "@/components/sections/Testimonials";
+import SceneryReveal from "@/components/sections/SceneryReveal";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/sections/Footer";
 
 export default function Home() {
   return (
@@ -17,10 +18,11 @@ export default function Home() {
         <Hero />
         <Marquee />
         <Services />
-        <ParallaxSection />
+        <HowWeWork />
         <MarketFocus />
         <CaseStudies />
-        <ZoomRevealSection />
+        <Testimonials />
+        <SceneryReveal />
         <Contact />
       </main>
       <Footer />

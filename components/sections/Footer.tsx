@@ -2,13 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import styles from "@/app/styles/styles";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const bannerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const words = ["MANZARKASH", "INNOVATORS", "VISIONARIES", "CREATIVES"];
+  const words = ["MANZARKASH", "PRODUCTION", "CREATIVES", "INNOVATORS"];
   const [wordIndex, setWordIndex] = useState(0);
 
   useEffect(() => {
@@ -40,18 +41,16 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="border-t border-zinc-200/50 dark:border-zinc-800/50 bg-white dark:bg-black transition-colors duration-300">
-      <div className="w-full px-6 md:px-16 lg:px-24 py-12 md:py-16">
+    <footer className="border-t border-zinc-200/50 dark:border-zinc-800/50 bg-white dark:bg-black transition-colors duration-300 w-full">
+      <div className={`${styles.container} py-12 md:py-16`}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-8 items-start">
-          {/* Brand Info */}
           <div className="lg:col-span-5 space-y-6">
             <a href="#" className="font-michroma text-xl md:text-2xl tracking-widest text-black dark:text-white">
               MANZARKASH<span className="text-primary font-bold">.</span>
             </a>
             <p className="text-sm text-zinc-500 dark:text-zinc-400 font-poppins italic max-w-sm">
-              We capture views, build landscapes, and scale digital operations with premium tech stacks and growth structures.
+              We are a Karachi-based creative digital agency specializing in high-end product photography, marketing campaigns, custom e-commerce & portfolio websites, and WhatsApp automation.
             </p>
-            {/* Social Links */}
             <div className="flex items-center gap-4">
               <a href="#" className="text-zinc-400 hover:text-primary transition-colors" aria-label="LinkedIn">
                 <FaLinkedin className="w-5 h-5" />
@@ -65,39 +64,46 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick links columns */}
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div className="space-y-4">
               <h4 className="text-xs font-bold uppercase tracking-wider text-black dark:text-white">Services</h4>
               <ul className="space-y-2 text-sm text-zinc-500 dark:text-zinc-400">
-                <li><a href="#services" className="hover:text-primary transition-colors">Search SEO</a></li>
-                <li><a href="#services" className="hover:text-primary transition-colors">Performance Ads</a></li>
-                <li><a href="#services" className="hover:text-primary transition-colors">Custom Dev</a></li>
-                <li><a href="#services" className="hover:text-primary transition-colors">Linguistic Copy</a></li>
+                <li><a href="/#services" className="hover:text-primary transition-colors">Product Photography</a></li>
+                <li><a href="/#services" className="hover:text-primary transition-colors">Ads & Marketing</a></li>
+                <li><a href="/#services" className="hover:text-primary transition-colors">Social Media & Content</a></li>
+                <li><a href="/#services" className="hover:text-primary transition-colors">SEO & Custom Sites</a></li>
+                <li><a href="/#services" className="hover:text-primary transition-colors">WhatsApp Automation</a></li>
               </ul>
             </div>
 
             <div className="space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-black dark:text-white">Markets</h4>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-black dark:text-white">Agency</h4>
               <ul className="space-y-2 text-sm text-zinc-500 dark:text-zinc-400">
-                <li><a href="#market-focus" className="hover:text-primary transition-colors">United States</a></li>
-                <li><a href="#market-focus" className="hover:text-primary transition-colors">United Kingdom</a></li>
-                <li><a href="#market-focus" className="hover:text-primary transition-colors">Middle East / Gulf</a></li>
-                <li><a href="#market-focus" className="hover:text-primary transition-colors">Pakistan Domestic</a></li>
+                <li><a href="/about" className="hover:text-primary transition-colors">About Us</a></li>
+                <li><a href="/#market-focus" className="hover:text-primary transition-colors">United States Focus</a></li>
+                <li><a href="/#market-focus" className="hover:text-primary transition-colors">United Kingdom Focus</a></li>
+                <li><a href="/#market-focus" className="hover:text-primary transition-colors">Pakistan Domestic Focus</a></li>
               </ul>
             </div>
 
-            <div className="space-y-4 col-span-2 sm:col-span-1">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-black dark:text-white">Contact</h4>
+            <div className="space-y-4 col-span-2 sm:col-span-1 font-poppins">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-black dark:text-white font-michroma">Contact</h4>
               <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
                 UK Office: 85 Great Portland St, London<br />
                 PK Office: Shahrah-e-Faisal, Karachi
               </p>
+              <div className="space-y-1.5 text-sm pt-2">
+                <p className="text-zinc-500 dark:text-zinc-400">
+                  Email: <a href="mailto:hello@manzarkash.com" className="hover:text-primary transition-colors text-black dark:text-white font-semibold">hello@manzarkash.com</a>
+                </p>
+                <p className="text-zinc-500 dark:text-zinc-400">
+                  Phone: <a href="https://wa.me/923313936011" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-black dark:text-white font-semibold">+92 331 3936011</a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Giant typographic reveal banner */}
         <div ref={bannerRef} className="mt-16 border-t border-zinc-100 dark:border-zinc-900/60 pt-16 overflow-hidden select-none">
           <div
             className={`text-[8.2vw] font-bold tracking-tighter leading-none text-zinc-200/50 dark:text-zinc-900/30 font-michroma text-center uppercase transition-all duration-1000 ease-out flex justify-center gap-[0.2vw] ${
@@ -126,14 +132,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Sub-Footer */}
-        <div className="mt-12 md:mt-16 pt-8 border-t border-zinc-200/50 dark:border-zinc-800/50 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <p>© {currentYear} Manzarkash. All rights reserved.</p>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <span>•</span>
-            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
-          </div>
+        <div className="mt-12 md:mt-16 pt-8 border-t border-zinc-200/50 dark:border-zinc-800/50 text-center text-xs text-zinc-500">
+          <p>© {currentYear} Manzarkash Production. All rights reserved.</p>
         </div>
       </div>
     </footer>

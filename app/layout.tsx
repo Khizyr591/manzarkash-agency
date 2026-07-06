@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Michroma, Poppins } from "next/font/google";
-import "./globals.css";
+import "./styles/globals.css";
 
 const michroma = Michroma({
   weight: "400",
@@ -15,17 +15,44 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Manzarkash Agency | Creative Digital Marketing & Web Engineering",
-  description: "Premium digital marketing agency scaling Pakistani and international brands with hyper-optimized SEO, high-conversion paid ads, and custom Next.js web systems.",
+  title: "Manzarkash Production | Karachi's Premier Digital Marketing & Creative Agency",
+  description: "Karachi-based digital agency scaling brands with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation.",
   keywords: [
-    "digital marketing agency Pakistan",
+    "digital marketing agency Karachi",
+    "product photography Karachi",
     "SEO agency Pakistan",
-    "creative agency Karachi",
-    "performance marketing",
-    "Next.js developers",
-    "bilingual copywriting",
-    "brand identity design"
+    "ads campaign Karachi",
+    "whatsapp automation Pakistan",
+    "custom e-commerce websites",
+    "portfolio websites Karachi",
+    "digital agency Pakistan"
   ],
+  metadataBase: new URL("https://manzarkash.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Manzarkash Production | Karachi's Premier Digital Marketing & Creative Agency",
+    description: "Karachi-based digital agency scaling brands with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation.",
+    url: "https://manzarkash.com",
+    siteName: "Manzarkash Production",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Manzarkash Production - Digital Agency & Product Photography",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Manzarkash Production | Karachi's Premier Digital Marketing & Creative Agency",
+    description: "Karachi-based digital agency scaling brands with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -36,9 +63,9 @@ export default function RootLayout({
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Manzarkash Agency",
+    "name": "Manzarkash Production",
     "image": "https://manzarkash.com/og-image.jpg",
-    "@id": "https://manzarkash.com/#agency",
+    "@id": "https://manzarkash.com/#production",
     "url": "https://manzarkash.com",
     "telephone": "+923000000000",
     "priceRange": "$$$",
@@ -63,7 +90,7 @@ export default function RootLayout({
       "https://www.linkedin.com/company/manzarkash",
       "https://twitter.com/manzarkash"
     ],
-    "description": "Creative digital marketing and high-performance web engineering agency catering to local and international markets."
+    "description": "Karachi-based digital agency scaling brands with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation."
   };
 
   return (
@@ -75,6 +102,19 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (_) {}
+            `,
+          }}
         />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
