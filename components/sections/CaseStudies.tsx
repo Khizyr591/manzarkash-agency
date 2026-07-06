@@ -1,10 +1,37 @@
+"use client";
+
+import { motion } from "framer-motion";
+import styles from "@/app/styles/styles";
+import Eyebrow from "@/components/ui/Eyebrow";
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+} as const;
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+} as const;
+
 export default function CaseStudies() {
   const cases = [
     {
       metric: "+310%",
       label: "Organic Traffic Growth",
       title: "Zylora Fashion (US)",
-      desc: "Architected a headless Next.js e-commerce engine combined with global search engine optimization, propelling the brand from zero presence to standard US retail authority.",
+      desc: "Architected a high-speed custom e-commerce engine combined with global search engine optimization, propelling the brand from zero presence to standard US retail authority.",
       highlight: "$1.2M+ Annual Revenue Generated",
     },
     {
@@ -24,33 +51,44 @@ export default function CaseStudies() {
   ];
 
   return (
-    <section id="case-studies" className="py-20 md:py-28 relative">
-      <div className="w-full px-6 md:px-16 lg:px-24">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-24">
+    <section id="case-studies" className="py-20 md:py-28 relative w-full">
+      <div className={styles.container}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-24"
+        >
           <div className="space-y-4 max-w-2xl">
-            <span className="text-primary font-semibold text-sm tracking-widest uppercase">
-              CASE STUDIES
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white">
+            <Eyebrow>CASE STUDIES</Eyebrow>
+            <h2 className={styles.heading_2}>
               RESULTS THAT DELIVER VALUE
             </h2>
           </div>
           <div>
-            <p className="text-lg text-zinc-650 dark:text-zinc-350 font-poppins italic max-w-md">
+            <p className={styles.paragraph}>
               We focus on metrics that impact your financial bottom line:
               clicks, conversions, and revenue.
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+        >
           {cases.map((c, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={itemVariants}
+              whileHover={{ y: -6, transition: { duration: 0.2, ease: "easeInOut" } }}
               className="relative rounded-3xl p-8 bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/20 transition-all duration-300 flex flex-col justify-between group shadow-sm hover:shadow-lg"
             >
               <div className="space-y-6">
-                {/* Metric Display */}
                 <div className="space-y-1">
                   <div className="text-4xl md:text-5xl font-bold tracking-tight text-primary font-michroma">
                     {c.metric}
@@ -61,25 +99,24 @@ export default function CaseStudies() {
                 </div>
 
                 <div className="space-y-3">
-                  <h3 className="text-xl font-bold tracking-tight text-zinc-900 dark:text-white group-hover:text-primary transition-colors">
+                  <h3 className={`${styles.heading_3} group-hover:text-primary transition-colors`}>
                     {c.title}
                   </h3>
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  <p className={styles.paragraph_sm}>
                     {c.desc}
                   </p>
                 </div>
               </div>
 
-              {/* Highlight box */}
               <div className="mt-8 pt-4 border-t border-zinc-200/60 dark:border-zinc-800/60">
                 <span className="text-xs font-bold text-black dark:text-white inline-flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   {c.highlight}
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

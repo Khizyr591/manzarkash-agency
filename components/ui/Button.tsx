@@ -30,7 +30,7 @@ export default function Button({
 }: ButtonProps) {
   // Base classes for consistent sizing, rounded border, flex alignment, and micro-interactions
   const baseClasses =
-    "inline-flex items-center justify-center font-semibold rounded-full transition-all duration-300 transform active:scale-95 disabled:opacity-50 disabled:pointer-events-none";
+    "inline-flex items-center justify-center font-poppins font-semibold rounded-full transition-all duration-300 transform active:scale-95 disabled:opacity-50 disabled:pointer-events-none";
 
   // Variant classes
   const variantClasses = {
@@ -60,9 +60,9 @@ export default function Button({
         className={finalClasses}
         {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
-        {leftIcon && <span className="flex-shrink-0">{leftIcon}</span>}
+        {leftIcon && <span className="shrink-0">{leftIcon}</span>}
         <span className="truncate">{children}</span>
-        {rightIcon && <span className="flex-shrink-0">{rightIcon}</span>}
+        {rightIcon && <span className="shrink-0">{rightIcon}</span>}
       </a>
     );
   }
@@ -79,13 +79,13 @@ export default function Button({
       )}
 
       {/* Left Icon (only visible when not loading) */}
-      {!isLoading && leftIcon && <span className="flex-shrink-0">{leftIcon}</span>}
+      {!isLoading && leftIcon && <span className="shrink-0">{leftIcon}</span>}
 
       {/* Button Content */}
       <span className="truncate">{children}</span>
 
       {/* Right Icon */}
-      {!isLoading && rightIcon && <span className="flex-shrink-0">{rightIcon}</span>}
+      {!isLoading && rightIcon && <span className="shrink-0">{rightIcon}</span>}
     </button>
   );
 }
