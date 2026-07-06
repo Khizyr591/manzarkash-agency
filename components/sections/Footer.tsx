@@ -26,7 +26,7 @@ export default function Footer() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.05 }
+      { threshold: 0 }
     );
 
     if (bannerRef.current) {
@@ -97,7 +97,7 @@ export default function Footer() {
                   Email: <a href="mailto:hello@manzarkash.com" className="hover:text-primary transition-colors text-black dark:text-white font-semibold">hello@manzarkash.com</a>
                 </p>
                 <p className="text-zinc-500 dark:text-zinc-400">
-                  Phone: <a href="https://wa.me/923313936011" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-black dark:text-white font-semibold">+92 331 3936011</a>
+                  Phone: <a href="https://wa.me/923313936011" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-black dark:text-white font-semibold font-poppins">+92 331 3936011</a>
                 </p>
               </div>
             </div>
@@ -106,15 +106,14 @@ export default function Footer() {
 
         <div ref={bannerRef} className="mt-16 border-t border-zinc-100 dark:border-zinc-900/60 pt-16 overflow-hidden select-none">
           <div
-            className={`text-[8.2vw] font-bold tracking-tighter leading-none text-zinc-200/50 dark:text-zinc-900/30 font-michroma text-center uppercase transition-all duration-1000 ease-out flex justify-center gap-[0.2vw] ${
-              isVisible ? "translate-y-0 opacity-100 scale-100 skew-y-0" : "translate-y-full opacity-0 scale-95 skew-y-6"
-            }`}
+            className={`text-[8.2vw] font-bold tracking-tighter leading-none text-zinc-200/50 dark:text-zinc-900/30 font-michroma text-center uppercase transition-all duration-1000 ease-out flex justify-center gap-[0.2vw] ${isVisible ? "translate-y-0 opacity-100 scale-100 skew-y-0" : "translate-y-full opacity-0 scale-95 skew-y-6"
+              }`}
             style={{ transformOrigin: "center top" }}
           >
             {words[wordIndex].split("").map((letter, index) => (
               <span
                 key={`${wordIndex}-${index}`}
-                className={`inline-block ${isVisible ? "opacity-0 animate-letter-in" : "opacity-0"}`}
+                className={`inline-block ${isVisible ? "animate-letter-in" : "opacity-0"}`}
                 style={{
                   animationDelay: `${index * 0.05}s`,
                 }}
