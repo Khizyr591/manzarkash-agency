@@ -74,7 +74,7 @@ export default function Testimonials() {
           {testimonials.map((t, idx) => (
             <div
               key={`loop-1-${idx}`}
-              className="w-[300px] sm:w-[380px] md:w-[420px] flex-shrink-0 p-8 rounded-3xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/20 transition-all duration-300 shadow-lg flex flex-col justify-between"
+              className="w-[300px] sm:w-[380px] md:w-[420px] shrink-0 p-8 rounded-3xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/20 transition-all duration-300 shadow-lg flex flex-col justify-between"
             >
               <div className="space-y-6">
                 <div className="flex gap-1 text-orange-500">
@@ -104,7 +104,7 @@ export default function Testimonials() {
           {testimonials.map((t, idx) => (
             <div
               key={`loop-2-${idx}`}
-              className="w-[300px] sm:w-[380px] md:w-[420px] flex-shrink-0 p-8 rounded-3xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/20 transition-all duration-300 shadow-lg flex flex-col justify-between"
+              className="w-[300px] sm:w-[380px] md:w-[420px] shrink-0 p-8 rounded-3xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/20 transition-all duration-300 shadow-lg flex flex-col justify-between"
             >
               <div className="space-y-6">
                 <div className="flex gap-1 text-orange-500">

@@ -36,6 +36,9 @@ export default function SceneryReveal() {
     [0, 0.06, 0.9, 1]
   );
 
+  const gridScale = useTransform(scrollYProgress, [0, 1], [1, 1.25]);
+  const gridOpacity = useTransform(scrollYProgress, [0, 0.4, 0.8], [0.06, 0.15, 0.04]);
+
   const grainOpacity = useTransform(scrollYProgress, [0.1, 0.7], [0, 0.18]);
 
   const phase1Opacity = useTransform(scrollYProgress, [0, 0.22, 0.35], [1, 1, 0]);
@@ -69,6 +72,11 @@ export default function SceneryReveal() {
         />
 
         <motion.div
+          className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[32px_32px] dark:bg-[linear-gradient(to_right,#ffffff04_1px,transparent_1px),linear-gradient(to_bottom,#ffffff04_1px,transparent_1px)] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"
+          style={{ scale: gridScale, opacity: gridOpacity }}
+        />
+
+        <motion.div
           className="absolute font-michroma font-bold text-[28vw] md:text-[20vw] text-primary select-none pointer-events-none will-change-transform"
           style={{ scale: mScale, opacity: mOpacity }}
         >
@@ -98,7 +106,7 @@ export default function SceneryReveal() {
         >
           <Eyebrow>The Visual Transformation</Eyebrow>
 
-          <h2 className="font-michroma text-4xl md:text-6xl lg:text-7xl text-zinc-900 dark:text-white tracking-tight leading-tight">
+          <h2 className="font-michroma text-4xl md:text-6xl lg:text-7xl bg-linear-to-b from-zinc-900 via-zinc-800 to-zinc-500 dark:from-white dark:via-zinc-200 dark:to-zinc-500 bg-clip-text text-transparent tracking-tight leading-tight uppercase font-semibold">
             The Digital Scenery Shift
           </h2>
 
@@ -107,11 +115,24 @@ export default function SceneryReveal() {
             digital experiences.
           </p>
 
-          <div className="flex flex-col items-center gap-2 pt-4">
-            <span className="font-poppins text-[10px] tracking-[0.2em] uppercase text-zinc-400 dark:text-zinc-600">
+          <div className="flex flex-col items-center gap-2 pt-6">
+            <div className="w-6 h-10 rounded-full border border-zinc-300 dark:border-zinc-700 flex justify-center pt-2.5">
+              <motion.div
+                animate={{
+                  y: [0, 12, 0],
+                  opacity: [1, 0.2, 1]
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 1.6,
+                  ease: "easeInOut"
+                }}
+                className="w-1 h-1.5 rounded-full bg-primary"
+              />
+            </div>
+            <span className="font-poppins text-[10px] tracking-[0.25em] uppercase text-zinc-400 dark:text-zinc-500">
               scroll
             </span>
-            <div className="w-px h-10 bg-linear-to-b from-zinc-300 to-transparent dark:from-zinc-700 animate-pulse" />
           </div>
         </motion.div>
 
@@ -126,9 +147,9 @@ export default function SceneryReveal() {
         >
           <Eyebrow variant="white">{"Let's Work Together"}</Eyebrow>
 
-          <h2 className="font-michroma text-4xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.05] max-w-3xl">
+          <h2 className="font-michroma text-4xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.05] max-w-3xl font-semibold uppercase">
             READY TO DEFINE YOUR{" "}
-            <span className="text-primary">SCENERY?</span>
+            <span className="text-primary bg-linear-to-r from-primary to-orange-400 bg-clip-text">SCENERY?</span>
           </h2>
 
           <p className="font-poppins text-base md:text-lg text-white/75 italic max-w-lg leading-relaxed">
@@ -140,8 +161,9 @@ export default function SceneryReveal() {
             {TRUST_CHIPS.map((chip) => (
               <span
                 key={chip}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-white/80 font-poppins text-xs font-medium"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white/80 font-poppins text-xs font-medium hover:bg-primary/10 hover:border-primary/30 hover:text-primary transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
               >
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                 {chip}
               </span>
             ))}
