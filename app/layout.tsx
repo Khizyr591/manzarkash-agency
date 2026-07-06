@@ -67,7 +67,7 @@ export default function RootLayout({
     "image": "https://manzarkash.com/og-image.jpg",
     "@id": "https://manzarkash.com/#production",
     "url": "https://manzarkash.com",
-    "telephone": "+923000000000",
+    "telephone": "+923313936011",
     "priceRange": "$$$",
     "address": [
       {
@@ -96,7 +96,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${michroma.variable} ${poppins.variable} h-full antialiased`}
+      className={`${michroma.variable} ${poppins.variable} h-full antialiased dark`}
     >
       <head>
         <script
@@ -107,11 +107,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                  document.documentElement.classList.add('dark');
-                } else {
-                  document.documentElement.classList.remove('dark');
-                }
+                document.documentElement.classList.add('dark');
               } catch (_) {}
             `,
           }}

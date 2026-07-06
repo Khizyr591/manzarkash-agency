@@ -135,11 +135,10 @@ export default function Hero() {
               </svg>
             </span>{" "}
             brands people{" "}
-            <span className="inline-block w-40 h-30 md:w-60 md:h-34 mx-1.5 md:mx-3 rounded-xl bg-black align-middle overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-lg relative">
+            <span className="inline-block w-[90px] h-[52px] sm:w-[130px] sm:h-[74px] md:w-[180px] md:h-[102px] lg:w-[220px] lg:h-[125px] mx-1.5 md:mx-3 rounded-xl bg-black align-middle overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/40 hover:shadow-primary/10 transition-all duration-300 transform hover:scale-105 shadow-lg relative select-none">
               <iframe
                 src={YT_SRC}
-                className="absolute border-0 pointer-events-none"
-                style={{ width: "178%", height: "100%", left: "-39%", top: 0 }}
+                className="absolute border-0 pointer-events-none w-[178%] h-full left-[-39%] top-0"
                 allow="autoplay; encrypted-media"
                 tabIndex={-1}
                 title="preview"

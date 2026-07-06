@@ -111,39 +111,6 @@ export default function ParallaxSection() {
   const [visibleSteps, setVisibleSteps] = useState<boolean[]>([false, false, false, false]);
 
   useEffect(() => {
-    const htmlElement = document.documentElement;
-
-    const isSystemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const hasDarkClass = htmlElement.classList.contains("dark");
-    const initialTheme = hasDarkClass || (isSystemDark && !htmlElement.classList.contains("light")) ? "dark" : "light";
-
-    const themeObserver = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          if (initialTheme === "dark") {
-            htmlElement.classList.remove("dark");
-            htmlElement.classList.add("light");
-          } else {
-            htmlElement.classList.add("dark");
-            htmlElement.classList.remove("light");
-          }
-        } else {
-          if (initialTheme === "dark") {
-            htmlElement.classList.add("dark");
-            htmlElement.classList.remove("light");
-          } else {
-            htmlElement.classList.remove("dark");
-            htmlElement.classList.add("light");
-          }
-        }
-      },
-      { threshold: 0.15 }
-    );
-
-    if (containerRef.current) {
-      themeObserver.observe(containerRef.current);
-    }
-
     const showcaseObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -180,17 +147,8 @@ export default function ParallaxSection() {
     });
 
     return () => {
-      themeObserver.disconnect();
       showcaseObserver.disconnect();
       stepObservers.forEach((obs) => obs.disconnect());
-
-      if (initialTheme === "dark") {
-        htmlElement.classList.add("dark");
-        htmlElement.classList.remove("light");
-      } else {
-        htmlElement.classList.remove("dark");
-        htmlElement.classList.add("light");
-      }
     };
   }, []);
 
