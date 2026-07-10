@@ -47,6 +47,7 @@ export default function Services() {
         "Social Media Visual Assets",
       ],
       icon: <FiCamera className="w-6 h-6" />,
+      href: "/services/product-visuals",
     },
     {
       title: "Marketing & Ads Campaigns",
@@ -58,6 +59,7 @@ export default function Services() {
         "Targeted Audience & Pixel Setup",
       ],
       icon: <FiTarget className="w-6 h-6" />,
+      href: "/services/marketing-ads",
     },
     {
       title: "Social Media & Content",
@@ -69,6 +71,7 @@ export default function Services() {
         "Community Growth & Brand Management",
       ],
       icon: <FiShare2 className="w-6 h-6" />,
+      href: "/services/social-media",
     },
     {
       title: "Advanced SEO Solutions",
@@ -80,6 +83,7 @@ export default function Services() {
         "High-Authority Content Building",
       ],
       icon: <FiTrendingUp className="w-6 h-6" />,
+      href: "/services/seo",
     },
     {
       title: "E-Commerce & Custom Portfolios",
@@ -91,6 +95,7 @@ export default function Services() {
         "Rapid Load Times & SEO Optimization",
       ],
       icon: <FiCode className="w-6 h-6" />,
+      href: "/services/ecommerce",
     },
     {
       title: "WhatsApp Automation & Support",
@@ -102,6 +107,7 @@ export default function Services() {
         "CRM Setup & Direct Message Scaling",
       ],
       icon: <FiMessageSquare className="w-6 h-6" />,
+      href: "/services/whatsapp-automation",
     },
   ];
 
@@ -167,10 +173,10 @@ export default function Services() {
 
               <div className="pt-8">
                 <a
-                  href="#contact"
+                  href={service.href}
                   className={`inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors ${styles.label_text}`}
                 >
-                  Request Consultation
+                  Explore Process & Cases
                   <FiArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 duration-300" />
                 </a>
               </div>

@@ -20,6 +20,7 @@
   --font-poppins: var(--font-poppins);
   --color-primary: var(--primary);
   --animate-marquee: marquee 25s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 25s linear infinite;
   --animate-letter-bounce: letter-bounce 2s ease-in-out infinite;
   --animate-letter-in: letter-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 
@@ -29,6 +30,15 @@
     }
     to {
       transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-reverse {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
     }
   }
 

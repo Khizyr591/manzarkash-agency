@@ -1,6 +1,7 @@
 import Navbar from "@/components/sections/Navbar";
 import Hero from "@/components/sections/Hero";
-import Marquee from "@/components/ui/Marquee";
+import CrossedMarquee from "@/components/ui/CrossedMarquee";
+import ClientLogos from "@/components/sections/ClientLogos";
 import Services from "@/components/sections/Services";
 import HowWeWork from "@/components/sections/HowWeWork";
 import MarketFocus from "@/components/sections/MarketFocus";
@@ -16,7 +17,8 @@ export default function Home() {
       <Navbar />
       <main className="flex flex-col">
         <Hero />
-        <Marquee />
+        <CrossedMarquee />
+        <ClientLogos />
         <Services />
         <HowWeWork />
         <MarketFocus />

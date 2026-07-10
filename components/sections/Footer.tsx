@@ -99,7 +99,7 @@ export default function Footer() {
               >
                 <li>
                   <a
-                    href="/#services"
+                    href="/services/product-visuals"
                     className="hover:text-primary transition-colors"
                   >
                     Product Photography
@@ -107,7 +107,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/#services"
+                    href="/services/marketing-ads"
                     className="hover:text-primary transition-colors"
                   >
                     Ads & Marketing
@@ -115,7 +115,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/#services"
+                    href="/services/social-media"
                     className="hover:text-primary transition-colors"
                   >
                     Social Media & Content
@@ -123,15 +123,23 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/#services"
+                    href="/services/seo"
                     className="hover:text-primary transition-colors"
                   >
-                    SEO & Custom Sites
+                    SEO Solutions
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/#services"
+                    href="/services/ecommerce"
+                    className="hover:text-primary transition-colors"
+                  >
+                    E-Commerce Custom Sites
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/services/whatsapp-automation"
                     className="hover:text-primary transition-colors"
                   >
                     WhatsApp Automation
@@ -155,6 +163,30 @@ export default function Footer() {
                     className="hover:text-primary transition-colors"
                   >
                     About Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/founder"
+                    className="hover:text-primary transition-colors"
+                  >
+                    About Founder
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/portfolio"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Portfolio / Cases
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/contact"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Get in Touch
                   </a>
                 </li>
                 <li>

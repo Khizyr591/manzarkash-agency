@@ -56,10 +56,10 @@ export default function Navbar() {
 
   const navLinks = [
     { label: "About", href: "/about", num: "01" },
-    { label: "Services", href: "/#services", num: "02" },
-    { label: "Dual Focus", href: "/#market-focus", num: "03" },
-    { label: "Case Studies", href: "/#case-studies", num: "04" },
-    { label: "Consultation", href: "/#contact", num: "05" },
+    { label: "Founder", href: "/founder", num: "02" },
+    { label: "Portfolio", href: "/portfolio", num: "03" },
+    { label: "Services", href: "/services", num: "04" },
+    { label: "Contact", href: "/contact", num: "05" },
   ];
 
   const offices = [
@@ -122,18 +122,17 @@ export default function Navbar() {
     <>
       {/* ── NAVBAR BAR ───────────────────────────────────── */}
       <nav
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-          scrolled
-            ? "backdrop-blur-xl bg-white/85 dark:bg-black/85 border-b border-zinc-200/60 dark:border-zinc-800/60 shadow-sm"
-            : "backdrop-blur-md  bg-white/60 dark:bg-black/60 border-b border-zinc-200/30 dark:border-zinc-800/30"
-        }`}
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${scrolled
+          ? "backdrop-blur-xl bg-white/85 dark:bg-black/85 border-b border-zinc-200/60 dark:border-zinc-800/60 shadow-sm"
+          : "backdrop-blur-md  bg-white/60 dark:bg-black/60 border-b border-zinc-200/30 dark:border-zinc-800/30"
+          }`}
       >
         <div className={styles.container}>
-          <div className="flex items-center justify-between h-[4.5rem]">
+          <div className="flex items-center justify-between h-18">
             {/* Logo */}
             <a
               href="#"
-              className={`${styles.heading_5} !text-xl md:!text-2xl !tracking-widest text-black dark:text-white shrink-0`}
+              className={`${styles.heading_5} text-xl! md:text-2xl! tracking-widest! text-black dark:text-white shrink-0`}
             >
               MANZARKASH<span className="text-primary">.</span>
             </a>
@@ -144,7 +143,7 @@ export default function Navbar() {
                 <a
                   key={l.label}
                   href={l.href}
-                  className={`${styles.label_text} !text-sm text-zinc-500 hover:text-primary dark:text-zinc-400 dark:hover:text-primary transition-colors relative group`}
+                  className={`${styles.label_text} text-sm! text-zinc-500 hover:text-primary dark:text-zinc-400 dark:hover:text-primary transition-colors relative group`}
                 >
                   {l.label}
                   <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-primary transition-all duration-300 group-hover:w-full" />
@@ -157,7 +156,7 @@ export default function Navbar() {
               href="https://wa.me/923313936011"
               target="_blank"
               rel="noopener noreferrer"
-              className={`hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-white transition-all shadow-sm hover:shadow-primary/25 hover:-translate-y-0.5 duration-300 ${styles.button_text_sm} !normal-case`}
+              className={`hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-white transition-all shadow-sm hover:shadow-primary/25 hover:-translate-y-0.5 duration-300 ${styles.button_text_sm} normal-case!`}
             >
               Let's Talk
             </a>
@@ -188,7 +187,7 @@ export default function Navbar() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.22 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-[998] bg-black/65 backdrop-blur-[2px] touch-none"
+              className="fixed inset-0 z-998 bg-black/65 backdrop-blur-[2px] touch-none"
             />
 
             {/* Panel */}
@@ -198,7 +197,7 @@ export default function Navbar() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="fixed top-0 right-0 bottom-0 h-screen h-[100dvh] z-[999] w-[82vw] max-w-[320px] flex flex-col"
+              className="fixed top-0 right-0 bottom-0 h-screen z-999 w-[82vw] max-w-[320px] flex flex-col"
               style={{
                 background:
                   "linear-gradient(160deg, #0d0d0d 0%, #111 55%, #180c00 100%)",
@@ -224,13 +223,13 @@ export default function Navbar() {
               />
 
               {/* ── HEADER ── */}
-              <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-white/[0.06] shrink-0 touch-none">
+              <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-white/6 shrink-0 touch-none">
                 <div>
                   <p className="text-[10px] text-zinc-500 font-poppins tracking-[0.18em] uppercase mb-0.5">
                     {greeting}
                   </p>
                   <span
-                    className={`${styles.heading_5} !text-[1.1rem] !tracking-widest text-white leading-none`}
+                    className={`${styles.heading_5} text-[1.1rem]! tracking-widest! text-white leading-none`}
                   >
                     MANZARKASH<span className="text-primary">.</span>
                   </span>
@@ -253,7 +252,7 @@ export default function Navbar() {
               </div>
 
               {/* ── SCROLLABLE MIDDLE AREA ── */}
-              <div className="flex-1 overflow-y-auto overscroll-contain">
+              <div className="flex-1 overflow-y-auto overscroll-contain min-h-0">
                 {/* ── NAV LINKS ── */}
                 <nav className="flex flex-col px-5 py-3">
                   {navLinks.map((link, i) => (
@@ -265,13 +264,13 @@ export default function Navbar() {
                       initial="hidden"
                       animate="visible"
                       onClick={() => setIsOpen(false)}
-                      className="group flex items-center gap-3 py-[0.85rem] border-b border-white/[0.05] last:border-0 hover:border-primary/20 transition-colors duration-200"
+                      className="group flex items-center gap-3 py-[0.85rem] border-b border-white/5 last:border-0 hover:border-primary/20 transition-colors duration-200"
                     >
                       <span className="text-[9px] font-mono text-primary/40 w-4 shrink-0 group-hover:text-primary/70 transition-colors">
                         {link.num}
                       </span>
                       <span
-                        className={`${styles.label_text} !text-[0.95rem] text-zinc-300 group-hover:text-white transition-colors duration-200 flex-1`}
+                        className={`${styles.label_text} text-[0.95rem]! text-zinc-300 group-hover:text-white transition-colors duration-200 flex-1`}
                       >
                         {link.label}
                       </span>
@@ -294,13 +293,13 @@ export default function Navbar() {
               </div>
 
               {/* ── BOTTOM SECTION ── */}
-              <div className="px-5 pb-6 pt-4 space-y-3 border-t border-white/[0.06] shrink-0 bg-[#0f0f0f]/95 backdrop-blur-[2px] touch-none">
+              <div className="px-5 pb-6 pt-4 space-y-3 border-t border-white/6 shrink-0 bg-[#0f0f0f]/95 backdrop-blur-[2px] touch-none">
                 {/* World clocks — side by side cards */}
                 <div className="grid grid-cols-2 gap-2">
                   {offices.map(({ flag, city, tz, offset }) => (
                     <div
                       key={city}
-                      className="relative rounded-xl border border-white/[0.06] bg-white/[0.03] p-3 overflow-hidden"
+                      className="relative rounded-xl border border-white/6 bg-white/3 p-3 overflow-hidden"
                     >
                       {/* card glow */}
                       <div
