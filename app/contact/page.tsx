@@ -3,13 +3,12 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiClock, FiGlobe } from "react-icons/fi";
-import Navbar from "@/components/sections/Navbar";
-import Footer from "@/components/sections/Footer";
-import Contact from "@/components/sections/Contact";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import Contact from "@/components/shared/Contact";
 import Eyebrow from "@/components/ui/Eyebrow";
-import styles from "@/app/styles/styles";
+import styles from "@/lib/styles";
 
-// FAQ Item structure
 interface FaqItem {
   q: string;
   a: string;
@@ -25,7 +24,7 @@ export default function ContactPage() {
     },
     {
       q: "Do you offer localized pricing for Pakistani brand partners?",
-      a: "Yes. While we operate globally and sync retainers with international partners in USD/GBP, we offer tailored local project rates and performance structures for Pakistani brand operators to support growth in our local ecosystem.",
+      a: "Yes. UAE retainers are billed in AED (or USD equivalent) to match Gulf procurement norms, and we offer tailored local project rates and performance structures in PKR for Pakistani brand operators to support growth in our home ecosystem.",
     },
     {
       q: "How does the Outcome Partnership retainer structure work?",
@@ -37,10 +36,9 @@ export default function ContactPage() {
     },
   ];
 
-  // Live clocks for Karachi and London offices
   const [clocks, setClocks] = useState({
     karachi: "--:--:--",
-    london: "--:--:--"
+    dubai: "--:--:--"
   });
 
   useEffect(() => {
@@ -56,7 +54,7 @@ export default function ContactPage() {
       };
       setClocks({
         karachi: getFormattedTime("Asia/Karachi"),
-        london: getFormattedTime("Europe/London")
+        dubai: getFormattedTime("Asia/Dubai")
       });
     };
     updateTime();
@@ -69,33 +67,29 @@ export default function ContactPage() {
       <Navbar />
 
       <main className="flex flex-col">
-        {/* Contact Page Hero */}
         <section className="py-20 md:py-28 relative overflow-hidden w-full flex items-center justify-center bg-zinc-50/50 dark:bg-zinc-950/20 border-b border-zinc-150 dark:border-zinc-900">
           <div className={`${styles.container} text-center space-y-6 max-w-4xl relative z-10`}>
             <Eyebrow>GET IN TOUCH</Eyebrow>
-            <h1 className={`${styles.heading_1} !text-4xl sm:!text-6xl !leading-[1.1] text-zinc-900 dark:text-white uppercase`}>
+            <h1 className={`${styles.heading_1} text-4xl! sm:text-6xl! leading-[1.1]! text-zinc-900 dark:text-white uppercase`}>
               CONNECT FOR <span className="text-primary">INSTANT RESPONSE</span>
             </h1>
             <p className={`${styles.paragraph} text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto italic font-light`}>
               Have a project query or audit request? Message our team directly or fill out our project scope form beneath. We respond to WhatsApp queries in real-time.
             </p>
           </div>
-          {/* Background decorations */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none opacity-20 dark:opacity-10 bg-primary/20 blur-[100px]" />
         </section>
 
-        {/* Timezone Clocks and Office Locations */}
         <section className="py-12 bg-white dark:bg-black border-b border-zinc-150 dark:border-zinc-900 relative">
           <div className={`${styles.container}`}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {/* Karachi Office Clock */}
               <div className="flex items-center justify-between p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200/50 dark:border-zinc-800/50">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2 text-zinc-500">
                     <FiGlobe className="w-4 h-4 text-primary" />
                     <span className="text-xs font-mono uppercase tracking-wider font-semibold">KARACHI STUDIO (HQ)</span>
                   </div>
-                  <h3 className="text-lg font-bold font-michroma text-zinc-900 dark:text-white">SHAHRAH-E-FAISAL</h3>
+                  <h3 className="text-lg font-bold font-michroma text-zinc-900 dark:text-white">GULSHAN-E-IQBAL</h3>
                 </div>
                 <div className="text-right">
                   <div className="flex items-center gap-1.5 justify-end text-zinc-500 mb-1">
@@ -108,14 +102,13 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* London Office Clock */}
               <div className="flex items-center justify-between p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200/50 dark:border-zinc-800/50">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2 text-zinc-500">
                     <FiGlobe className="w-4 h-4 text-primary" />
-                    <span className="text-xs font-mono uppercase tracking-wider font-semibold">LONDON OFFICE</span>
+                    <span className="text-xs font-mono uppercase tracking-wider font-semibold">DUBAI OFFICE</span>
                   </div>
-                  <h3 className="text-lg font-bold font-michroma text-zinc-900 dark:text-white">GREAT PORTLAND ST</h3>
+                  <h3 className="text-lg font-bold font-michroma text-zinc-900 dark:text-white">RAS AL KHOR</h3>
                 </div>
                 <div className="text-right">
                   <div className="flex items-center gap-1.5 justify-end text-zinc-500 mb-1">
@@ -123,7 +116,7 @@ export default function ContactPage() {
                     <span className="text-[10px] font-mono tracking-widest uppercase">LOCAL TIME</span>
                   </div>
                   <div className="text-sm md:text-base font-mono font-bold text-primary">
-                    {clocks.london}
+                    {clocks.dubai}
                   </div>
                 </div>
               </div>
@@ -131,10 +124,8 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Existing Contact Component */}
         <Contact />
 
-        {/* Contact Specific FAQs */}
         <section className="py-20 md:py-28 border-t border-zinc-150 dark:border-zinc-900 bg-zinc-50/20 dark:bg-zinc-950/10">
           <div className={styles.container}>
             <div className="max-w-3xl mx-auto space-y-12">
@@ -164,9 +155,8 @@ export default function ContactPage() {
                           {faq.q}
                         </span>
                         <FiPlus
-                          className={`w-5 h-5 text-primary shrink-0 transition-transform duration-300 ${
-                            isActive ? "transform rotate-45" : ""
-                          }`}
+                          className={`w-5 h-5 text-primary shrink-0 transition-transform duration-300 ${isActive ? "transform rotate-45" : ""
+                            }`}
                         />
                       </button>
 

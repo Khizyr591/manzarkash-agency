@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import { FiCode, FiCpu, FiMonitor, FiZap, FiArrowRight, FiCheck } from "react-icons/fi";
-import Navbar from "@/components/sections/Navbar";
-import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import styles from "@/app/styles/styles";
+import styles from "@/lib/styles";
 
 export default function EcommercePage() {
   const steps = [
@@ -47,7 +47,6 @@ export default function EcommercePage() {
       <Navbar />
 
       <main className="flex flex-col">
-        {/* Engineering Hero */}
         <section className="py-24 md:py-32 relative overflow-hidden w-full flex items-center justify-center bg-zinc-50/50 dark:bg-zinc-950/20 border-b border-zinc-150 dark:border-zinc-900">
           <div className={`${styles.container} text-center space-y-6 max-w-4xl relative z-10`}>
             <Eyebrow>CUSTOM WEB ENGINEERING</Eyebrow>
@@ -61,11 +60,9 @@ export default function EcommercePage() {
           </div>
         </section>
 
-        {/* Speed Metrics Widget (Tailored Terminal UX Accent) */}
         <section className="py-16 bg-zinc-50 dark:bg-zinc-955/40 border-b border-zinc-150 dark:border-zinc-900">
           <div className={styles.container}>
             <div className="max-w-3xl mx-auto bg-zinc-950 text-zinc-100 border border-zinc-900 rounded-3xl p-6 md:p-8 space-y-6 font-mono shadow-xl relative">
-              {/* Terminal header controls */}
               <div className="flex items-center justify-between border-b border-zinc-900 pb-4">
                 <div className="flex items-center gap-1.5">
                   <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
@@ -76,7 +73,6 @@ export default function EcommercePage() {
                 <span className="text-[10px] text-primary font-bold">STATUS: STABLE</span>
               </div>
 
-              {/* Terminal metric blocks */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {speedMetrics.map((met, i) => (
                   <div key={i} className="p-4 rounded-xl bg-zinc-900/60 border border-zinc-900 space-y-2 relative">
@@ -87,7 +83,6 @@ export default function EcommercePage() {
                 ))}
               </div>
 
-              {/* Code snippet simulation */}
               <div className="p-4 rounded-xl bg-zinc-900/40 border border-zinc-900/80 text-[10px] text-zinc-400 space-y-1 overflow-x-auto">
                 <p className="text-zinc-550">// Target optimization metrics compiled</p>
                 <p><span className="text-primary">const</span> config = &#123; latency: <span className="text-purple-400">"0.2s"</span>, gzip: <span className="text-purple-400">true</span>, cdn: <span className="text-purple-400">"Cloudflare"</span> &#125;;</p>
@@ -97,7 +92,6 @@ export default function EcommercePage() {
           </div>
         </section>
 
-        {/* Process Steps */}
         <section className="py-20 md:py-28 relative">
           <div className={styles.container}>
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -136,7 +130,6 @@ export default function EcommercePage() {
           </div>
         </section>
 
-        {/* Case Study Section */}
         <section className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-950/40 border-t border-zinc-150 dark:border-zinc-900">
           <div className={styles.container}>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -163,13 +156,12 @@ export default function EcommercePage() {
                 </div>
               </div>
 
-              {/* Stats Card */}
               <div className="lg:col-span-6 p-8 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 shadow-md space-y-6">
                 <span className="px-3 py-1 rounded-md text-[9px] font-mono bg-primary/10 border border-primary/20 text-primary font-bold tracking-wider uppercase">
                   STORE KPI ATTRIBUTION
                 </span>
                 <h3 className="font-michroma text-lg sm:text-xl font-bold text-zinc-900 dark:text-white uppercase tracking-wide">
-                  ZYLORA APPAREL (US)
+                  ZYLORA APPAREL (UAE)
                 </h3>
                 <p className="text-xs text-zinc-505 dark:text-zinc-400 font-poppins font-light leading-relaxed">
                   We engineered custom store templates focusing on speed, visual weight, and mobile navigation layouts to optimize search rankings and conversion metrics.
@@ -190,7 +182,6 @@ export default function EcommercePage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="py-20 md:py-28 text-center relative w-full overflow-hidden bg-white dark:bg-black border-t border-zinc-150 dark:border-zinc-900">
           <div className={`${styles.container} max-w-3xl space-y-8 relative z-10`}>
             <Eyebrow>REQUEST A TECHNICAL AUDIT</Eyebrow>

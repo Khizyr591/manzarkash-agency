@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import { FiShare2, FiLayers, FiMessageCircle, FiTv, FiArrowRight, FiCheck } from "react-icons/fi";
-import Navbar from "@/components/sections/Navbar";
-import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import styles from "@/app/styles/styles";
+import styles from "@/lib/styles";
 
 export default function SocialMediaPage() {
   const steps = [
@@ -47,7 +47,6 @@ export default function SocialMediaPage() {
       <Navbar />
 
       <main className="flex flex-col">
-        {/* Creative Hero */}
         <section className="py-24 md:py-32 relative overflow-hidden w-full flex items-center justify-center bg-zinc-50/50 dark:bg-zinc-950/20 border-b border-zinc-150 dark:border-zinc-900">
           <div className={`${styles.container} text-center space-y-6 max-w-4xl relative z-10`}>
             <Eyebrow>ORGANIC BRAND BUILDING</Eyebrow>
@@ -59,12 +58,10 @@ export default function SocialMediaPage() {
               We script, direct, style, and manage full-service social media campaigns to cultivate an authentic local or global community for your brand.
             </p>
           </div>
-          {/* Background circles */}
           <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-pink-550/5 dark:bg-pink-500/[0.02] blur-[80px] pointer-events-none" />
           <div className="absolute bottom-0 left-1/4 w-96 h-96 rounded-full bg-purple-550/5 dark:bg-purple-550/[0.02] blur-[80px] pointer-events-none" />
         </section>
 
-        {/* Mock Creative Grid (Vibrant UX Accent) */}
         <section className="py-16 bg-zinc-50 dark:bg-zinc-950/40 border-b border-zinc-150 dark:border-zinc-900">
           <div className={styles.container}>
             <div className="text-center mb-10">
@@ -91,7 +88,6 @@ export default function SocialMediaPage() {
           </div>
         </section>
 
-        {/* Process Steps */}
         <section className="py-20 md:py-28 relative">
           <div className={styles.container}>
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -130,7 +126,6 @@ export default function SocialMediaPage() {
           </div>
         </section>
 
-        {/* Case Study Section */}
         <section className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-950/40 border-t border-zinc-150 dark:border-zinc-900">
           <div className={styles.container}>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -157,13 +152,12 @@ export default function SocialMediaPage() {
                 </div>
               </div>
 
-              {/* Stats Card */}
               <div className="lg:col-span-6 p-8 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 shadow-md space-y-6">
                 <span className="px-3 py-1 rounded-md text-[9px] font-mono bg-primary/10 border border-primary/20 text-primary font-bold tracking-wider uppercase">
                   SOCIAL KPI ATTRIBUTION
                 </span>
                 <h3 className="font-michroma text-lg sm:text-xl font-bold text-zinc-900 dark:text-white uppercase tracking-wide">
-                  ZYLORA APPAREL (US)
+                  ZYLORA APPAREL (UAE)
                 </h3>
                 <p className="text-xs text-zinc-505 dark:text-zinc-400 font-poppins font-light leading-relaxed">
                   We directed a series of highly visual lifestyle videos capturing product materials and fits, growing their organic Instagram and TikTok community impressions.
@@ -184,7 +178,6 @@ export default function SocialMediaPage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="py-20 md:py-28 text-center relative w-full overflow-hidden bg-white dark:bg-black border-t border-zinc-150 dark:border-zinc-900">
           <div className={`${styles.container} max-w-3xl space-y-8 relative z-10`}>
             <Eyebrow>SCHEDULE A DISCOVERY CALL</Eyebrow>

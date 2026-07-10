@@ -1,20 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  FiCamera, 
-  FiTarget, 
-  FiShare2, 
-  FiTrendingUp, 
-  FiCode, 
+import {
+  FiCamera,
+  FiTarget,
+  FiShare2,
+  FiTrendingUp,
+  FiCode,
   FiMessageSquare,
-  FiArrowRight
+  FiPackage,
+  FiArrowRight,
 } from "react-icons/fi";
-import Navbar from "@/components/sections/Navbar";
-import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import styles from "@/app/styles/styles";
+import styles from "@/lib/styles";
 
 interface ServiceItem {
   id: string;
@@ -58,7 +59,7 @@ export default function ServicesPage() {
     {
       id: "seo",
       title: "Advanced SEO Solutions",
-      desc: "Dominating local search in Karachi and scaling organic presence globally. We identify high-volume transactional keywords, optimize technical speed, and build search authority.",
+      desc: "Dominating local search across Karachi and Dubai to build compounding organic presence. We identify high-volume transactional keywords, optimize technical speed, and build search authority.",
       icon: <FiTrendingUp className="w-6 h-6 text-primary" />,
       href: "/services/seo",
       glowColor: "rgba(16, 185, 129, 0.15)",
@@ -81,6 +82,15 @@ export default function ServicesPage() {
       href: "/services/whatsapp-automation",
       glowColor: "rgba(168, 85, 247, 0.15)",
       highlights: ["Conversational Chatbot Flows", "E-Commerce Database Integrations", "Automatic Order Tracking Bot", "Agent Fallback Routing Webhooks"]
+    },
+    {
+      id: "branding-packaging",
+      title: "Branding & Packaging Design",
+      desc: "Identity systems and print-ready packaging design. From wordmark to dielines, we ship brand systems that hold up on-shelf in Karachi and Dubai and on a phone-sized product tile.",
+      icon: <FiPackage className="w-6 h-6 text-primary" />,
+      href: "/services/branding-packaging",
+      glowColor: "rgba(217, 70, 239, 0.15)",
+      highlights: ["Logo Suite & Typographic Scale", "Brand Color & Voice Guidelines", "Print-Ready Packaging Dielines", "Working Figma Design System"]
     }
   ];
 
@@ -89,7 +99,6 @@ export default function ServicesPage() {
       <Navbar />
 
       <main className="flex flex-col">
-        {/* Services Directory Hero */}
         <section className="py-24 md:py-32 relative overflow-hidden w-full flex items-center justify-center bg-zinc-50/50 dark:bg-zinc-950/20 border-b border-zinc-150 dark:border-zinc-900">
           <div className={`${styles.container} text-center space-y-6 max-w-4xl relative z-10`}>
             <Eyebrow>OUR SPECIALIZED SERVICES</Eyebrow>
@@ -100,11 +109,9 @@ export default function ServicesPage() {
               We integrate premium visual content creation with advanced software engineering to operate as an end-to-end partner for digital brand growth.
             </p>
           </div>
-          {/* Background decoration */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none opacity-20 dark:opacity-10 bg-primary/20 blur-[100px]" />
         </section>
 
-        {/* Services Grid */}
         <section className="py-20 md:py-28 relative w-full">
           <div className={styles.container}>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -118,7 +125,6 @@ export default function ServicesPage() {
                   whileHover={{ y: -8, transition: { duration: 0.25 } }}
                   className="group relative rounded-3xl bg-zinc-50/50 dark:bg-zinc-900/30 border border-zinc-200/50 dark:border-zinc-800/50 p-8 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
                 >
-                  {/* Radial Glow Hover Effect */}
                   <div
                     className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                     style={{
@@ -159,10 +165,10 @@ export default function ServicesPage() {
                     <Button
                       href={service.href}
                       variant="outline"
-                      className="w-full flex items-center justify-center gap-2 border-zinc-200 hover:border-primary dark:border-zinc-800 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300"
+                      rightIcon={<FiArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />}
+                      className="w-full border-zinc-200 hover:border-primary dark:border-zinc-800 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300"
                     >
-                      <span>Explore Process & Cases</span>
-                      <FiArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      Explore Process & Cases
                     </Button>
                   </div>
                 </motion.div>
@@ -171,7 +177,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Directory CTA */}
         <section className="py-20 md:py-28 text-center relative w-full overflow-hidden border-t border-zinc-150 dark:border-zinc-900 bg-zinc-50/50 dark:bg-zinc-950/20">
           <div className={`${styles.container} max-w-3xl space-y-8 relative z-10`}>
             <Eyebrow>CUSTOM GROWTH STRATEGY</Eyebrow>

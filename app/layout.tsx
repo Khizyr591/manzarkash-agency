@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Michroma, Poppins } from "next/font/google";
-import "./styles/globals.css";
-import Preloader from "@/components/ui/Preloader";
+import "./globals.css";
+import Preloader from "@/components/layout/Preloader";
 
 const michroma = Michroma({
   weight: "400",
@@ -16,33 +16,39 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Manzarkash Production | Karachi's Premier Digital Marketing & Creative Agency",
-  description: "Karachi-based digital agency scaling brands with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation.",
+  title: "Manzarkash | Digital Marketing & Creative Agency for Pakistan & the UAE",
+  description: "Karachi & Dubai digital agency scaling brands across Pakistan and the UAE with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation.",
   keywords: [
     "digital marketing agency Karachi",
+    "digital marketing agency Dubai",
     "product photography Karachi",
+    "product photography Dubai",
     "SEO agency Pakistan",
+    "SEO agency UAE",
     "ads campaign Karachi",
+    "ads campaign Dubai",
     "whatsapp automation Pakistan",
+    "whatsapp automation UAE",
     "custom e-commerce websites",
     "portfolio websites Karachi",
-    "digital agency Pakistan"
+    "digital agency Pakistan",
+    "digital agency UAE"
   ],
   metadataBase: new URL("https://manzarkash.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Manzarkash Production | Karachi's Premier Digital Marketing & Creative Agency",
-    description: "Karachi-based digital agency scaling brands with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation.",
+    title: "Manzarkash | Digital Marketing & Creative Agency for Pakistan & the UAE",
+    description: "Karachi & Dubai digital agency scaling brands across Pakistan and the UAE with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation.",
     url: "https://manzarkash.com",
-    siteName: "Manzarkash Production",
+    siteName: "Manzarkash",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Manzarkash Production - Digital Agency & Product Photography",
+        alt: "Manzarkash - Digital Agency & Product Photography",
       },
     ],
     locale: "en_US",
@@ -50,8 +56,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Manzarkash Production | Karachi's Premier Digital Marketing & Creative Agency",
-    description: "Karachi-based digital agency scaling brands with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation.",
+    title: "Manzarkash | Digital Marketing & Creative Agency for Pakistan & the UAE",
+    description: "Karachi & Dubai digital agency scaling brands across Pakistan and the UAE with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation.",
     images: ["/og-image.jpg"],
   },
 };
@@ -64,7 +70,7 @@ export default function RootLayout({
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Manzarkash Production",
+    "name": "Manzarkash",
     "image": "https://manzarkash.com/og-image.jpg",
     "@id": "https://manzarkash.com/#production",
     "url": "https://manzarkash.com",
@@ -73,25 +79,24 @@ export default function RootLayout({
     "address": [
       {
         "@type": "PostalAddress",
-        "streetAddress": "Shahrah-e-Faisal",
+        "streetAddress": "SB-9, 13/C Main University Rd, Block 13-C Gulshan-e-Iqbal",
         "addressLocality": "Karachi",
         "addressRegion": "Sindh",
-        "postalCode": "75400",
+        "postalCode": "75300",
         "addressCountry": "PK"
       },
       {
         "@type": "PostalAddress",
-        "streetAddress": "85 Great Portland St",
-        "addressLocality": "London",
-        "postalCode": "W1W 7LT",
-        "addressCountry": "GB"
+        "streetAddress": "Ducamz, Dubai Auto Zone Market, Ras Al Khor",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
       }
     ],
     "sameAs": [
       "https://www.linkedin.com/company/manzarkash",
       "https://twitter.com/manzarkash"
     ],
-    "description": "Karachi-based digital agency scaling brands with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation."
+    "description": "Karachi & Dubai digital agency scaling brands across Pakistan and the UAE with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation."
   };
 
   return (

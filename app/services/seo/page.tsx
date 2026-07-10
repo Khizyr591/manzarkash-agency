@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import { FiTrendingUp, FiSearch, FiSliders, FiFileText, FiArrowRight, FiCheck } from "react-icons/fi";
-import Navbar from "@/components/sections/Navbar";
-import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import styles from "@/app/styles/styles";
+import styles from "@/lib/styles";
 
 export default function SeoPage() {
   const steps = [
@@ -37,9 +37,9 @@ export default function SeoPage() {
   ];
 
   const searchSnippet = {
-    title: "Manzarkash Production | Digital Marketing Agency Karachi",
+    title: "Manzarkash | Digital Marketing Agency Karachi & Dubai",
     url: "https://manzarkash.com",
-    snippet: "Karachi-based digital agency scaling brands with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation.",
+    snippet: "Karachi & Dubai digital agency scaling brands across Pakistan and the UAE with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation.",
     stats: [
       { label: "Google Rank", val: "#1" },
       { label: "Search Volume", val: "18k/mo" },
@@ -52,7 +52,6 @@ export default function SeoPage() {
       <Navbar />
 
       <main className="flex flex-col">
-        {/* Search Hero */}
         <section className="py-24 md:py-32 relative overflow-hidden w-full flex items-center justify-center bg-zinc-50/50 dark:bg-zinc-950/20 border-b border-zinc-150 dark:border-zinc-900">
           <div className={`${styles.container} text-center space-y-6 max-w-4xl relative z-10`}>
             <Eyebrow>ORGANIC SEARCH DOMINANCE</Eyebrow>
@@ -66,7 +65,6 @@ export default function SeoPage() {
           </div>
         </section>
 
-        {/* Mock Search Results (Tailored SEO UX Accent) */}
         <section className="py-16 bg-zinc-50 dark:bg-zinc-950/40 border-b border-zinc-150 dark:border-zinc-900">
           <div className={styles.container}>
             <div className="max-w-3xl mx-auto bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 md:p-8 space-y-6 shadow-sm">
@@ -75,7 +73,6 @@ export default function SeoPage() {
                 <h3 className="font-michroma text-sm font-semibold text-zinc-800 dark:text-zinc-100 uppercase mt-0.5">SERP Snippet Example Layout</h3>
               </div>
 
-              {/* SERP Preview Block */}
               <div className="p-5 rounded-2xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/50 dark:border-zinc-805/40 space-y-3">
                 <div>
                   <span className="text-xs text-zinc-405 dark:text-zinc-500 font-poppins">{searchSnippet.url}</span>
@@ -88,7 +85,6 @@ export default function SeoPage() {
                 </p>
               </div>
 
-              {/* Keyword Stats Pill Grid */}
               <div className="grid grid-cols-3 gap-4 pt-2">
                 {searchSnippet.stats.map((st, i) => (
                   <div key={i} className="text-center p-3 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/40 dark:border-zinc-805/30">
@@ -101,7 +97,6 @@ export default function SeoPage() {
           </div>
         </section>
 
-        {/* Process Steps */}
         <section className="py-20 md:py-28 relative">
           <div className={styles.container}>
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -140,7 +135,6 @@ export default function SeoPage() {
           </div>
         </section>
 
-        {/* Case Study Section */}
         <section className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-950/40 border-t border-zinc-150 dark:border-zinc-900">
           <div className={styles.container}>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -167,7 +161,6 @@ export default function SeoPage() {
                 </div>
               </div>
 
-              {/* Stats Card */}
               <div className="lg:col-span-6 p-8 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-805/50 shadow-md space-y-6">
                 <span className="px-3 py-1 rounded-md text-[9px] font-mono bg-primary/10 border border-primary/20 text-primary font-bold tracking-wider uppercase">
                   SEO PERFORMANCE ATTRIBUTION
@@ -194,7 +187,6 @@ export default function SeoPage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="py-20 md:py-28 text-center relative w-full overflow-hidden bg-white dark:bg-black border-t border-zinc-150 dark:border-zinc-900">
           <div className={`${styles.container} max-w-3xl space-y-8 relative z-10`}>
             <Eyebrow>COMPILING A KEYWORD REPORT</Eyebrow>

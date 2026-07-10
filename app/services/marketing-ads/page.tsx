@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import { FiTrendingUp, FiTarget, FiBarChart2, FiPieChart, FiArrowRight, FiCheck } from "react-icons/fi";
-import Navbar from "@/components/sections/Navbar";
-import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import styles from "@/app/styles/styles";
+import styles from "@/lib/styles";
 
 export default function MarketingAdsPage() {
   const steps = [
@@ -47,7 +47,6 @@ export default function MarketingAdsPage() {
       <Navbar />
 
       <main className="flex flex-col">
-        {/* Performance Hero */}
         <section className="py-24 md:py-32 relative overflow-hidden w-full flex items-center justify-center bg-zinc-50/50 dark:bg-zinc-950/20 border-b border-zinc-150 dark:border-zinc-900">
           <div className={`${styles.container} text-center space-y-6 max-w-4xl relative z-10`}>
             <Eyebrow>PERFORMANCE MARKETING</Eyebrow>
@@ -59,11 +58,9 @@ export default function MarketingAdsPage() {
               We configure, launch, and scale performance ad retainers across Meta, Google, and TikTok, focused entirely on conversion attribution.
             </p>
           </div>
-          {/* Background mesh */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(245,78,14,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(245,78,14,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
         </section>
 
-        {/* Mock Funnel Dashboard (Tailored UX Accent) */}
         <section className="py-16 bg-zinc-50 dark:bg-zinc-950/40 border-b border-zinc-150 dark:border-zinc-900">
           <div className={styles.container}>
             <div className="max-w-4xl mx-auto bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 md:p-8 space-y-6 shadow-md">
@@ -77,7 +74,6 @@ export default function MarketingAdsPage() {
                 </div>
               </div>
 
-              {/* Conversion Funnel Grid */}
               <div className="space-y-4">
                 {funnelMetrics.map((met, i) => (
                   <div key={i} className="grid grid-cols-1 sm:grid-cols-4 items-center gap-4 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200/50 dark:border-zinc-800/40">
@@ -99,7 +95,6 @@ export default function MarketingAdsPage() {
           </div>
         </section>
 
-        {/* Process Steps */}
         <section className="py-20 md:py-28 relative">
           <div className={styles.container}>
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -138,7 +133,6 @@ export default function MarketingAdsPage() {
           </div>
         </section>
 
-        {/* Case Study Section */}
         <section className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-950/40 border-t border-zinc-150 dark:border-zinc-900">
           <div className={styles.container}>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -165,7 +159,6 @@ export default function MarketingAdsPage() {
                 </div>
               </div>
 
-              {/* Stats Card */}
               <div className="lg:col-span-6 p-8 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 shadow-md space-y-6">
                 <span className="px-3 py-1 rounded-md text-[9px] font-mono bg-primary/10 border border-primary/20 text-primary font-bold tracking-wider uppercase">
                   CASE KPI ATTRIBUTION
@@ -192,7 +185,6 @@ export default function MarketingAdsPage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="py-20 md:py-28 text-center relative w-full overflow-hidden bg-white dark:bg-black border-t border-zinc-150 dark:border-zinc-900">
           <div className={`${styles.container} max-w-3xl space-y-8 relative z-10`}>
             <Eyebrow>REQUEST A CAMPAIGN AUDIT</Eyebrow>

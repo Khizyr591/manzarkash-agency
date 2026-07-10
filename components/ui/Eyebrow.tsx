@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/app/styles/styles";
+import styles from "@/lib/styles";
 
 interface EyebrowProps {
   children: React.ReactNode;

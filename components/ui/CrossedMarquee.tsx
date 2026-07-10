@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+
 import { 
   FiMonitor, 
   FiTrendingUp, 
@@ -26,7 +26,7 @@ export default function CrossedMarquee() {
     { text: "CONVERSION SCALE", icon: <FiZap className="text-primary w-4 h-4 md:w-5 h-5 shrink-0" /> },
   ];
 
-  // Helper to repeat items for seamless scrolling
+
   const renderRedRepeated = (count: number) => {
     return Array.from({ length: count }).map((_, i) => (
       <span key={`red-${i}`} className="inline-flex items-center gap-8 md:gap-12">
@@ -51,7 +51,7 @@ export default function CrossedMarquee() {
   return (
     <div className="relative w-full h-[260px] md:h-[320px] bg-zinc-50 dark:bg-zinc-950/20 overflow-hidden flex items-center justify-center py-12 select-none border-y border-zinc-150 dark:border-zinc-900">
       
-      {/* ── BAND 1: RED BAND (Tilted -4deg, scrolls left, bottom layered) ── */}
+
       <div 
         className="absolute w-[140vw] left-[-20vw] bg-[#f54e0e] text-white py-4 md:py-5 border-y border-white/10 shadow-[0_15px_30px_rgba(245,78,14,0.3)] z-10 transform -rotate-4 overflow-hidden flex"
       >
@@ -63,7 +63,7 @@ export default function CrossedMarquee() {
         </div>
       </div>
 
-      {/* ── BAND 2: BLACK BAND (Tilted +3deg, scrolls right, top layered) ── */}
+
       <div 
         className="absolute w-[140vw] left-[-20vw] bg-black text-white py-4 md:py-5 border-y border-zinc-800/80 shadow-[0_10px_25px_rgba(0,0,0,0.5)] z-20 transform rotate-3 overflow-hidden flex"
       >
@@ -75,7 +75,7 @@ export default function CrossedMarquee() {
         </div>
       </div>
 
-      {/* Shadow overlay to blend edges */}
+
       <div className="absolute top-0 bottom-0 left-0 w-16 md:w-32 bg-linear-to-r from-white dark:from-black to-transparent z-30 pointer-events-none" />
       <div className="absolute top-0 bottom-0 right-0 w-16 md:w-32 bg-linear-to-l from-white dark:from-black to-transparent z-30 pointer-events-none" />
     </div>

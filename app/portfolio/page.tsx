@@ -11,13 +11,12 @@ import {
   FiArrowRight,
   FiAward
 } from "react-icons/fi";
-import Navbar from "@/components/sections/Navbar";
-import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import styles from "@/app/styles/styles";
+import styles from "@/lib/styles";
 
-// Portfolio Item Schema
 interface Project {
   id: string;
   title: string;
@@ -48,7 +47,7 @@ export default function PortfolioPage() {
     {
       id: "zylora",
       title: "Custom Shopify Engine & Global Growth",
-      client: "Zylora Fashion (US)",
+      client: "Zylora Fashion (UAE)",
       category: "development",
       categoryLabel: "Web Engineering",
       metric: "+310%",
@@ -84,7 +83,7 @@ export default function PortfolioPage() {
     {
       id: "lumiere",
       title: "Premium Studio Catalog Production",
-      client: "Lumière Cosmetics (UK)",
+      client: "Lumière Cosmetics (UAE)",
       category: "photography",
       categoryLabel: "Visual Production",
       metric: "82%",
@@ -102,7 +101,7 @@ export default function PortfolioPage() {
     {
       id: "apex",
       title: "B2B Organic Pipeline Autopilot",
-      client: "ApexLogistics (Gulf)",
+      client: "ApexLogistics (UAE)",
       category: "marketing",
       categoryLabel: "Search Optimization",
       metric: "100+",
@@ -120,7 +119,7 @@ export default function PortfolioPage() {
     {
       id: "vortex",
       title: "Automated Conversational Support Bot",
-      client: "Vortex SaaS (Canada)",
+      client: "Vortex SaaS (UAE)",
       category: "automation",
       categoryLabel: "WhatsApp Automation",
       metric: "-60%",
@@ -138,7 +137,7 @@ export default function PortfolioPage() {
     {
       id: "nexus",
       title: "Fashion Campaign Studio Shoot",
-      client: "Nexus Apparel (Global)",
+      client: "Nexus Apparel (Pakistan)",
       category: "photography",
       categoryLabel: "Creative Production",
       metric: "10k+",
@@ -165,7 +164,6 @@ export default function PortfolioPage() {
       <Navbar />
 
       <main className="flex flex-col">
-        {/* Hero Section */}
         <section className="py-24 md:py-32 relative overflow-hidden w-full flex items-center justify-center bg-zinc-50/50 dark:bg-zinc-950/20 border-b border-zinc-150 dark:border-zinc-900">
           <div className={`${styles.container} text-center space-y-6 max-w-4xl relative z-10`}>
             <Eyebrow>OUR CREATIVE PORTFOLIO</Eyebrow>
@@ -176,12 +174,10 @@ export default function PortfolioPage() {
               Explore our case studies. We construct digital assets that drive conversions, organic authority, and long-term brand equity globally.
             </p>
           </div>
-          {/* Background decorations */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full pointer-events-none opacity-20 dark:opacity-10 bg-primary/20 blur-[100px]" />
           <div className="absolute inset-0 bg-linear-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
         </section>
 
-        {/* Tab Filters */}
         <section className="py-10 bg-white dark:bg-black border-b border-zinc-150 dark:border-zinc-900 sticky top-18 z-40 backdrop-blur-md bg-white/90 dark:bg-black/90">
           <div className={`${styles.container} flex flex-wrap justify-center gap-2 md:gap-4`}>
             {categories.map((cat) => (
@@ -200,7 +196,6 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        {/* Portfolio Showcase Grid */}
         <section className="py-20 md:py-28 relative w-full">
           <div className={styles.container}>
             <motion.div 
@@ -219,7 +214,6 @@ export default function PortfolioPage() {
                     whileHover={{ y: -8, transition: { duration: 0.3 } }}
                     className="group relative rounded-3xl bg-zinc-50/50 dark:bg-zinc-900/30 border border-zinc-200/50 dark:border-zinc-800/50 p-8 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
                   >
-                    {/* Hover Glow Effect */}
                     <div
                       className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                       style={{
@@ -228,7 +222,6 @@ export default function PortfolioPage() {
                     />
 
                     <div className="space-y-6 relative z-10">
-                      {/* Top bar with icon and tag */}
                       <div className="flex items-center justify-between">
                         <div className="w-10 h-10 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 shadow-xs flex items-center justify-center">
                           {proj.icon}
@@ -238,7 +231,6 @@ export default function PortfolioPage() {
                         </span>
                       </div>
 
-                      {/* Heading and Client */}
                       <div className="space-y-2">
                         <span className="text-xs font-poppins font-medium text-zinc-400 dark:text-zinc-500 uppercase tracking-wider">
                           {proj.client}
@@ -248,12 +240,10 @@ export default function PortfolioPage() {
                         </h3>
                       </div>
 
-                      {/* Description */}
                       <p className={`${styles.span_text} !text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-light`}>
                         {proj.desc}
                       </p>
 
-                      {/* Key Deliverables */}
                       <div className="space-y-2">
                         <span className="text-[9px] font-mono tracking-widest text-zinc-400 dark:text-zinc-500 uppercase font-bold">
                           Core Deliverables
@@ -269,9 +259,7 @@ export default function PortfolioPage() {
                       </div>
                     </div>
 
-                    {/* Bottom stats and technology tags */}
                     <div className="mt-8 pt-6 border-t border-zinc-200/50 dark:border-zinc-800/50 space-y-6 relative z-10 flex flex-col justify-between">
-                      {/* Key Performance Metric */}
                       <div className="flex items-center gap-4 bg-white/50 dark:bg-zinc-950/30 border border-zinc-200/30 dark:border-zinc-800/30 rounded-2xl p-4">
                         <div className="text-3xl font-michroma font-bold text-primary shrink-0 leading-none">
                           {proj.metric}
@@ -281,7 +269,6 @@ export default function PortfolioPage() {
                         </div>
                       </div>
 
-                      {/* Technology Stack tags */}
                       <div className="space-y-2">
                         <span className="text-[9px] font-mono tracking-widest text-zinc-400 dark:text-zinc-500 uppercase font-bold">
                           Engine & Tools
@@ -305,7 +292,6 @@ export default function PortfolioPage() {
           </div>
         </section>
 
-        {/* Call to Action */}
         <section className="py-20 md:py-28 text-center relative w-full overflow-hidden border-t border-zinc-150 dark:border-zinc-900 bg-zinc-50/50 dark:bg-zinc-950/20">
           <div className={`${styles.container} max-w-3xl space-y-8 relative z-10`}>
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto text-primary">

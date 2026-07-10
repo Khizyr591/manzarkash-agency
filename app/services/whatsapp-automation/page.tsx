@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMessageSquare, FiCpu, FiDatabase, FiSettings, FiArrowRight, FiCheck, FiSend } from "react-icons/fi";
-import Navbar from "@/components/sections/Navbar";
-import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import styles from "@/app/styles/styles";
+import styles from "@/lib/styles";
 
 interface ChatMessage {
   sender: "user" | "bot";
@@ -43,7 +43,6 @@ export default function WhatsappAutomationPage() {
     }
   ];
 
-  // Interactive chat simulator state
   const [chatStep, setChatStep] = useState<number>(0);
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([
     { sender: "bot", text: "👋 Hello! Welcome to Manzarkash Automations. How can I help you scale operations today?", time: "12:00 PM" }
@@ -53,7 +52,6 @@ export default function WhatsappAutomationPage() {
     if (chatStep !== 0) return;
 
     if (optionIndex === 0) {
-      // Simulate Order Tracking path
       setChatStep(1);
       setChatHistory(prev => [...prev, 
         { sender: "user", text: "Track my order #4055 please", time: "12:01 PM" }
@@ -63,10 +61,9 @@ export default function WhatsappAutomationPage() {
         setChatHistory(prev => [...prev, 
           { sender: "bot", text: "🔍 Querying database for Order #4055... \n\nFound it! Your package was dispatched via Apex Logistics and is currently in transit. \n🚚 Status: Out for delivery in Karachi.", time: "12:01 PM" }
         ]);
-        setChatStep(0); // Reset for another interaction
+        setChatStep(0);
       }, 1200);
     } else {
-      // Simulate Catalog Query path
       setChatStep(2);
       setChatHistory(prev => [...prev, 
         { sender: "user", text: "Is the new catalog in stock?", time: "12:01 PM" }
@@ -76,7 +73,7 @@ export default function WhatsappAutomationPage() {
         setChatHistory(prev => [...prev, 
           { sender: "bot", text: "🌸 Yes! The summer collection catalog is active. Here is your direct shop link: shop.manzarkash.com/summer-catalog\n\nWould you like to book an order now?", time: "12:01 PM" }
         ]);
-        setChatStep(0); // Reset for another interaction
+        setChatStep(0);
       }, 1200);
     }
   };
@@ -86,7 +83,6 @@ export default function WhatsappAutomationPage() {
       <Navbar />
 
       <main className="flex flex-col">
-        {/* Automation Hero */}
         <section className="py-24 md:py-32 relative overflow-hidden w-full flex items-center justify-center bg-zinc-50/50 dark:bg-zinc-950/20 border-b border-zinc-150 dark:border-zinc-900">
           <div className={`${styles.container} text-center space-y-6 max-w-4xl relative z-10`}>
             <Eyebrow>CRM AUTOMATIONS & CHATBOTS</Eyebrow>
@@ -100,7 +96,6 @@ export default function WhatsappAutomationPage() {
           </div>
         </section>
 
-        {/* Interactive Chat Simulator (Tailored Chat UX Accent) */}
         <section className="py-16 bg-zinc-50 dark:bg-zinc-955/40 border-b border-zinc-150 dark:border-zinc-900">
           <div className={styles.container}>
             <div className="text-center mb-8">
@@ -108,17 +103,13 @@ export default function WhatsappAutomationPage() {
               <h3 className={`${styles.heading_3} !text-base sm:!text-lg text-zinc-800 dark:text-zinc-100 uppercase mt-1`}>Click below to simulate bot flow</h3>
             </div>
 
-            {/* Chat Device Container */}
             <div className="max-w-md mx-auto bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-[36px] p-4 shadow-xl overflow-hidden relative">
-              {/* Phone Speaker & Camera Notch */}
               <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-32 h-4 rounded-full bg-zinc-200 dark:bg-zinc-950 flex items-center justify-center pointer-events-none z-30">
                 <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 dark:bg-zinc-850 inline-block mr-2" />
                 <span className="w-12 h-1 rounded-full bg-zinc-400 dark:bg-zinc-850 inline-block" />
               </div>
 
-              {/* Chat Interface */}
               <div className="rounded-[28px] overflow-hidden bg-[#ece5dd] dark:bg-zinc-950 border border-zinc-200/50 dark:border-zinc-850 mt-4 flex flex-col h-[400px]">
-                {/* Chat Header */}
                 <div className="bg-[#075e54] dark:bg-zinc-900 text-white p-4 flex items-center justify-between shadow-sm z-20">
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-full bg-emerald-500/20 flex items-center justify-center font-michroma text-xs font-bold text-emerald-400 border border-emerald-450/30">
@@ -131,7 +122,6 @@ export default function WhatsappAutomationPage() {
                   </div>
                 </div>
 
-                {/* Message Feed */}
                 <div className="flex-1 p-4 overflow-y-auto space-y-3 flex flex-col z-10">
                   {chatHistory.map((msg, i) => (
                     <div
@@ -149,7 +139,6 @@ export default function WhatsappAutomationPage() {
                   ))}
                 </div>
 
-                {/* Interactive Inputs */}
                 <div className="p-3 bg-[#f0f0f0] dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-850 flex flex-col gap-2 z-20">
                   {chatStep === 0 ? (
                     <div className="flex gap-2">
@@ -177,7 +166,6 @@ export default function WhatsappAutomationPage() {
           </div>
         </section>
 
-        {/* Process Steps */}
         <section className="py-20 md:py-28 relative">
           <div className={styles.container}>
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -216,7 +204,6 @@ export default function WhatsappAutomationPage() {
           </div>
         </section>
 
-        {/* Case Study Section */}
         <section className="py-20 md:py-28 bg-zinc-50 dark:bg-zinc-955/40 border-t border-zinc-150 dark:border-zinc-900">
           <div className={styles.container}>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -243,7 +230,6 @@ export default function WhatsappAutomationPage() {
                 </div>
               </div>
 
-              {/* Stats Card */}
               <div className="lg:col-span-6 p-8 rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/50 shadow-md space-y-6">
                 <span className="px-3 py-1 rounded-md text-[9px] font-mono bg-primary/10 border border-primary/20 text-primary font-bold tracking-wider uppercase">
                   AUTOMATION KPI ATTRIBUTION
@@ -270,7 +256,6 @@ export default function WhatsappAutomationPage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="py-20 md:py-28 text-center relative w-full overflow-hidden bg-white dark:bg-black border-t border-zinc-150 dark:border-zinc-900">
           <div className={`${styles.container} max-w-3xl space-y-8 relative z-10`}>
             <Eyebrow>FREE BOT SCHEMAS REVIEW</Eyebrow>

@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import { FiCamera, FiGrid, FiFeather, FiSliders, FiArrowRight, FiCheck } from "react-icons/fi";
-import Navbar from "@/components/sections/Navbar";
-import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
-import styles from "@/app/styles/styles";
+import styles from "@/lib/styles";
 
 export default function ProductVisualsPage() {
   const steps = [
@@ -48,7 +48,6 @@ export default function ProductVisualsPage() {
       <Navbar />
 
       <main className="flex flex-col">
-        {/* Cinematic Hero */}
         <section className="py-28 md:py-36 relative overflow-hidden w-full flex items-center justify-center bg-radial from-zinc-900 to-black border-b border-zinc-900">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,78,14,0.06)_0%,transparent_60%)] pointer-events-none" />
           
@@ -64,11 +63,9 @@ export default function ProductVisualsPage() {
           </div>
         </section>
 
-        {/* Visual Mockups Showcase (UX Accent) */}
         <section className="py-16 bg-zinc-950 border-b border-zinc-900">
           <div className={styles.container}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Concept Card 1 */}
               <div className="relative group rounded-3xl overflow-hidden aspect-[4/3] bg-zinc-900 border border-zinc-800 flex items-end p-6 hover:border-primary/30 transition-all duration-500">
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent z-10" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-primary/5 blur-[50px] group-hover:bg-primary/10 transition-colors" />
@@ -79,7 +76,6 @@ export default function ProductVisualsPage() {
                 </div>
               </div>
 
-              {/* Concept Card 2 */}
               <div className="relative group rounded-3xl overflow-hidden aspect-[4/3] bg-zinc-900 border border-zinc-800 flex items-end p-6 hover:border-primary/30 transition-all duration-500">
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent z-10" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-primary/5 blur-[50px] group-hover:bg-primary/10 transition-colors" />
@@ -90,7 +86,6 @@ export default function ProductVisualsPage() {
                 </div>
               </div>
 
-              {/* Concept Card 3 */}
               <div className="relative group rounded-3xl overflow-hidden aspect-[4/3] bg-zinc-900 border border-zinc-800 flex items-end p-6 hover:border-primary/30 transition-all duration-500">
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent z-10" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-primary/5 blur-[50px] group-hover:bg-primary/10 transition-colors" />
@@ -104,7 +99,6 @@ export default function ProductVisualsPage() {
           </div>
         </section>
 
-        {/* Process Steps (Tailored UX) */}
         <section className="py-20 md:py-28 bg-black relative">
           <div className={styles.container}>
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -143,7 +137,6 @@ export default function ProductVisualsPage() {
           </div>
         </section>
 
-        {/* Deliverables & Case Studies */}
         <section className="py-20 md:py-28 bg-zinc-950 border-t border-zinc-900">
           <div className={styles.container}>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -164,14 +157,13 @@ export default function ProductVisualsPage() {
                 </ul>
               </div>
 
-              {/* Case Study Card */}
               <div className="lg:col-span-6 p-8 rounded-3xl bg-zinc-900/60 border border-zinc-800/80 space-y-6 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full pointer-events-none blur-[40px]" />
                 <span className="px-3 py-1 rounded-md text-[9px] font-mono bg-primary/10 border border-primary/20 text-primary font-bold tracking-wider uppercase">
                   CASE STUDY IN FOCUS
                 </span>
                 <h3 className="font-michroma text-lg sm:text-xl font-bold text-white uppercase tracking-wide">
-                  LUMIÈRE COSMETICS (UK)
+                  LUMIÈRE COSMETICS (UAE)
                 </h3>
                 <p className="text-xs text-zinc-400 font-poppins font-light leading-relaxed">
                   We styled a collection of premium skincare containers using textured backdrops and organic rock formations at our Karachi studio. The resulting cinematic ad creatives drove high click-through results on social media.
@@ -192,7 +184,6 @@ export default function ProductVisualsPage() {
           </div>
         </section>
 
-        {/* Services Footer CTA */}
         <section className="py-20 md:py-28 text-center relative w-full overflow-hidden bg-black border-t border-zinc-900">
           <div className={`${styles.container} max-w-3xl space-y-8 relative z-10`}>
             <Eyebrow>SCHEDULE A SHOOT</Eyebrow>

@@ -1,16 +1,16 @@
 "use client";
 
-import Navbar from "@/components/sections/Navbar";
-import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import { motion } from "framer-motion";
-import styles from "@/app/styles/styles";
+import styles from "@/lib/styles";
 import { FiCamera, FiTrendingUp, FiCode, FiCheckCircle } from "react-icons/fi";
-import AboutValues from "@/components/sections/AboutValues";
-import AboutTimeline from "@/components/sections/AboutTimeline";
-import AboutTeam from "@/components/sections/AboutTeam";
-import AboutFaq from "@/components/sections/AboutFaq";
+import AboutValues from "@/app/about/_components/AboutValues";
+import AboutTimeline from "@/app/about/_components/AboutTimeline";
+import AboutTeam from "@/app/about/_components/AboutTeam";
+import AboutFaq from "@/app/about/_components/AboutFaq";
 
 const containerVariants = {
   hidden: {},
@@ -64,7 +64,7 @@ export default function AboutPage() {
               DEFINING THE <span className="text-primary">DIGITAL SCENERY</span>
             </h1>
             <p className={`${styles.paragraph} text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto italic font-light`}>
-              Based in Karachi, Manzarkash is a premium digital agency delivering visual excellence, conversion copywriting, paid ad campaigns, and automated web solutions to brands worldwide.
+              With studios in Karachi and Dubai, Manzarkash is a premium digital agency delivering visual excellence, conversion copywriting, paid ad campaigns, and automated web solutions to brands across Pakistan and the UAE.
             </p>
           </div>
           <div className="absolute inset-0 bg-linear-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
@@ -88,7 +88,7 @@ export default function AboutPage() {
                   We believe that digital success sits at the intersection of beautiful aesthetic content and highly optimised systems.
                 </p>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400 font-poppins leading-relaxed">
-                  Too often, agencies force brands to choose between a creative agency that doesn't understand coding metrics, or a software house that lacks visual storytelling. At Manzarkash, we provide both. We shoot elite product photography, build high-performance e-commerce platforms, drive search engine presence, and scale messaging through automation.
+                  Too often, agencies force brands to choose between a creative agency that does not understand coding metrics, or a software house that lacks visual storytelling. At Manzarkash, we provide both. We shoot elite product photography, build high-performance e-commerce platforms, drive search engine presence, and scale messaging through automation.
                 </p>
               </motion.div>
 
