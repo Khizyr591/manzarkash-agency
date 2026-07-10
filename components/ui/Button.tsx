@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from "react";
 import { FiLoader } from "react-icons/fi";
 
-import styles from "@/app/styles/styles";
+import styles from "@/lib/styles";
 
 type BaseProps = {
   variant?: "primary" | "secondary" | "outline" | "ghost";
@@ -13,7 +13,7 @@ type BaseProps = {
   href?: string;
 };
 
-// Intersect button and anchor types based on whether href is present
+
 export type ButtonProps = BaseProps &
   Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseProps> &
   Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseProps>;
@@ -30,11 +30,11 @@ export default function Button({
   href,
   ...props
 }: ButtonProps) {
-  // Base classes for consistent sizing, rounded border, flex alignment, and micro-interactions
+
   const baseClasses =
     "inline-flex items-center justify-center rounded-full transition-all duration-300 transform active:scale-95 disabled:opacity-50 disabled:pointer-events-none";
 
-  // Variant classes
+
   const variantClasses = {
     primary:
       "bg-primary hover:bg-primary/95 text-white shadow-lg shadow-primary/10 hover:shadow-primary/20 border border-transparent",
@@ -46,7 +46,7 @@ export default function Button({
       "text-zinc-700 hover:bg-zinc-100/50 hover:text-black dark:text-zinc-300 dark:hover:bg-zinc-900/50 dark:hover:text-white bg-transparent",
   };
 
-  // Size classes
+
   const sizeClasses = {
     sm: `px-4 py-2 gap-1.5 ${styles.button_text_sm} !normal-case`,
     md: `px-6 py-3 gap-2 ${styles.button_text_sm} !normal-case`,
@@ -75,18 +75,18 @@ export default function Button({
       disabled={disabled || isLoading}
       {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
     >
-      {/* Loading Spinner */}
+
       {isLoading && (
         <FiLoader className="animate-spin -ml-1 mr-1 h-4 w-4 text-current" />
       )}
 
-      {/* Left Icon (only visible when not loading) */}
+
       {!isLoading && leftIcon && <span className="shrink-0">{leftIcon}</span>}
 
-      {/* Button Content */}
+
       <span className="truncate">{children}</span>
 
-      {/* Right Icon */}
+
       {!isLoading && rightIcon && <span className="shrink-0">{rightIcon}</span>}
     </button>
   );

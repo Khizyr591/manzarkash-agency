@@ -1,14 +1,17 @@
-import Navbar from "@/components/sections/Navbar";
-import Hero from "@/components/sections/Hero";
-import Marquee from "@/components/ui/Marquee";
-import Services from "@/components/sections/Services";
-import HowWeWork from "@/components/sections/HowWeWork";
-import MarketFocus from "@/components/sections/MarketFocus";
-import CaseStudies from "@/components/sections/CaseStudies";
-import Testimonials from "@/components/sections/Testimonials";
-import SceneryReveal from "@/components/sections/SceneryReveal";
-import Contact from "@/components/sections/Contact";
-import Footer from "@/components/sections/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Hero from "@/app/_components/Hero";
+import CrossedMarquee from "@/components/ui/CrossedMarquee";
+import ClientLogos from "@/app/_components/ClientLogos";
+import Services from "@/app/_components/Services";
+import HomeStats from "@/app/_components/HomeStats";
+import HowWeWork from "@/app/_components/HowWeWork";
+import MarketFocus from "@/app/_components/MarketFocus";
+import CaseStudies from "@/components/shared/CaseStudies";
+import Testimonials from "@/components/shared/Testimonials";
+import SceneryReveal from "@/app/_components/SceneryReveal";
+import HomeFAQ from "@/app/_components/HomeFAQ";
+import Contact from "@/components/shared/Contact";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -16,13 +19,16 @@ export default function Home() {
       <Navbar />
       <main className="flex flex-col">
         <Hero />
-        <Marquee />
+        <CrossedMarquee />
+        <ClientLogos />
         <Services />
+        <HomeStats />
         <HowWeWork />
         <MarketFocus />
         <CaseStudies />
         <Testimonials />
         <SceneryReveal />
+        <HomeFAQ />
         <Contact />
       </main>
       <Footer />
