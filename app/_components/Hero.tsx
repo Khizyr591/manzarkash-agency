@@ -62,6 +62,19 @@ export default function Hero() {
   const videoOpacity = useSpring(rawOpacity, { stiffness: 100, damping: 22 });
   const videoScale = useSpring(rawScale, { stiffness: 80, damping: 18 });
 
+  // 3D Cylinder Open Effects
+  const leftRotateYRaw = useTransform(scrollYProgress, [0, 0.65], [-45, -15]);
+  const rightRotateYRaw = useTransform(scrollYProgress, [0, 0.65], [45, 15]);
+  const leftXRaw = useTransform(scrollYProgress, [0, 0.65], [60, -20]);
+  const rightXRaw = useTransform(scrollYProgress, [0, 0.65], [-60, 20]);
+  const midZRaw = useTransform(scrollYProgress, [0, 0.65], [-30, 30]);
+
+  const leftRotateY = useSpring(leftRotateYRaw, { stiffness: 80, damping: 18 });
+  const rightRotateY = useSpring(rightRotateYRaw, { stiffness: 80, damping: 18 });
+  const leftX = useSpring(leftXRaw, { stiffness: 80, damping: 18 });
+  const rightX = useSpring(rightXRaw, { stiffness: 80, damping: 18 });
+  const midZ = useSpring(midZRaw, { stiffness: 80, damping: 18 });
+
   return (
     <section
       ref={heroRef}
@@ -200,13 +213,14 @@ export default function Hero() {
               </svg>
             </span>{" "}
             brands people{" "}
-            <span className="inline-block w-[90px] h-[52px] sm:w-[130px] sm:h-[74px] md:w-[180px] md:h-[102px] lg:w-[220px] lg:h-[125px] mx-1.5 md:mx-3 rounded-xl bg-black align-middle overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/40 hover:shadow-primary/10 transition-all duration-300 transform hover:scale-105 shadow-lg relative select-none">
-              <iframe
-                src={YT_SRC}
-                className="absolute border-0 pointer-events-none w-[178%] h-full left-[-39%] top-0"
-                allow="autoplay; encrypted-media"
-                tabIndex={-1}
-                title="preview"
+            <span className="inline-block w-[32px] h-[56px] sm:w-[48px] sm:h-[84px] md:w-[64px] md:h-[112px] lg:w-[80px] lg:h-[140px] mx-1.5 md:mx-3 rounded-xl bg-black align-middle overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/40 hover:shadow-primary/10 transition-all duration-300 transform hover:scale-105 shadow-lg relative select-none">
+              <video
+                src="/VID_20260712_230114_219.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </span>{" "}
             remember.
@@ -285,21 +299,40 @@ export default function Hero() {
             scale: videoScale,
             transformOrigin: "top center",
           }}
-          className="w-full max-w-5xl mx-auto"
+          className="w-full max-w-4xl mx-auto grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 justify-items-center [transform-style:preserve-3d]"
         >
-          <div
-            className="relative w-full rounded-2xl overflow-hidden border border-zinc-200/60 dark:border-zinc-800/60 shadow-2xl shadow-zinc-900/15 dark:shadow-black/50 bg-black"
-            style={{ paddingBottom: "56.25%" }}
-          >
-            <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-primary/25 via-transparent to-transparent pointer-events-none z-10" />
-            <iframe
-              src={YT_SRC}
-              className="absolute inset-0 w-full h-full border-0"
-              allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-              allowFullScreen
-              title="Manzarkash — How We Work"
-            />
-          </div>
+          {[
+            "/VID_20260712_230114_219.mp4",
+            "/VID_20260712_230119_762.mp4",
+            "/VID_20260712_230138_054.mp4"
+          ].map((src, index) => {
+            let motionStyle = {};
+            if (index === 0) {
+              motionStyle = { rotateY: leftRotateY, x: leftX };
+            } else if (index === 1) {
+              motionStyle = { z: midZ };
+            } else if (index === 2) {
+              motionStyle = { rotateY: rightRotateY, x: rightX };
+            }
+
+            return (
+              <motion.div
+                key={index}
+                style={motionStyle}
+                className="relative w-full aspect-9/16 rounded-2xl overflow-hidden border border-zinc-200/60 dark:border-zinc-800/60 shadow-2xl shadow-zinc-900/15 dark:shadow-black/50 bg-black group hover:border-primary/45 transition-colors duration-300"
+              >
+                <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-primary/25 via-transparent to-transparent pointer-events-none z-10" />
+                <video
+                  src={src}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
 
