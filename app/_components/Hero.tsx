@@ -75,6 +75,10 @@ export default function Hero() {
   const rightX = useSpring(rightXRaw, { stiffness: 80, damping: 18 });
   const midZ = useSpring(midZRaw, { stiffness: 80, damping: 18 });
 
+  // Inline Portrait Video Parallax Effect
+  const inlineVideoYRaw = useTransform(scrollYProgress, [0, 0.45], [-25, 25]);
+  const inlineVideoY = useSpring(inlineVideoYRaw, { stiffness: 80, damping: 18 });
+
   return (
     <section
       ref={heroRef}
@@ -213,7 +217,10 @@ export default function Hero() {
               </svg>
             </span>{" "}
             brands people{" "}
-            <span className="inline-block w-[32px] h-[56px] sm:w-[48px] sm:h-[84px] md:w-[64px] md:h-[112px] lg:w-[80px] lg:h-[140px] mx-1.5 md:mx-3 rounded-xl bg-black align-middle overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/40 hover:shadow-primary/10 transition-all duration-300 transform hover:scale-105 shadow-lg relative select-none">
+            <motion.span
+              style={{ y: inlineVideoY }}
+              className="inline-block w-[32px] h-[56px] sm:w-[48px] sm:h-[84px] md:w-[64px] md:h-[112px] lg:w-[80px] lg:h-[140px] mx-1.5 md:mx-3 rounded-xl bg-black align-middle overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/40 hover:shadow-primary/10 transition-all duration-300 transform hover:scale-105 shadow-lg relative select-none"
+            >
               <video
                 src="/VID_20260712_230114_219.mp4"
                 autoPlay
@@ -222,7 +229,7 @@ export default function Hero() {
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover"
               />
-            </span>{" "}
+            </motion.span>{" "}
             remember.
           </motion.h2>
 
