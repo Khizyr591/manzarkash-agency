@@ -4,7 +4,7 @@ import {
   FiTrendingUp,
   FiTarget,
   FiCode,
-  FiCamera,
+  FiLayout,
   FiMessageSquare,
   FiShare2,
   FiPackage,
@@ -39,15 +39,15 @@ const itemVariants = {
 export default function Services() {
   const services = [
     {
-      title: "Product Visuals & Creatives",
-      desc: "High-end product photography and visual creative production that showcases your products in the best light and drives sales.",
+      title: "Creative Ad & Graphic Design",
+      desc: "High-converting visual assets and video ad creatives that capture customer attention and drive campaign conversions.",
       points: [
-        "High-End E-commerce Studio Shoots",
-        "Creative Styling & Lighting Setups",
-        "Professional Color Grading & Retouching",
-        "Social Media Visual Assets",
+        "Social Ad Layout & Banner Design",
+        "Direct-Response Asset Styling",
+        "High-Fidelity UI & Display Graphics",
+        "Creative Storyboarding & Assets",
       ],
-      icon: <FiCamera className="w-6 h-6" />,
+      icon: <FiLayout className="w-6 h-6" />,
       href: "/services/product-visuals",
     },
     {
@@ -76,7 +76,7 @@ export default function Services() {
     },
     {
       title: "Advanced SEO Solutions",
-      desc: "Dominating local search queries across Karachi and Dubai to bring free, compounding organic traffic to your brand.",
+      desc: "Dominating local search queries across Pakistan to bring free, compounding organic traffic to your brand.",
       points: [
         "Local SEO & Google Maps Domination",
         "Technical SEO & Speed Performance",

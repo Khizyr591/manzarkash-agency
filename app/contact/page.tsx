@@ -37,8 +37,7 @@ export default function ContactPage() {
   ];
 
   const [clocks, setClocks] = useState({
-    karachi: "--:--:--",
-    dubai: "--:--:--"
+    karachi: "--:--:--"
   });
 
   useEffect(() => {
@@ -53,8 +52,7 @@ export default function ContactPage() {
         });
       };
       setClocks({
-        karachi: getFormattedTime("Asia/Karachi"),
-        dubai: getFormattedTime("Asia/Dubai")
+        karachi: getFormattedTime("Asia/Karachi")
       });
     };
     updateTime();
@@ -82,14 +80,14 @@ export default function ContactPage() {
 
         <section className="py-12 bg-white dark:bg-black border-b border-zinc-150 dark:border-zinc-900 relative">
           <div className={`${styles.container}`}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="max-w-xl mx-auto">
               <div className="flex items-center justify-between p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200/50 dark:border-zinc-800/50">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2 text-zinc-500">
                     <FiGlobe className="w-4 h-4 text-primary" />
-                    <span className="text-xs font-mono uppercase tracking-wider font-semibold">KARACHI STUDIO (HQ)</span>
+                    <span className="text-xs font-mono uppercase tracking-wider font-semibold">PAKISTAN AGENCY (HQ)</span>
                   </div>
-                  <h3 className="text-lg font-bold font-michroma text-zinc-900 dark:text-white">GULSHAN-E-IQBAL</h3>
+                  <h3 className="text-lg font-bold font-michroma text-zinc-900 dark:text-white">MANZARKASH DIGITAL</h3>
                 </div>
                 <div className="text-right">
                   <div className="flex items-center gap-1.5 justify-end text-zinc-500 mb-1">
@@ -98,25 +96,6 @@ export default function ContactPage() {
                   </div>
                   <div className="text-sm md:text-base font-mono font-bold text-primary">
                     {clocks.karachi}
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900/40 border border-zinc-200/50 dark:border-zinc-800/50">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2 text-zinc-500">
-                    <FiGlobe className="w-4 h-4 text-primary" />
-                    <span className="text-xs font-mono uppercase tracking-wider font-semibold">DUBAI OFFICE</span>
-                  </div>
-                  <h3 className="text-lg font-bold font-michroma text-zinc-900 dark:text-white">RAS AL KHOR</h3>
-                </div>
-                <div className="text-right">
-                  <div className="flex items-center gap-1.5 justify-end text-zinc-500 mb-1">
-                    <FiClock className="w-3.5 h-3.5" />
-                    <span className="text-[10px] font-mono tracking-widest uppercase">LOCAL TIME</span>
-                  </div>
-                  <div className="text-sm md:text-base font-mono font-bold text-primary">
-                    {clocks.dubai}
                   </div>
                 </div>
               </div>

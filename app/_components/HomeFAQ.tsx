@@ -8,16 +8,16 @@ import styles from "@/lib/styles";
 
 const FAQS = [
   {
-    q: "Which markets does Manzarkash actively serve?",
-    a: "We operate two studios — Karachi (Pakistan) and Dubai (UAE) — and take retainers exclusively from brands trading in one or both of those markets. Pricing, contracts, and creative are all localized to each market.",
+    q: "Which markets does Manzarkash Digital Agency actively serve?",
+    a: "We operate in Pakistan, offering performance-driven digital marketing and custom website engineering retainers exclusively for brands trading in the domestic market.",
   },
   {
-    q: "Do you handle both visual production and code, or do you sub-contract?",
-    a: "Both are in-house. Our team ships the studio photography, the Shopify or Next.js build, the paid ad creative, and the WhatsApp automation from a single roof. That eliminates the hand-off gap most agencies charge extra to bridge.",
+    q: "Do you handle both marketing campaigns and custom engineering, or do you sub-contract?",
+    a: "Both are in-house. Our team handles search engine optimization (SEO), Shopify or Next.js custom storefront engineering, paid ads setup, and WhatsApp automation under a single unified workflow. That eliminates the hand-off gap most agencies charge extra to bridge.",
   },
   {
     q: "How is a retainer scoped for a brand my size?",
-    a: "We publish three baseline tiers on our pricing page (Launch, Scale, Enterprise) with transparent monthly rates in USD, AED, and PKR. If your needs sit between tiers, we scope a bespoke retainer during the discovery call — no template contracts.",
+    a: "We publish three baseline tiers on our pricing page (Launch, Scale, Enterprise) with transparent monthly rates in PKR and USD equivalent. If your needs sit between tiers, we scope a bespoke retainer during the discovery call — no template contracts.",
   },
   {
     q: "How fast can we start after a signed SOW?",
@@ -28,8 +28,8 @@ const FAQS = [
     a: "Every retainer ships with GA4, Search Console, and platform-native attribution (Meta Ads Manager, Google Ads, TikTok) wired to a shared reporting workspace. Scale and Enterprise clients get a real-time dashboard; Launch clients get weekly written reports.",
   },
   {
-    q: "Can you work with brands outside Pakistan and the UAE?",
-    a: "Occasionally, when the founder team resonates with the mission. But our operational focus — timezones, cultural nuance, local platform expertise — is calibrated for Pakistan and the UAE. Outside those markets, we&apos;ll recommend a specialist partner instead.",
+    q: "Can you work with brands outside Pakistan?",
+    a: "Occasionally, when the founder team resonates with the mission. But our core focus is localized to Pakistan. Outside our domestic focus, we'll recommend a trusted partner instead.",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function HomeFAQ() {
           <Eyebrow>FREQUENTLY ASKED</Eyebrow>
           <h2 className={styles.heading_2}>QUESTIONS BEFORE WE START</h2>
           <p className={styles.paragraph}>
-            The most common questions we hear from Pakistan and UAE brand operators before signing a retainer.
+            The most common questions we hear from brand operators in Pakistan before signing a retainer.
           </p>
         </div>
 

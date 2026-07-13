@@ -31,12 +31,12 @@ export default function ServicesPage() {
   const services: ServiceItem[] = [
     {
       id: "product-visuals",
-      title: "Product Visuals & Creatives",
-      desc: "High-end product photography and visual creative production. We capture catalog shots and video assets that showcase product details, driving conversions at first glance.",
-      icon: <FiCamera className="w-6 h-6 text-primary" />,
+      title: "Creative Ad & Graphic Design",
+      desc: "High-converting visual assets and video ad creatives. We design graphics, banners, and layout structures that capture customer attention and drive campaign conversions.",
+      icon: <FiTarget className="w-6 h-6 text-primary" />,
       href: "/services/product-visuals",
       glowColor: "rgba(245, 78, 14, 0.15)",
-      highlights: ["Studio Catalog Shoots", "Set Styling & Concept Design", "Cinema Lighting Setup", "Color Grading & Retouching"]
+      highlights: ["Social Ad Banner Design", "Direct-Response Mockups", "Display Graphics Assets", "A/B Testing Optimization"]
     },
     {
       id: "marketing-ads",
@@ -59,11 +59,11 @@ export default function ServicesPage() {
     {
       id: "seo",
       title: "Advanced SEO Solutions",
-      desc: "Dominating local search across Karachi and Dubai to build compounding organic presence. We identify high-volume transactional keywords, optimize technical speed, and build search authority.",
+      desc: "Dominating local search rankings to build compounding organic presence. We identify high-volume transactional keywords, optimize technical speed, and build search authority.",
       icon: <FiTrendingUp className="w-6 h-6 text-primary" />,
       href: "/services/seo",
       glowColor: "rgba(16, 185, 129, 0.15)",
-      highlights: ["Google Maps Local Domination", "Core Web Vitals Speed Hardening", "Competitor Keyword Scoping", "High-Authority Link Outreach"]
+      highlights: ["Local Search Domination", "Core Web Vitals Speed Hardening", "Competitor Keyword Scoping", "High-Authority Link Outreach"]
     },
     {
       id: "ecommerce",
@@ -86,7 +86,7 @@ export default function ServicesPage() {
     {
       id: "branding-packaging",
       title: "Branding & Packaging Design",
-      desc: "Identity systems and print-ready packaging design. From wordmark to dielines, we ship brand systems that hold up on-shelf in Karachi and Dubai and on a phone-sized product tile.",
+      desc: "Identity systems and print-ready packaging design. From wordmark to dielines, we ship brand systems that hold up on-shelf and on a phone-sized product tile.",
       icon: <FiPackage className="w-6 h-6 text-primary" />,
       href: "/services/branding-packaging",
       glowColor: "rgba(217, 70, 239, 0.15)",

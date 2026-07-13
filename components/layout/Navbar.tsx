@@ -57,7 +57,7 @@ export default function Navbar() {
   const navLinks: NavLink[] = [
     { label: "Home", href: "/", num: "01" },
     { label: "About", href: "/about", num: "02" },
-    { label: "Founder", href: "/founder", num: "03" },
+    { label: "Founder", href: "/#founder", num: "03" },
     { label: "Case Studies", href: "/case-studies", num: "04" },
     { label: "Portfolio", href: "/portfolio", num: "05" },
     {
@@ -78,8 +78,7 @@ export default function Navbar() {
   ];
 
   const offices = [
-    { flag: "🇵🇰", city: "Karachi", tz: "Asia/Karachi", offset: "PKT +5" },
-    { flag: "🇦🇪", city: "Dubai", tz: "Asia/Dubai", offset: "GST +4" },
+    { flag: "🇵🇰", city: "Pakistan", tz: "Asia/Karachi", offset: "PKT +5" },
   ];
 
   useEffect(() => {
@@ -144,10 +143,10 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-18">
             <a
               href="/"
-              className={`${styles.heading_5} text-xl! md:text-2xl! tracking-widest! text-black dark:text-white shrink-0`}
-              aria-label="Manzarkash — Home"
+              className={`${styles.heading_5} text-lg! sm:text-xl! md:text-2xl! tracking-widest! text-black dark:text-white shrink-0`}
+              aria-label="Manzarkash Digital Agency — Home"
             >
-              MANZARKASH<span className="text-primary">.</span>
+              MANZARKASH DIGITAL<span className="text-primary">.</span>
             </a>
 
             <div className="hidden lg:flex items-center gap-7">
@@ -239,7 +238,7 @@ export default function Navbar() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.22 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-998 bg-black/65 backdrop-blur-[2px] touch-none"
+              className="fixed inset-0 z-[998] bg-black/65 backdrop-blur-[2px] touch-none"
             />
 
             <motion.aside
@@ -248,7 +247,7 @@ export default function Navbar() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="fixed top-0 right-0 bottom-0 h-screen z-999 w-[82vw] max-w-[320px] flex flex-col"
+              className="fixed top-0 right-0 bottom-0 h-screen z-[999] w-[82vw] max-w-[320px] flex flex-col"
               style={{
                 background:
                   "linear-gradient(160deg, #0d0d0d 0%, #111 55%, #180c00 100%)",
@@ -277,9 +276,9 @@ export default function Navbar() {
                     {greeting}
                   </p>
                   <span
-                    className={`${styles.heading_5} text-[1.1rem]! tracking-widest! text-white leading-none`}
+                    className={`${styles.heading_5} text-[0.95rem]! sm:text-[1.1rem]! tracking-widest! text-white leading-none`}
                   >
-                    MANZARKASH<span className="text-primary">.</span>
+                    MANZARKASH DIGITAL<span className="text-primary">.</span>
                   </span>
                 </div>
 
@@ -412,7 +411,7 @@ export default function Navbar() {
               </div>
 
               <div className="px-5 pb-6 pt-4 space-y-3 border-t border-white/6 shrink-0 bg-[#0f0f0f]/95 backdrop-blur-[2px] touch-none">
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1">
                   {offices.map(({ flag, city, tz, offset }) => (
                     <div
                       key={city}

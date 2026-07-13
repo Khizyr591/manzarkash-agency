@@ -1,16 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiUsers, FiDollarSign, FiClock, FiMapPin } from "react-icons/fi";
+import { FiUsers, FiDollarSign, FiClock, FiTrendingUp } from "react-icons/fi";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import Eyebrow from "@/components/ui/Eyebrow";
 import styles from "@/lib/styles";
 
 const STATS = [
-  { icon: <FiUsers />, value: 120, suffix: "+", label: "Brands Scaled", note: "Across Pakistan & UAE" },
+  { icon: <FiUsers />, value: 120, suffix: "+", label: "Brands Scaled", note: "Across Pakistan" },
   { icon: <FiDollarSign />, value: 4.8, suffix: "M+", prefix: "$", label: "Revenue Attributed", note: "To campaigns we ran" },
   { icon: <FiClock />, value: 48, suffix: "hr", label: "Onboarding SLA", note: "Signed to first sprint" },
-  { icon: <FiMapPin />, value: 2, label: "Studio Locations", note: "Karachi · Dubai" },
+  { icon: <FiTrendingUp />, value: 3.2, suffix: "x", label: "Average ROAS", note: "Across client campaigns" },
 ];
 
 export default function HomeStats() {
@@ -37,12 +37,12 @@ export default function HomeStats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.55, delay: i * 0.08, ease: "easeOut" }}
-              className="rounded-3xl p-6 md:p-8 bg-white dark:bg-zinc-900/60 border border-zinc-200/60 dark:border-zinc-800/60 hover:border-primary/40 transition-all duration-300 group"
+              className="rounded-3xl p-4 sm:p-6 md:p-8 bg-white dark:bg-zinc-900/60 border border-zinc-200/60 dark:border-zinc-800/60 hover:border-primary/40 transition-all duration-300 group"
             >
               <div className="w-11 h-11 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:scale-110 transition-transform">
                 {s.icon}
               </div>
-              <p className={`${styles.heading_2} text-3xl! md:text-5xl! text-zinc-900 dark:text-white font-bold! leading-none tabular-nums`}>
+              <p className={`${styles.heading_2} text-xl! min-[360px]:text-2xl! sm:text-3xl! md:text-5xl! text-zinc-900 dark:text-white font-bold! leading-none tabular-nums`}>
                 {s.prefix ?? ""}
                 <AnimatedCounter value={s.value} suffix={s.suffix ?? ""} decimals={String(s.value).includes(".") ? 1 : 0} />
               </p>

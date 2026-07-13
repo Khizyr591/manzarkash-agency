@@ -6,7 +6,7 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import { motion } from "framer-motion";
 import styles from "@/lib/styles";
-import { FiCamera, FiTrendingUp, FiCode, FiCheckCircle } from "react-icons/fi";
+import { FiTarget, FiTrendingUp, FiCode, FiCheckCircle } from "react-icons/fi";
 import AboutValues from "@/app/about/_components/AboutValues";
 import AboutTimeline from "@/app/about/_components/AboutTimeline";
 import AboutTeam from "@/app/about/_components/AboutTeam";
@@ -36,18 +36,18 @@ const itemVariants = {
 export default function AboutPage() {
   const pillars = [
     {
-      title: "Visual Dominance",
-      desc: "Creating stunning visual assets and high-end product photography out of our Karachi studio to showcase product value instantly.",
-      icon: <FiCamera className="w-6 h-6 text-primary" />,
+      title: "Creative Strategy",
+      desc: "Designing high-converting visual assets and ad creatives to immediately capture customer interest and showcase product value.",
+      icon: <FiTarget className="w-6 h-6 text-primary" />,
     },
     {
       title: "Performance Focus",
-      desc: "Building outcome-driven SEO, Google Maps authority, and Meta/TikTok paid ad campaigns that yield measurable return on ad spend.",
+      desc: "Building outcome-driven SEO, search rankings, and Meta/TikTok paid ad campaigns that yield measurable return on ad spend.",
       icon: <FiTrendingUp className="w-6 h-6 text-primary" />,
     },
     {
       title: "Modern Engineering",
-      desc: "Developing fast, responsive, and robust Shopify and WordPress e-commerce websites and custom portfolio platforms.",
+      desc: "Developing fast, responsive, and robust Shopify and Next.js e-commerce websites and custom portfolio platforms.",
       icon: <FiCode className="w-6 h-6 text-primary" />,
     },
   ];
@@ -64,7 +64,7 @@ export default function AboutPage() {
               DEFINING THE <span className="text-primary">DIGITAL SCENERY</span>
             </h1>
             <p className={`${styles.paragraph} text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto italic font-light`}>
-              With studios in Karachi and Dubai, Manzarkash is a premium digital agency delivering visual excellence, conversion copywriting, paid ad campaigns, and automated web solutions to brands across Pakistan and the UAE.
+              Manzarkash Digital Agency is a premium growth marketing and web engineering agency delivering visual ad design, conversion copywriting, paid ad campaigns, search engine optimization (SEO), and automated web solutions to brands in Pakistan.
             </p>
           </div>
           <div className="absolute inset-0 bg-linear-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
@@ -88,7 +88,7 @@ export default function AboutPage() {
                   We believe that digital success sits at the intersection of beautiful aesthetic content and highly optimised systems.
                 </p>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400 font-poppins leading-relaxed">
-                  Too often, agencies force brands to choose between a creative agency that does not understand coding metrics, or a software house that lacks visual storytelling. At Manzarkash, we provide both. We shoot elite product photography, build high-performance e-commerce platforms, drive search engine presence, and scale messaging through automation.
+                  Too often, agencies force brands to choose between a creative marketing agency that does not understand performance metrics, or a web development house that lacks brand strategy. At Manzarkash Digital Agency, we provide both under a single unified workflow. We design conversion-focused ad creatives, build high-performance e-commerce platforms, drive search engine presence, and scale messaging through automation.
                 </p>
               </motion.div>
 

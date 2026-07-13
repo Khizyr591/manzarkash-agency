@@ -8,6 +8,7 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
   const [progress, setProgress] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [animationDone, setAnimationDone] = useState(false);
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
@@ -52,10 +53,10 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
               <span
                 className={`${styles.heading_6} text-[10px]! md:text-xs! tracking-[0.2em] text-zinc-500 uppercase`}
               >
-                Manzarkash
+                Manzarkash Digital
               </span>
               <span
-                className={`${styles.caption_text} text-[10px]! md:text-xs! tracking-[0.2em] text-zinc-500 uppercase !font-light`}
+                className={`${styles.caption_text} text-[10px]! md:text-xs! tracking-[0.2em] text-zinc-500 uppercase font-light!`}
               >
                 Creative Digital Agency
               </span>
@@ -67,9 +68,9 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-                className={`${styles.heading_1} !text-4xl sm:!text-5xl md:!text-7xl lg:!text-8xl tracking-[0.25em] text-white font-normal text-center select-none mr-[-0.25em]`}
+                className={`${styles.heading_1} !text-lg min-[360px]:!text-xl min-[480px]:!text-2xl sm:!text-4xl md:!text-6xl lg:!text-7xl tracking-[0.18em] text-white font-normal text-center select-none mr-[-0.18em]`}
               >
-                MANZARKASH
+                MANZARKASH DIGITAL
               </motion.h2>
               <motion.div
                 initial={{ scaleX: 0 }}
@@ -83,27 +84,26 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 w-full font-poppins">
               <div className="flex flex-col gap-2 max-w-xs text-left">
                 <span
-                  className={`${styles.heading_6} !text-[10px] uppercase tracking-widest text-zinc-500`}
+                  className={`${styles.heading_6} text-[10px]! uppercase tracking-widest text-zinc-500`}
                 >
-                  Est. 2024 - {currentYear} / Karachi, PK
+                  Est. 2024 - {currentYear} / Pakistan
                 </span>
                 <p
                   className={`${styles.caption_text} !text-zinc-400 !leading-relaxed !font-light`}
                 >
-                  Scaling brands through premium product photography, campaigns,
-                  and bespoke web apps.
+                  Scaling brands through performance marketing campaigns, search optimization (SEO), and custom web apps.
                 </p>
               </div>
 
               <div className="flex flex-col items-end gap-3">
                 <div className="flex items-baseline gap-1">
                   <span
-                    className={`${styles.heading_1} !text-6xl md:!text-8xl !font-normal text-white !leading-none !tabular-nums`}
+                    className={`${styles.heading_1} text-6xl! md:text-8xl! font-normal! text-white leading-none! tabular-nums!`}
                   >
                     {String(progress).padStart(3, "0")}
                   </span>
                   <span
-                    className={`${styles.heading_5} !text-xl md:!text-2xl text-zinc-500 !leading-none`}
+                    className={`${styles.heading_5} text-xl! md:text-2xl! text-zinc-500 leading-none!`}
                   >
                     %
                   </span>
@@ -130,8 +130,14 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
         animate={
           isComplete ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}
         }
+        onAnimationComplete={() => {
+          if (isComplete) {
+            setAnimationDone(true);
+          }
+        }}
         transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
-        className="w-full flex-grow flex flex-col"
+        className={`w-full grow flex flex-col ${animationDone ? "transform-[none!important] filter-[none!important]" : ""
+          }`}
       >
         {children}
       </motion.div>

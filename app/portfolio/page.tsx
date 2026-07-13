@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  FiCamera, 
+  FiLayout, 
   FiCode, 
   FiTrendingUp, 
   FiCpu, 
@@ -37,7 +37,7 @@ export default function PortfolioPage() {
 
   const categories = [
     { id: "all", label: "ALL WORK" },
-    { id: "photography", label: "PHOTOGRAPHY / PRODUCTION" },
+    { id: "photography", label: "CREATIVE AD DESIGN" },
     { id: "development", label: "WEB ENGINEERING" },
     { id: "marketing", label: "SEO & PERFORMANCE ADS" },
     { id: "automation", label: "WHATSAPP AUTOMATIONS" },
@@ -47,7 +47,7 @@ export default function PortfolioPage() {
     {
       id: "zylora",
       title: "Custom Shopify Engine & Global Growth",
-      client: "Zylora Fashion (UAE)",
+      client: "Zylora Fashion",
       category: "development",
       categoryLabel: "Web Engineering",
       metric: "+310%",
@@ -82,26 +82,26 @@ export default function PortfolioPage() {
     },
     {
       id: "lumiere",
-      title: "Premium Studio Catalog Production",
-      client: "Lumière Cosmetics (UAE)",
+      title: "Creative Ad Styling & Design",
+      client: "Lumière Cosmetics",
       category: "photography",
-      categoryLabel: "Visual Production",
+      categoryLabel: "Creative Ad Design",
       metric: "82%",
       metricLabel: "Ad Click-Through Scale",
-      desc: "Designed and styled high-end product setups at our Karachi studio. Captured cinema-lit catalog shots and video assets to establish a luxurious global brand image.",
+      desc: "Designed and styled high-converting ad layouts and video creatives. Captured direct-response social assets to establish a premium brand image.",
       deliverables: [
-        "Creative set styling & direction",
-        "Color-accurate product editing",
+        "Creative layout styling & direction",
+        "Color-accurate product design",
         "Social micro-video assets",
       ],
-      tech: ["Studio Lighting", "Capture One Pro", "Photoshop", "Lightroom", "Premiere Pro"],
+      tech: ["Figma", "Photoshop", "Illustrator", "After Effects", "Premiere Pro"],
       color: "rgba(59, 130, 246, 0.15)",
-      icon: <FiCamera className="w-5 h-5 text-primary" />,
+      icon: <FiLayout className="w-5 h-5 text-primary" />,
     },
     {
       id: "apex",
       title: "B2B Organic Pipeline Autopilot",
-      client: "ApexLogistics (UAE)",
+      client: "ApexLogistics",
       category: "marketing",
       categoryLabel: "Search Optimization",
       metric: "100+",
@@ -119,7 +119,7 @@ export default function PortfolioPage() {
     {
       id: "vortex",
       title: "Automated Conversational Support Bot",
-      client: "Vortex SaaS (UAE)",
+      client: "Vortex SaaS",
       category: "automation",
       categoryLabel: "WhatsApp Automation",
       metric: "-60%",
@@ -136,21 +136,21 @@ export default function PortfolioPage() {
     },
     {
       id: "nexus",
-      title: "Fashion Campaign Studio Shoot",
+      title: "Fashion Ad Creative & Styling",
       client: "Nexus Apparel (Pakistan)",
       category: "photography",
-      categoryLabel: "Creative Production",
+      categoryLabel: "Creative Ad Design",
       metric: "10k+",
       metricLabel: "New Instagram Followers",
-      desc: "Directed a seasonal model lifestyle collection shoot. Combined premium studio captures with street styling aesthetics for high-end digital ad lookbooks.",
+      desc: "Designed a seasonal model lifestyle collection layout. Combined premium design assets with direct-response ad structures for high-end digital ad campaigns.",
       deliverables: [
-        "Model casting & styling",
-        "High-fidelity camera lighting",
-        "Multi-aspect ratio outputs",
+        "Model styling & creative direction",
+        "High-fidelity design layouts",
+        "Multi-aspect ratio ad outputs",
       ],
-      tech: ["Studio Lighting", "Photoshop CC", "Capture One", "Framer Studio"],
+      tech: ["Figma", "Photoshop CC", "Illustrator", "After Effects"],
       color: "rgba(236, 72, 153, 0.15)",
-      icon: <FiCamera className="w-5 h-5 text-primary" />,
+      icon: <FiLayout className="w-5 h-5 text-primary" />,
     },
   ];
 
@@ -178,13 +178,13 @@ export default function PortfolioPage() {
           <div className="absolute inset-0 bg-linear-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
         </section>
 
-        <section className="py-10 bg-white dark:bg-black border-b border-zinc-150 dark:border-zinc-900 sticky top-18 z-40 backdrop-blur-md bg-white/90 dark:bg-black/90">
-          <div className={`${styles.container} flex flex-wrap justify-center gap-2 md:gap-4`}>
+        <section className="py-4 md:py-6 bg-white dark:bg-black border-b border-zinc-150 dark:border-zinc-900 sticky top-18 z-40 backdrop-blur-md bg-white/90 dark:bg-black/90">
+          <div className={`${styles.container} flex items-center justify-start md:justify-center gap-2 overflow-x-auto md:overflow-visible no-scrollbar -mx-6 px-6 md:mx-0 md:px-0`}>
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setFilter(cat.id)}
-                className={`px-4 py-2 rounded-xl text-xs md:text-sm font-poppins font-medium tracking-wide uppercase transition-all duration-300 border ${
+                className={`shrink-0 px-4 py-2 rounded-xl text-xs md:text-sm font-poppins font-medium tracking-wide uppercase transition-all duration-300 border ${
                   filter === cat.id
                     ? "bg-primary border-primary text-white shadow-lg shadow-primary/25"
                     : "border-zinc-200 text-zinc-500 dark:border-zinc-800 dark:text-zinc-400 hover:border-zinc-900 dark:hover:border-white hover:text-zinc-900 dark:hover:text-white"

@@ -32,7 +32,7 @@ export default function BrandingPackagingPage() {
     {
       num: "03",
       title: "Packaging & Structure",
-      desc: "Dielines, print-ready artwork, structural mockups for boxes, sleeves, bottles, and labels. Sampled and proofed with regional printers in Karachi and Dubai before mass production.",
+      desc: "Dielines, print-ready artwork, structural mockups for boxes, sleeves, bottles, and labels. Sampled and proofed with regional printers in Pakistan before mass production.",
       icon: <FiPackage className="w-5 h-5 text-primary" />,
     },
     {

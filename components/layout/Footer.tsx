@@ -54,14 +54,12 @@ export default function Footer() {
               className={`${styles.heading_5} !text-xl md:!text-2xl !tracking-widest text-black dark:text-white`}
               aria-label="Manzarkash — Home"
             >
-              MANZARKASH<span className="text-primary font-bold">.</span>
+              MANZARKASH DIGITAL<span className="text-primary font-bold">.</span>
             </a>
             <p
               className={`${styles.paragraph_sm} text-zinc-500 dark:text-zinc-400 italic max-w-sm`}
             >
-              Manzarkash is a Karachi & Dubai creative digital agency specializing in
-              high-end product photography, marketing campaigns, custom
-              e-commerce & portfolio websites, and WhatsApp automation.
+              Manzarkash Digital Agency is a Pakistan performance marketing and conversion engineering agency scaling brand ventures through high-ROI advertising campaigns, SEO, custom web applications, and WhatsApp automation.
             </p>
             <div className="flex items-center gap-4">
               <a
@@ -103,7 +101,7 @@ export default function Footer() {
                     href="/services/product-visuals"
                     className="hover:text-primary transition-colors"
                   >
-                    Product Photography
+                    Creative Ad Design
                   </a>
                 </li>
                 <li>
@@ -176,7 +174,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/founder"
+                    href="/#founder"
                     className="hover:text-primary transition-colors"
                   >
                     About Founder
@@ -214,30 +212,7 @@ export default function Footer() {
                     Get in Touch
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="/#market-focus"
-                    className="hover:text-primary transition-colors"
-                  >
-                    UAE Market Focus
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/#market-focus"
-                    className="hover:text-primary transition-colors"
-                  >
-                    Dubai Studio
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/#market-focus"
-                    className="hover:text-primary transition-colors"
-                  >
-                    Pakistan Domestic Focus
-                  </a>
-                </li>
+
               </ul>
             </div>
 
@@ -250,9 +225,7 @@ export default function Footer() {
               <p
                 className={`text-zinc-500 dark:text-zinc-400 leading-relaxed ${styles.span_text} !text-sm`}
               >
-                PK Office: SB-9, 13/C Main University Rd, Block 13-C Gulshan-e-Iqbal, Karachi 75300
-                <br />
-                UAE Office: Ducamz, Dubai Auto Zone Market, Ras Al Khor, Dubai
+                Office: SB-9, 13/C Main University Rd, Block 13-C Gulshan-e-Iqbal, Pakistan
               </p>
               <div
                 className={`space-y-1.5 pt-2 text-zinc-500 dark:text-zinc-400 ${styles.span_text} !text-sm`}
@@ -260,10 +233,10 @@ export default function Footer() {
                 <p>
                   Email:{" "}
                   <a
-                    href="mailto:hello@manzarkash.com"
+                    href="mailto:info@manzarkash.com"
                     className="hover:text-primary transition-colors text-black dark:text-white font-semibold"
                   >
-                    hello@manzarkash.com
+                    info@manzarkash.com
                   </a>
                 </p>
                 <p>

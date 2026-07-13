@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiCamera, FiGrid, FiFeather, FiSliders, FiArrowRight, FiCheck } from "react-icons/fi";
+import { FiTarget, FiGrid, FiFeather, FiSliders, FiArrowRight, FiCheck } from "react-icons/fi";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -12,35 +12,35 @@ export default function ProductVisualsPage() {
   const steps = [
     {
       num: "01",
-      title: "Concept & Moodboards",
-      desc: "We research your audience, establish a creative tone, and create highly detailed moodboards defining backdrops, lighting angles, and prop arrangements before shooting.",
+      title: "Concept & Storyboarding",
+      desc: "We research your audience, establish a high-ROI visual tone, and create detailed ad layout boards before design begins.",
       icon: <FiFeather className="w-5 h-5 text-primary" />
     },
     {
       num: "02",
-      title: "Set Styling & Art Direction",
-      desc: "Our Karachi studio team sets up the physical shoot environment, styling textures, background colors, and positioning product structures for maximum visual depth.",
+      title: "Layout & Graphic Design",
+      desc: "Our design team styles layouts, choosing brand colors and typography that trigger interest and increase clicks.",
       icon: <FiGrid className="w-5 h-5 text-primary" />
     },
     {
       num: "03",
-      title: "Cinema-Grade Shooting",
-      desc: "Captured with high-resolution studio cameras and sharp prime lenses. We utilize cinematic softbox diffusers and shape shadows to accent premium quality.",
-      icon: <FiCamera className="w-5 h-5 text-primary" />
+      title: "Asset Styling & Production",
+      desc: "We compile static graphics, video loops, and dynamic motion assets focused entirely on conversion performance.",
+      icon: <FiTarget className="w-5 h-5 text-primary" />
     },
     {
       num: "04",
-      title: "Precision Editing & Grading",
-      desc: "Every asset undergoes strict commercial editing: micro-dust cleanup, label alignment corrections, background extension, and highly accurate color matching.",
+      title: "A/B Testing & Optimization",
+      desc: "Every creative asset is optimized for load speed, color profiles, and tested for CTR optimization.",
       icon: <FiSliders className="w-5 h-5 text-primary" />
     }
   ];
 
   const outcomes = [
-    "High-resolution catalog product images (PNG/JPG)",
-    "Cinema-lit street lifestyle mockups & assets",
-    "Optimized aspect ratios for Meta, TikTok, and web headers",
-    "Color-accurate files matching physical packaging specs"
+    "High-converting social ad creatives (banners, carousels, stories)",
+    "Direct-response micro-video layouts & dynamic motion clips",
+    "Optimized display graphics for search and landing headers",
+    "Figma design source files matching official brand guidelines"
   ];
 
   return (
@@ -52,17 +52,17 @@ export default function ProductVisualsPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,78,14,0.06)_0%,transparent_60%)] pointer-events-none" />
           
           <div className={`${styles.container} text-center space-y-6 max-w-4xl relative z-10`}>
-            <Eyebrow>CREATIVE PRODUCTION</Eyebrow>
+            <Eyebrow>CREATIVE AD DESIGN</Eyebrow>
             <h1 className={`${styles.heading_1} !text-4xl sm:!text-6xl !leading-[1.1] text-white uppercase tracking-wider`}>
-              PRODUCT VISUALS <br />
-              <span className="text-primary">& CREATIVE DIRECTION</span>
+              CREATIVE AD DESIGN <br />
+              <span className="text-primary">& ASSET PRODUCTION</span>
             </h1>
             <p className={`${styles.paragraph} text-zinc-400 max-w-2xl mx-auto italic font-light`}>
-              We shoot catalog and editorial visuals out of our physical Karachi studio, shaping light and texture to define authentic product luxury.
+              We design high-converting visual assets and video ad creatives that capture attention and drive sales for your campaigns.
             </p>
           </div>
         </section>
-
+ 
         <section className="py-16 bg-zinc-950 border-b border-zinc-900">
           <div className={styles.container}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -71,8 +71,8 @@ export default function ProductVisualsPage() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-primary/5 blur-[50px] group-hover:bg-primary/10 transition-colors" />
                 <div className="relative z-20 space-y-2">
                   <span className="text-[10px] font-mono text-primary uppercase font-bold tracking-widest">CONCEPT 01</span>
-                  <h3 className="font-michroma text-sm font-semibold text-white tracking-wide uppercase">Cinema Shadow Contours</h3>
-                  <p className="text-xs text-zinc-400 font-poppins font-light leading-relaxed">Shaping premium highlights on high-gloss cosmetics containers.</p>
+                  <h3 className="font-michroma text-sm font-semibold text-white tracking-wide uppercase">Direct-Response Graphics</h3>
+                  <p className="text-xs text-zinc-400 font-poppins font-light leading-relaxed">Designing premium visual highlights on your hero product features.</p>
                 </div>
               </div>
 
@@ -81,8 +81,8 @@ export default function ProductVisualsPage() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-primary/5 blur-[50px] group-hover:bg-primary/10 transition-colors" />
                 <div className="relative z-20 space-y-2">
                   <span className="text-[10px] font-mono text-primary uppercase font-bold tracking-widest">CONCEPT 02</span>
-                  <h3 className="font-michroma text-sm font-semibold text-white tracking-wide uppercase">Styling Textures & Props</h3>
-                  <p className="text-xs text-zinc-400 font-poppins font-light leading-relaxed">Pairing lifestyle items with organic clays, stones, and water waves.</p>
+                  <h3 className="font-michroma text-sm font-semibold text-white tracking-wide uppercase">Styling & Social Layouts</h3>
+                  <p className="text-xs text-zinc-400 font-poppins font-light leading-relaxed">Pairing engaging model lifestyles with structured discount layouts.</p>
                 </div>
               </div>
 
@@ -91,8 +91,8 @@ export default function ProductVisualsPage() {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full bg-primary/5 blur-[50px] group-hover:bg-primary/10 transition-colors" />
                 <div className="relative z-20 space-y-2">
                   <span className="text-[10px] font-mono text-primary uppercase font-bold tracking-widest">CONCEPT 03</span>
-                  <h3 className="font-michroma text-sm font-semibold text-white tracking-wide uppercase">Digital Retouching Fidelity</h3>
-                  <p className="text-xs text-zinc-400 font-poppins font-light leading-relaxed">Color matching and micro-cleanup ensuring high-res retail clarity.</p>
+                  <h3 className="font-michroma text-sm font-semibold text-white tracking-wide uppercase">High-Fidelity UI Graphics</h3>
+                  <p className="text-xs text-zinc-400 font-poppins font-light leading-relaxed">Creating clean website header visuals and optimized storefront banners.</p>
                 </div>
               </div>
             </div>
@@ -103,9 +103,9 @@ export default function ProductVisualsPage() {
           <div className={styles.container}>
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
               <Eyebrow>OUR WORKFLOW</Eyebrow>
-              <h2 className={`${styles.heading_2} text-white uppercase`}>HOW WE SHAPE THE VIEW</h2>
+              <h2 className={`${styles.heading_2} text-white uppercase`}>HOW WE SHAPE THE ASSETS</h2>
               <p className={`${styles.paragraph} text-zinc-400 max-w-2xl mx-auto font-light`}>
-                From the first sketch to the final pixel retouch, we maintain complete control over visual parameters.
+                From research to testing, we maintain complete focus on ad campaign conversion parameters.
               </p>
             </div>
 
@@ -163,10 +163,10 @@ export default function ProductVisualsPage() {
                   CASE STUDY IN FOCUS
                 </span>
                 <h3 className="font-michroma text-lg sm:text-xl font-bold text-white uppercase tracking-wide">
-                  LUMIÈRE COSMETICS (UAE)
+                  LUMIÈRE COSMETICS
                 </h3>
                 <p className="text-xs text-zinc-400 font-poppins font-light leading-relaxed">
-                  We styled a collection of premium skincare containers using textured backdrops and organic rock formations at our Karachi studio. The resulting cinematic ad creatives drove high click-through results on social media.
+                  We designed and produced high-converting social ad creatives and branding assets. The resulting visual assets drove high click-through results on social media.
                 </p>
                 <div className="pt-2 flex items-center justify-between border-t border-zinc-800">
                   <div>
@@ -175,7 +175,7 @@ export default function ProductVisualsPage() {
                   </div>
                   <div>
                     <span className="text-3xl font-michroma font-bold text-primary">150+</span>
-                    <p className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase mt-0.5">CREATIVE ASSETS SHOT</p>
+                    <p className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase mt-0.5">CREATIVE ASSETS DESIGNED</p>
                   </div>
                 </div>
               </div>
@@ -186,13 +186,13 @@ export default function ProductVisualsPage() {
 
         <section className="py-20 md:py-28 text-center relative w-full overflow-hidden bg-black border-t border-zinc-900">
           <div className={`${styles.container} max-w-3xl space-y-8 relative z-10`}>
-            <Eyebrow>SCHEDULE A SHOOT</Eyebrow>
+            <Eyebrow>SCHEDULE AN AUDIT</Eyebrow>
             <h2 className={`${styles.heading_2} !text-3xl sm:!text-5xl text-white uppercase !leading-tight`}>
               DEFINE YOUR BRAND'S <br />
-              <span className="text-primary">VISUAL DOMINANCE</span>
+              <span className="text-primary">VISUAL PERFORMANCE</span>
             </h2>
             <p className={`${styles.paragraph} text-zinc-405 max-w-2xl mx-auto font-light`}>
-              Request a visual scoping audit. We evaluate your current storefront product styling and design a custom catalog photography roadmap.
+              Request a creative scoping audit. We evaluate your current ad creatives and design a custom visual assets roadmap.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
@@ -201,7 +201,7 @@ export default function ProductVisualsPage() {
                 size="lg"
                 className="shadow-2xl shadow-primary/40 hover:scale-105 transition-all duration-300"
               >
-                Book Studio Shoot
+                Book Creative Consultation
               </Button>
               <Button
                 href="/services"

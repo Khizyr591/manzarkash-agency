@@ -25,10 +25,10 @@ const cardVariants: Variants = {
 export default function AboutTeam() {
   const domains = [
     {
-      role: "Creative & Visual Production",
-      description: "Bringing brands to life visually. We direct styling, light product setups, capture high-end photography, and write persuasive content to position products cleanly.",
-      methodology: "Cinema lighting, studio set styling, direct-response copywriting.",
-      stack: ["Capture One", "Photoshop", "Lightroom", "Premiere Pro", "Figma"],
+      role: "Creative & Visual Design",
+      description: "Bringing brands to life visually. We design social ad layouts, draft direct-response banners, style digital campaigns, and write persuasive content to position brands cleanly.",
+      methodology: "Social banner design, direct-response copywriting, visual layout styling.",
+      stack: ["Figma", "Photoshop", "Illustrator", "Premiere Pro", "After Effects"],
       glow: "rgba(245, 78, 14, 0.15)",
     },
     {

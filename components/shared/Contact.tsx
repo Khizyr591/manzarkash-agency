@@ -92,8 +92,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className={`${styles.caption_text} !text-zinc-500`}>Email Us Directly</p>
-                    <a href="mailto:hello@manzarkash.com" className={`hover:text-primary transition-colors ${styles.label_text} !text-sm text-black dark:text-white font-semibold`}>
-                      hello@manzarkash.com
+                    <a href="mailto:info@manzarkash.com" className={`hover:text-primary transition-colors ${styles.label_text} !text-sm text-black dark:text-white font-semibold`}>
+                      info@manzarkash.com
                     </a>
                   </div>
                 </div>
@@ -105,7 +105,7 @@ export default function Contact() {
                   <div>
                     <p className={`${styles.caption_text} !text-zinc-500`}>Corporate HQ</p>
                     <p className={`${styles.label_text} !text-sm text-black dark:text-white font-semibold`}>
-                      Karachi, Pakistan & Dubai, UAE
+                      Pakistan
                     </p>
                   </div>
                 </div>

@@ -6,6 +6,7 @@ import Services from "@/app/_components/Services";
 import HomeStats from "@/app/_components/HomeStats";
 import HowWeWork from "@/app/_components/HowWeWork";
 import MarketFocus from "@/app/_components/MarketFocus";
+import Founder from "@/app/_components/Founder";
 import CaseStudies from "@/components/shared/CaseStudies";
 import Testimonials from "@/components/shared/Testimonials";
 import SceneryReveal from "@/app/_components/SceneryReveal";
@@ -25,6 +26,7 @@ export default function Home() {
         <HomeStats />
         <HowWeWork />
         <MarketFocus />
+        <Founder />
         <CaseStudies />
         <Testimonials />
         <SceneryReveal />
