@@ -30,7 +30,7 @@ export default function ClientLogos() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-14 relative z-10 flex flex-col items-center gap-3">
         <Eyebrow>OUR CLIENT NETWORK</Eyebrow>
-        <h2 className="text-3xl md:text-5xl font-michroma font-bold text-center bg-gradient-to-b from-white via-zinc-100 to-zinc-500 bg-clip-text text-transparent tracking-tight leading-normal">
+        <h2 className="text-3xl md:text-5xl font-michroma font-bold text-center bg-linear-to-b from-white via-zinc-100 to-zinc-500 bg-clip-text text-transparent tracking-tight leading-normal">
           Trusted by the best companies
         </h2>
         <p className="text-zinc-400 text-center font-poppins text-sm md:text-base mt-2 max-w-xl mx-auto tracking-wide">
@@ -59,7 +59,7 @@ export default function ClientLogos() {
                 }
               }
             }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-x-12 sm:gap-x-16 md:gap-x-20 gap-y-8 justify-items-center items-center w-full"
+            className="grid grid-cols-2 md:grid-cols-4 gap-x-6 sm:gap-x-16 md:gap-x-20 gap-y-8 justify-items-center items-center w-full"
           >
             {activeGroup.map((name) => {
               const LogoIcon = BrandLogos[name] || (() => null);

@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Studio Product Photography & Visual Production | Manzarkash",
+  title: "Creative Ad Design & Asset Production | Manzarkash Digital Agency",
   description:
-    "Cinema-lit product photography and lifestyle visual production out of our Karachi studio. Catalog captures, motion clips, and editorial imagery for premium retail brands across Pakistan and the UAE.",
+    "High-converting social ad creatives, direct-response banners, display graphics, and asset styling for retail brands in Pakistan.",
   alternates: { canonical: "/services/product-visuals" },
   openGraph: {
-    title: "Studio Product Photography & Visual Production — Manzarkash",
+    title: "Creative Ad Design & Asset Production — Manzarkash Digital Agency",
     description:
-      "Cinema-lit catalog, motion, and editorial imagery for Pakistan & UAE retail brands.",
+      "High-converting visual assets and ad creative layouts for retail brands in Pakistan.",
     url: "https://manzarkash.com/services/product-visuals",
     type: "website",
   },

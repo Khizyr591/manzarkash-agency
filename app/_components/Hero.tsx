@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { FiCamera, FiTrendingUp, FiCode } from "react-icons/fi";
+import { FiSearch, FiTrendingUp, FiCode } from "react-icons/fi";
 import {
   motion,
   useScroll,
@@ -147,7 +147,7 @@ export default function Hero() {
 
       <div className={`${styles.container} relative z-10 pt-20 md:pt-28`}>
         <h1 className="sr-only">
-          Manzarkash | Product Photography, Ads Campaigns & SEO Agency for Pakistan & the UAE
+          Manzarkash Digital Agency | Performance Ads Campaigns & SEO Agency for Pakistan
         </h1>
         <motion.div
           variants={containerVariants}
@@ -157,7 +157,7 @@ export default function Hero() {
         >
           <motion.h2
             variants={itemVariants}
-            className={`${styles.heading_1} text-4xl! sm:text-5xl! md:text-6xl! lg:text-7xl! xl:text-[80px]! leading-tight! text-zinc-900 dark:text-white max-w-6xl mx-auto`}
+            className={`${styles.heading_1} text-3xl! min-[375px]:text-4xl! sm:text-5xl! md:text-6xl! lg:text-7xl! xl:text-[80px]! leading-tight! text-zinc-900 dark:text-white max-w-6xl mx-auto`}
           >
             We{" "}
             <span className="inline-flex items-center gap-1.5 p-1 md:p-1.5 bg-zinc-150/50 dark:bg-zinc-900/50 border border-zinc-250/50 dark:border-zinc-800/50 rounded-2xl mx-1.5 md:mx-3 align-middle shadow-sm">
@@ -167,7 +167,7 @@ export default function Hero() {
                   : "bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-200 hover:scale-110"
                   }`}
               >
-                <FiCamera className="w-4 h-4 md:w-5 md:h-5" />
+                <FiSearch className="w-4 h-4 md:w-5 md:h-5" />
               </span>
               <span
                 className={`w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center shadow-sm transform transition-all duration-300 select-none ${activeTooltip === 1
@@ -216,7 +216,7 @@ export default function Hero() {
             variants={itemVariants}
             className={`${styles.paragraph_lg} text-lg! md:text-2xl! text-zinc-600 dark:text-zinc-350 max-w-5xl leading-relaxed! italic font-light!`}
           >
-            Manzarkash is a Karachi & Dubai digital agency scaling brands across Pakistan and the UAE with premium product photography, high-impact marketing campaigns, custom websites, and WhatsApp automation.
+            Manzarkash Digital Agency is a Pakistan marketing and web engineering agency scaling brand retail ventures with high-impact ads campaigns, search optimization (SEO), custom websites, and WhatsApp automation.
           </motion.p>
 
           <motion.div
@@ -247,10 +247,10 @@ export default function Hero() {
           >
             <div>
               <p className={`${styles.heading_3} text-2xl! md:text-3xl! font-bold! text-black dark:text-white`}>
-                <AnimatedCounter value={4.2} decimals={1} suffix="M+" />
+                <AnimatedCounter value={4.8} decimals={1} suffix="M+" />
               </p>
               <p className={`${styles.caption_text} text-xs! text-zinc-500 dark:text-zinc-400`}>
-                PKR Ads Revenue Generated
+                USD Attributed Revenue
               </p>
             </div>
             <div>
@@ -266,7 +266,7 @@ export default function Hero() {
                 <AnimatedCounter value={15} suffix="+" />
               </p>
               <p className={`${styles.caption_text} text-xs! text-zinc-500 dark:text-zinc-400`}>
-                Cities Across PK & UAE
+                Cities Across Pakistan
               </p>
             </div>
           </motion.div>

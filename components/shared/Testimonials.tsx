@@ -62,7 +62,7 @@ export default function Testimonials() {
           TRUSTED BY GROWING BRANDS
         </h2>
         <p className={styles.paragraph}>
-          See how we help businesses across Karachi and Dubai optimize their digital performance.
+          See how we help businesses across Pakistan optimize their digital performance.
         </p>
       </div>
 

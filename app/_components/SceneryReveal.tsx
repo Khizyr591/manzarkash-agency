@@ -2,23 +2,23 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring, useReducedMotion } from "framer-motion";
-import { FiCamera, FiCode, FiTrendingUp, FiCpu } from "react-icons/fi";
+import { FiSearch, FiCode, FiTrendingUp, FiCpu } from "react-icons/fi";
 import Button from "@/components/ui/Button";
 import Eyebrow from "@/components/ui/Eyebrow";
 import styles from "@/lib/styles";
 
 const CAPABILITIES = [
-  { icon: <FiCamera className="w-4 h-4" />, label: "Studio Visuals" },
-  { icon: <FiCode className="w-4 h-4" />, label: "Custom Engineering" },
   { icon: <FiTrendingUp className="w-4 h-4" />, label: "Performance Ads" },
+  { icon: <FiSearch className="w-4 h-4" />, label: "Search SEO" },
+  { icon: <FiCode className="w-4 h-4" />, label: "Custom Engineering" },
   { icon: <FiCpu className="w-4 h-4" />, label: "WhatsApp Automation" },
 ];
 
 const STATS = [
-  { value: "120+", label: "Brands Scaled", note: "Pakistan & UAE" },
-  { value: "$4M+", label: "Revenue Driven", note: "Attributed to campaigns" },
-  { value: "48hr", label: "Onboarding SLA", note: "Kick-off to first sprint" },
-  { value: "2", label: "Studios", note: "Karachi · Dubai" },
+  { value: "120+", label: "Brands Scaled", note: "Across Pakistan" },
+  { value: "$4.8M+", label: "Revenue Attributed", note: "To client campaigns" },
+  { value: "48hr", label: "Onboarding SLA", note: "SOW to first sprint" },
+  { value: "3.2x", label: "Average ROAS", note: "Across ads channels" },
 ];
 
 export default function SceneryReveal() {
@@ -84,11 +84,11 @@ export default function SceneryReveal() {
           <h2
             className={`${styles.heading_1} text-4xl! md:text-6xl! lg:text-7xl! bg-linear-to-b from-zinc-900 via-zinc-800 to-zinc-500 dark:from-white dark:via-zinc-200 dark:to-zinc-500 bg-clip-text text-transparent tracking-tight leading-[1.05] uppercase font-semibold! max-w-4xl`}
           >
-            One studio system.<br className="hidden md:block" />{" "}
-            <span className="text-primary bg-linear-to-r from-primary to-orange-400 bg-clip-text text-transparent">Two home markets.</span>
+            One digital system.<br className="hidden md:block" />{" "}
+            <span className="text-primary bg-linear-to-r from-primary to-orange-400 bg-clip-text text-transparent">Attuned to Pakistan.</span>
           </h2>
           <p className={`${styles.paragraph} text-base! md:text-lg! text-zinc-500 dark:text-zinc-400 italic max-w-xl leading-relaxed!`}>
-            Studio-lit visuals, high-performance engineering, and paid growth — engineered for retail in Pakistan and the UAE.
+            High-conversion ad creatives, high-performance engineering, and search optimization — engineered for growth in Pakistan.
           </p>
 
           <div className="flex flex-col items-center gap-2 pt-4">
@@ -190,14 +190,7 @@ export default function SceneryReveal() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60" />
                   <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 </span>
-                Karachi · Live
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="relative flex h-1.5 w-1.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                </span>
-                Dubai · Live
+                Pakistan · Live
               </span>
             </div>
           </div>

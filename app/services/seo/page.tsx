@@ -37,9 +37,9 @@ export default function SeoPage() {
   ];
 
   const searchSnippet = {
-    title: "Manzarkash | Digital Marketing Agency Karachi & Dubai",
+    title: "Manzarkash Digital Agency | Performance Ads & SEO Pakistan",
     url: "https://manzarkash.com",
-    snippet: "Karachi & Dubai digital agency scaling brands across Pakistan and the UAE with professional product photography, high-ROI ads campaigns, SEO, custom e-commerce & portfolio websites, and WhatsApp automation.",
+    snippet: "Manzarkash Digital Agency scales brand retail ventures in Pakistan with high-ROI ads campaigns, search optimization (SEO), custom e-commerce sites, and WhatsApp automation.",
     stats: [
       { label: "Google Rank", val: "#1" },
       { label: "Search Volume", val: "18k/mo" },

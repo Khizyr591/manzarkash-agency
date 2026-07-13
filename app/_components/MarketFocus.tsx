@@ -1,6 +1,6 @@
 "use client";
 
-import { FiGlobe, FiMapPin } from "react-icons/fi";
+import { FiTarget, FiCode } from "react-icons/fi";
 import { motion } from "framer-motion";
 import styles from "@/lib/styles";
 
@@ -23,16 +23,16 @@ const cardRightVariants = {
 } as const;
 
 export default function MarketFocus() {
-  const pointsGlobal = [
-    { title: "On-Ground UAE Coverage", desc: "Timezone-aligned operations out of our Dubai studio (GST +4) ensuring same-day response for retail partners across Dubai, Abu Dhabi, and Sharjah." },
-    { title: "Gulf-Grade Design & Tech Standards", desc: "No templates or boilerplate. High-end custom website development and premium minimalist interface designs tuned for the UAE market." },
-    { title: "AED ROI-Retention Driven", desc: "Data-driven marketing focused on lowering Customer Acquisition Cost (CAC) and scaling Life-Time Value (LTV) in AED-denominated funnels." }
+  const pointsMarketing = [
+    { title: "Conversion-Focused Ad Creatives", desc: "High-impact social ad creatives (banners, carousels, and videos) built specifically to hook buyers and maximize ROAS on Meta and TikTok." },
+    { title: "Bilingual Copywriting (Urdu & English)", desc: "Targeted localized copy that translates complex product value propositions into engaging Urdu colloquialisms that trigger purchases." },
+    { title: "Precision Event Attribution & Tracking", desc: "Full Pixel and GA4 integration auditing, checking API webhooks to ensure zero attribution leakage and accurate CAPI event matching." }
   ];
 
-  const pointsLocal = [
-    { title: "Hyper-Localized Demographics", desc: "Deep cultural alignment across major metropolitan centers (Karachi, Lahore, Islamabad) and regional hubs." },
-    { title: "Bilingual Storytelling (Urdu & English)", desc: "Targeted localized copywriting that translates global products into Urdu colloquialisms that trigger purchases." },
-    { title: "PKR Efficiency Optimizations", desc: "Maximizing budget yield with local ad channels, WhatsApp sales funnel automations, and local influencer partnerships." }
+  const pointsEngineering = [
+    { title: "Bespoke Web Development", desc: "Custom theme design on Shopify and highly optimized Next.js frameworks built for extreme speed and frictionless user checkouts." },
+    { title: "Core Web Vitals Perfection", desc: "Targeting a 99/100 PageSpeed standard, reducing time-to-interactive so mobile traffic stays on-site and converts instead of bouncing." },
+    { title: "WhatsApp Automation & Retention", desc: "Building custom database-synced automated support bots and order notifications that dramatically lower overhead and raise retention." }
   ];
 
   return (
@@ -46,10 +46,10 @@ export default function MarketFocus() {
           className="text-center max-w-3xl mx-auto space-y-4 mb-16 md:mb-24"
         >
           <h2 className={styles.heading_2}>
-            DUAL-FOCUS MARKET EXPERTISE
+            ROI-DRIVEN GROWTH EXPERTISE
           </h2>
           <p className={styles.paragraph}>
-            Engineered to scale UAE brand ventures while executing hyper-local Pakistan campaigns that capture the hearts and wallets of both markets.
+            We combine high-performance web engineering with hyper-targeted paid advertising campaigns to scale retail brands across Pakistan.
           </p>
         </motion.div>
 
@@ -65,16 +65,16 @@ export default function MarketFocus() {
             <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full pointer-events-none group-hover:bg-primary/10 transition-colors" />
             <div className="space-y-6">
               <div className="inline-flex p-3 rounded-2xl bg-primary/5 dark:bg-primary/10 text-primary">
-                <FiGlobe className="w-8 h-8" />
+                <FiTarget className="w-8 h-8" />
               </div>
               <h3 className={styles.heading_3}>
-                Gulf Standards <span className={`${styles.caption_text} !text-zinc-500 italic block mt-1`}>UAE Market</span>
+                Performance Ads <span className={`${styles.caption_text} !text-zinc-500 italic block mt-1`}>Paid Marketing Strategy</span>
               </h3>
               <p className={styles.paragraph_sm}>
-                Custom solutions designed to dominate the UAE retail arena, utilizing cutting-edge technologies and performance-driven metrics.
+                Direct-response paid campaigns designed to hook audiences, lower customer acquisition costs, and scale revenue.
               </p>
-              <div className="space-y-4 pt-4 border-t border-zinc-100 dark:border-zinc-800">
-                {pointsGlobal.map((point) => (
+              <div className="space-y-4 pt-4 border-t border-zinc-150 dark:border-zinc-800">
+                {pointsMarketing.map((point) => (
                   <div key={point.title} className="space-y-1">
                     <h4 className={`${styles.label_text} !text-sm text-black dark:text-white flex items-center gap-2`}>
                       <span className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -98,16 +98,16 @@ export default function MarketFocus() {
             <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full pointer-events-none group-hover:bg-primary/10 transition-colors" />
             <div className="space-y-6">
               <div className="inline-flex p-3 rounded-2xl bg-primary/5 dark:bg-primary/10 text-primary">
-                <FiMapPin className="w-8 h-8" />
+                <FiCode className="w-8 h-8" />
               </div>
               <h3 className={styles.heading_3}>
-                Hyper-Local Nuances <span className={`${styles.caption_text} !text-zinc-500 italic block mt-1`}>Pakistan Domestic Market</span>
+                Conversion Dev <span className={`${styles.caption_text} !text-zinc-500 italic block mt-1`}>Web Design & Engineering</span>
               </h3>
               <p className={styles.paragraph_sm}>
-                Harnessing deep regional market demographics, regionalized customer funnels, and optimized local digital ad platforms.
+                Fast, responsive storefront architectures engineered to reduce friction and capture search rankings.
               </p>
-              <div className="space-y-4 pt-4 border-t border-zinc-100 dark:border-zinc-800">
-                {pointsLocal.map((point) => (
+              <div className="space-y-4 pt-4 border-t border-zinc-150 dark:border-zinc-800">
+                {pointsEngineering.map((point) => (
                   <div key={point.title} className="space-y-1">
                     <h4 className={`${styles.label_text} !text-sm text-black dark:text-white flex items-center gap-2`}>
                       <span className="w-1.5 h-1.5 rounded-full bg-primary" />

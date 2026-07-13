@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "SEO Agency for Pakistan & UAE | Technical SEO, Content, Local Search — Manzarkash",
+  title: "SEO Agency for Pakistan | Technical SEO & Organic Traffic Domination — Manzarkash Digital Agency",
   description:
-    "Full-stack SEO services from Manzarkash. Technical audits, content strategy, local search domination in Karachi and Dubai, and long-tail organic pipelines that compound month over month.",
+    "Full-stack SEO services from Manzarkash Digital Agency. Technical audits, content strategy, local search ranking, and organic search pipelines in Pakistan that compound month over month.",
   alternates: { canonical: "/services/seo" },
   openGraph: {
-    title: "SEO Agency for Pakistan & UAE — Manzarkash",
+    title: "SEO Agency for Pakistan — Manzarkash Digital Agency",
     description:
-      "Technical SEO, content strategy, and local search domination in Karachi and Dubai.",
+      "Technical SEO, content strategy, and organic local search domination in Pakistan.",
     url: "https://manzarkash.com/services/seo",
     type: "website",
   },

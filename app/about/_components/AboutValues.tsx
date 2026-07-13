@@ -27,7 +27,7 @@ export default function AboutValues() {
   const values = [
     {
       title: "Visual Perfection",
-      desc: "We are obsessed with aesthetics. From pixel-perfect web layout spacings to high-fidelity studio product photography, every creative asset must communicate premium value.",
+      desc: "We are obsessed with aesthetics. From pixel-perfect web layout spacings to high-fidelity social ad creatives, every design asset must communicate premium value.",
       icon: <FiEye className="w-5 h-5 text-primary" />,
       color: "rgba(245, 78, 14, 0.15)",
     },

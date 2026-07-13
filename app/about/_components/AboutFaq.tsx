@@ -18,8 +18,8 @@ export default function AboutFaq() {
       a: "In Urdu, 'Manzar' means scenery or view, and 'Kash' refers to drawing or defining. Translating to 'Defining the Scenery', Manzarkash represents our mission to sculpt visual identity, technical structure, and automated operational flow for brands in the digital landscape.",
     },
     {
-      q: "How do you manage cross-border client campaigns and timezones?",
-      a: "Our core engineering and creative studio is based in Karachi (PKT +5), and our UAE operations run out of Dubai (GST +4). The one-hour offset lets us hand off work in real time across both markets, with shared boards for asynchronous updates and live video syncs for account reviews.",
+      q: "How do you collaborate and manage campaigns?",
+      a: "Our engineering and marketing team operates from Pakistan, enabling seamless communication across our domestic network. We use collaborative digital whiteboards, shared project management dashboards, and structured weekly video syncs to keep branding and performance campaigns completely aligned.",
     },
     {
       q: "What does your typical project onboarding timeline look like?",

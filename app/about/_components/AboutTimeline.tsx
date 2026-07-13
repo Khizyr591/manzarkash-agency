@@ -20,21 +20,21 @@ export default function AboutTimeline() {
     {
       year: "2021",
       tag: "FOUNDATION",
-      title: "The Vision & Lens",
-      tagline: "High-end product photography studio launched in Karachi.",
-      desc: "Manzarkash started with a single, clear objective: capturing absolute brand value through visual perfection. We established a dedicated physical studio in Karachi, shooting premium visuals for local fashion, cosmetics, and lifestyle brands.",
+      title: "The Vision & Strategy",
+      tagline: "ROI-driven marketing & brand positioning frameworks launched.",
+      desc: "Manzarkash Digital Agency started with a single, clear objective: driving client revenue growth through targeted advertising campaigns. We established our core frameworks, mapping high-converting user acquisition pipelines for local fashion, cosmetics, and lifestyle brands in Pakistan.",
       achievements: [
-        "Constructed a high-fidelity studio in Karachi",
-        "Collaborated with over 20 local consumer brands",
-        "Mastered high-end styling and product lighting techniques",
+        "Constructed core advertising frameworks",
+        "Collaborated with over 20 consumer brands to scale ROAS",
+        "Mastered localized copywriting and direct-response methods",
       ],
     },
     {
       year: "2022",
       tag: "DEVELOPMENT",
       title: "Visions Into Code",
-      tagline: "Integrating custom Shopify and WordPress engineering.",
-      desc: "We realized that elite creative content was only half the equation. To drive conversions, brands needed high-performance digital stores. We expanded our team to bring in top WordPress and Shopify developers, crafting custom, SEO-optimized e-commerce sites.",
+      tagline: "Integrating custom Shopify and Next.js web engineering.",
+      desc: "We realized that elite creative marketing copy was only half the equation. To drive conversions, brands needed high-performance digital stores. We expanded our team to bring in top software developers, crafting custom, SEO-optimized e-commerce sites.",
       achievements: [
         "Launched 15+ custom Shopify & WordPress storefronts",
         "Reduced mobile page load times by over 40% on average",
@@ -46,10 +46,10 @@ export default function AboutTimeline() {
       tag: "ACQUISITION",
       title: "Scaling Retainers",
       tagline: "Introducing high-ROI paid ads and local SEO authority.",
-      desc: "With premium assets and fast storefronts, the next step was traffic. We launched performance marketing services—setting up high-converting paid ad campaigns on Meta, Google, and TikTok, alongside organic growth strategies and Google Maps dominance.",
+      desc: "With premium ad creatives and fast storefronts, the next step was traffic. We launched performance marketing services—setting up high-converting paid ad campaigns on Meta, Google, and TikTok, alongside organic growth strategies and search dominance.",
       achievements: [
         "Managed performance campaigns yielding high-ROAS outcomes",
-        "Scaled 8 local businesses to top ranking slots on Google Maps",
+        "Scaled 8 local businesses to top ranking slots on search engines",
         "Developed custom copywriting frameworks for direct-response ads",
       ],
     },
@@ -68,12 +68,12 @@ export default function AboutTimeline() {
     {
       year: "2025/2026",
       tag: "REGIONAL LANDSCAPE",
-      title: "The Modern Agency",
-      tagline: "Rebranding to Manzarkash, managing campaigns across Pakistan & the UAE.",
-      desc: "Consolidating our visual production, custom engineering, search positioning, and automated software workflows, we became Manzarkash. Today, we deliver unified, full-stack brand acceleration to retail partners across Pakistan and the UAE, operated out of Karachi and Dubai.",
+      title: "The Rebrand & Agency Scale",
+      tagline: "Rebranding to Manzarkash Digital Agency, managing campaigns across Pakistan.",
+      desc: "Consolidating our high-converting ad designs, custom software engineering, search engine optimization (SEO), and automated messaging chatbots, we became Manzarkash Digital Agency. Today, we deliver unified, full-stack brand acceleration to retail partners across Pakistan.",
       achievements: [
-        "Unified visual and software teams under the Manzarkash brand",
-        "Successfully managing full-funnel scaling campaigns for global brands",
+        "Unified ad design and software engineering under a single team",
+        "Successfully managing full-funnel scaling campaigns for leading brands",
         "Operating as a premier outcomes-based agency with transparent ROI dashboards",
       ],
     },
@@ -88,7 +88,7 @@ export default function AboutTimeline() {
           <Eyebrow>OUR JOURNEY</Eyebrow>
           <h2 className={`${styles.heading_2} uppercase`}>EVOLUTION OF THE SCENERY</h2>
           <p className={`${styles.paragraph} text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto`}>
-            From a physical visual studio to a full-stack digital agency, trace the milestones of how we scale our brand partners.
+            From direct-response marketing roots to a full-stack digital growth agency, trace the milestones of how we scale our brand partners.
           </p>
         </div>
 

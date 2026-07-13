@@ -33,7 +33,7 @@ const caseStudies: CaseStudy[] = [
     revenueLabel: "Annual Attributed Revenue",
     stack: ["Shopify Plus", "React", "TailwindCSS", "GA4"],
     summary:
-      "Zylora arrived with a template Shopify build and no measurable organic presence. We re-architected the storefront around Core Web Vitals, deployed a custom Liquid + React theme, and paired it with UAE-focused technical SEO — content, schema, and internal linking mapped to high-intent Gulf retail queries.",
+      "Zylora arrived with a template Shopify build and no measurable organic presence. We re-architected the storefront around Core Web Vitals, deployed a custom Liquid + React theme, and paired it with technical SEO — content, schema, and internal linking mapped to high-intent retail queries.",
     outcomes: [
       "Sub-1.4s mobile LCP across product pages",
       "Featured in Google Merchant Center for 40+ commercial keywords",
@@ -62,7 +62,7 @@ const caseStudies: CaseStudy[] = [
   {
     slug: "apex",
     client: "ApexLogistics",
-    market: "UAE",
+    market: "Pakistan",
     category: "SEO & Content",
     headline: "#1 rankings on supply-chain keywords delivered +180% B2B pipeline",
     metric: "+180%",
@@ -71,9 +71,9 @@ const caseStudies: CaseStudy[] = [
     revenueLabel: "Enterprise Leads / Month",
     stack: ["WordPress Core", "Search Console", "Semrush", "Ahrefs"],
     summary:
-      "ApexLogistics was buying paid search for terms they should have owned organically. We ran a 90-day content and technical SEO sprint — keyword clustering, on-page rewrites, backlink outreach, and Google Business Profile hardening — until the site ranked #1 for the eight highest-intent Gulf supply-chain queries.",
+      "ApexLogistics was buying paid search for terms they should have owned organically. We ran a 90-day content and technical SEO sprint — keyword clustering, on-page rewrites, backlink outreach, and Google Business Profile hardening — until the site ranked #1 for the eight highest-intent supply-chain queries.",
     outcomes: [
-      "8 target keywords ranking #1 on Google UAE within 6 months",
+      "8 target keywords ranking #1 on Google Pakistan within 6 months",
       "Direct + organic contact-form leads up 3.4×",
       "Paid search spend redirected from branded to non-branded, freeing 60% budget",
     ],
@@ -81,26 +81,26 @@ const caseStudies: CaseStudy[] = [
   {
     slug: "lumiere",
     client: "Lumière Cosmetics",
-    market: "UAE",
-    category: "Visual Production",
-    headline: "Studio-lit catalog drove +82% ad click-through rate",
+    market: "Pakistan",
+    category: "Creative Ad Design",
+    headline: "High-converting ad designs drove +82% click-through rate",
     metric: "+82%",
     metricLabel: "Ad Click-Through Rate",
     revenue: "3.1×",
     revenueLabel: "Return on Ad Spend",
-    stack: ["Studio Lighting", "Capture One", "Photoshop", "Premiere"],
+    stack: ["Figma", "Photoshop", "After Effects", "Premiere"],
     summary:
-      "Lumière's product was premium; their existing catalog looked like every other clean-beauty brand. We shot a full seasonal collection at our Karachi studio using textured backdrops, organic rock formations, and cinema-grade lighting — then cut the assets into paid-ad-ready micro-videos.",
+      "Lumière's product was premium; their existing ad assets looked like every other clean-beauty brand. We designed a full seasonal ad creative set using bespoke layout guidelines, custom color palettes, and motion graphics — then deployed the assets as paid-ad-ready micro-videos.",
     outcomes: [
-      "12 hero product shots + 40 supporting angles + 8 motion clips",
-      "Deployed across Meta, TikTok, and shopper UAE marketplaces",
+      "12 hero ad concepts + 40 layout variations + 8 motion video clips",
+      "Deployed across Meta, TikTok, and e-commerce storefront channels",
       "Assets still in rotation 14 months later with no fatigue signals",
     ],
   },
   {
     slug: "vortex",
     client: "Vortex SaaS",
-    market: "UAE",
+    market: "Pakistan",
     category: "WhatsApp Automation",
     headline: "NLP support bot cut manual tickets by 60%",
     metric: "-60%",

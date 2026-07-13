@@ -59,7 +59,7 @@ export default function WhatsappAutomationPage() {
       
       setTimeout(() => {
         setChatHistory(prev => [...prev, 
-          { sender: "bot", text: "🔍 Querying database for Order #4055... \n\nFound it! Your package was dispatched via Apex Logistics and is currently in transit. \n🚚 Status: Out for delivery in Karachi.", time: "12:01 PM" }
+          { sender: "bot", text: "🔍 Querying database for Order #4055... \n\nFound it! Your package was dispatched via Apex Logistics and is currently in transit. \n🚚 Status: Out for delivery.", time: "12:01 PM" }
         ]);
         setChatStep(0);
       }, 1200);

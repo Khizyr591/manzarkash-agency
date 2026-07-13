@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About | Manzarkash — Studios in Karachi & Dubai",
+  title: "About | Manzarkash Digital Agency — Pakistan",
   description:
-    "Manzarkash is a premium digital agency with studios in Karachi and Dubai, delivering visual excellence, conversion copywriting, paid ads, SEO, and automated web solutions to brands across Pakistan and the UAE.",
+    "Manzarkash Digital Agency is a premium growth marketing and web engineering agency in Pakistan, delivering high-ROI advertising campaigns, search engine optimization (SEO), custom e-commerce web applications, and smart WhatsApp automation.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Manzarkash — Studios in Karachi & Dubai",
+    title: "About Manzarkash Digital Agency — Pakistan",
     description:
-      "A premium digital agency serving Pakistan & UAE brands with visuals, engineering, paid growth, and automation.",
+      "A premium growth marketing and web engineering agency serving Pakistan brands with ad creatives, custom development, SEO, and WhatsApp automation.",
     url: "https://manzarkash.com/about",
     type: "website",
   },
