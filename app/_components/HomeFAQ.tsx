@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     q: "How is a retainer scoped for a brand my size?",
-    a: "We publish three baseline tiers on our pricing page (Launch, Scale, Enterprise) with transparent monthly rates in PKR and USD equivalent. If your needs sit between tiers, we scope a bespoke retainer during the discovery call — no template contracts.",
+    a: "We offer three baseline tiers (Launch, Scale, Enterprise) with transparent monthly rates in PKR and USD equivalent. If your needs sit between tiers, we scope a bespoke retainer during the discovery call — no template contracts.",
   },
   {
     q: "How fast can we start after a signed SOW?",

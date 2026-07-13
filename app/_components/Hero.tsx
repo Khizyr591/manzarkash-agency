@@ -52,32 +52,37 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const rawY = useTransform(scrollYProgress, [0, 0.7], [-120, 0]);
-  const rawRotateX = useTransform(scrollYProgress, [0, 0.6], [-52, 0]);
-  const rawOpacity = useTransform(scrollYProgress, [0, 0.15, 0.55], [0, 0.15, 1]);
-  const rawScale = useTransform(scrollYProgress, [0, 0.6], [0.88, 1]);
+  // --- Shared scroll-driven entrance (rise up from below) ---
+  const rawY = useTransform(scrollYProgress, [0.1, 0.5], [80, 0]);
+  const rawOpacity = useTransform(scrollYProgress, [0.08, 0.35], [0, 1]);
+  const rawScale = useTransform(scrollYProgress, [0.1, 0.5], [0.92, 1]);
 
-  const videoY = useSpring(rawY, { stiffness: 80, damping: 18 });
-  const videoRotateX = useSpring(rawRotateX, { stiffness: 70, damping: 16 });
-  const videoOpacity = useSpring(rawOpacity, { stiffness: 100, damping: 22 });
-  const videoScale = useSpring(rawScale, { stiffness: 80, damping: 18 });
+  const videoY = useSpring(rawY, { stiffness: 50, damping: 22 });
+  const videoOpacity = useSpring(rawOpacity, { stiffness: 60, damping: 24 });
+  const videoScale = useSpring(rawScale, { stiffness: 50, damping: 22 });
 
-  // 3D Cylinder Open Effects
-  const leftRotateYRaw = useTransform(scrollYProgress, [0, 0.65], [-45, -15]);
-  const rightRotateYRaw = useTransform(scrollYProgress, [0, 0.65], [45, 15]);
-  const leftXRaw = useTransform(scrollYProgress, [0, 0.65], [60, -20]);
-  const rightXRaw = useTransform(scrollYProgress, [0, 0.65], [-60, 20]);
-  const midZRaw = useTransform(scrollYProgress, [0, 0.65], [-30, 30]);
+  // --- Cylinder fan-out per card ---
+  const fanRange: [number, number] = [0.08, 0.45];
 
-  const leftRotateY = useSpring(leftRotateYRaw, { stiffness: 80, damping: 18 });
-  const rightRotateY = useSpring(rightRotateYRaw, { stiffness: 80, damping: 18 });
-  const leftX = useSpring(leftXRaw, { stiffness: 80, damping: 18 });
-  const rightX = useSpring(rightXRaw, { stiffness: 80, damping: 18 });
-  const midZ = useSpring(midZRaw, { stiffness: 80, damping: 18 });
+  // Left card: starts stacked at center, fans out left
+  const rawLeftRotateY = useTransform(scrollYProgress, fanRange, [45, 0]);
+  const rawLeftX = useTransform(scrollYProgress, fanRange, [120, 0]);
+  const rawLeftScale = useTransform(scrollYProgress, fanRange, [0.82, 1]);
+  const leftRotateY = useSpring(rawLeftRotateY, { stiffness: 45, damping: 20 });
+  const leftX = useSpring(rawLeftX, { stiffness: 45, damping: 20 });
+  const leftScale = useSpring(rawLeftScale, { stiffness: 45, damping: 20 });
 
-  // Inline Portrait Video Parallax Effect
-  const inlineVideoYRaw = useTransform(scrollYProgress, [0, 0.45], [-25, 25]);
-  const inlineVideoY = useSpring(inlineVideoYRaw, { stiffness: 80, damping: 18 });
+  // Right card: starts stacked at center, fans out right
+  const rawRightRotateY = useTransform(scrollYProgress, fanRange, [-45, 0]);
+  const rawRightX = useTransform(scrollYProgress, fanRange, [-120, 0]);
+  const rawRightScale = useTransform(scrollYProgress, fanRange, [0.82, 1]);
+  const rightRotateY = useSpring(rawRightRotateY, { stiffness: 45, damping: 20 });
+  const rightX = useSpring(rawRightX, { stiffness: 45, damping: 20 });
+  const rightScale = useSpring(rawRightScale, { stiffness: 45, damping: 20 });
+
+  // Center card: subtle scale punch
+  const rawCenterScale = useTransform(scrollYProgress, fanRange, [0.88, 1]);
+  const centerScale = useSpring(rawCenterScale, { stiffness: 45, damping: 20 });
 
   return (
     <section
@@ -217,10 +222,7 @@ export default function Hero() {
               </svg>
             </span>{" "}
             brands people{" "}
-            <motion.span
-              style={{ y: inlineVideoY }}
-              className="inline-block w-[32px] h-[56px] sm:w-[48px] sm:h-[84px] md:w-[64px] md:h-[112px] lg:w-[80px] lg:h-[140px] mx-1.5 md:mx-3 rounded-xl bg-black align-middle overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/40 hover:shadow-primary/10 transition-all duration-300 transform hover:scale-105 shadow-lg relative select-none"
-            >
+            <span className="inline-block w-[32px] h-[56px] sm:w-[48px] sm:h-[84px] md:w-[64px] md:h-[112px] lg:w-[80px] lg:h-[140px] mx-1.5 md:mx-3 rounded-xl bg-black align-middle overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/40 hover:shadow-primary/10 transition-all duration-300 transform hover:scale-105 shadow-lg relative select-none">
               <video
                 src="/VID_20260712_230114_219.mp4"
                 autoPlay
@@ -229,7 +231,7 @@ export default function Hero() {
                 playsInline
                 className="absolute inset-0 w-full h-full object-cover"
               />
-            </motion.span>{" "}
+            </span>{" "}
             remember.
           </motion.h2>
 
@@ -296,50 +298,77 @@ export default function Hero() {
 
       <div
         className={`${styles.container} relative z-10 pt-16 pb-24`}
-        style={{ perspective: "1200px", perspectiveOrigin: "50% 0%" }}
+        style={{ perspective: "800px", perspectiveOrigin: "50% 80%" }}
       >
         <motion.div
           style={{
             y: videoY,
-            rotateX: videoRotateX,
             opacity: videoOpacity,
             scale: videoScale,
-            transformOrigin: "top center",
           }}
-          className="w-full max-w-4xl mx-auto grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 justify-items-center [transform-style:preserve-3d]"
+          className="w-full max-w-4xl mx-auto flex items-center justify-center relative"
+        // give the flex row enough height for portrait cards
+        // so the absolute-positioned side cards have room
         >
-          {[
-            "/VID_20260712_230114_219.mp4",
-            "/VID_20260712_230119_762.mp4",
-            "/VID_20260712_230138_054.mp4"
-          ].map((src, index) => {
-            let motionStyle = {};
-            if (index === 0) {
-              motionStyle = { rotateY: leftRotateY, x: leftX };
-            } else if (index === 1) {
-              motionStyle = { z: midZ };
-            } else if (index === 2) {
-              motionStyle = { rotateY: rightRotateY, x: rightX };
-            }
+          {/* --- Left Card --- */}
+          <motion.div
+            style={{
+              rotateY: leftRotateY,
+              x: leftX,
+              scale: leftScale,
+              transformOrigin: "right center",
+            }}
+            className="relative w-[28%] sm:w-[30%] aspect-9/16 rounded-2xl overflow-hidden border border-zinc-200/60 dark:border-zinc-800/60 shadow-2xl shadow-zinc-900/15 dark:shadow-black/50 bg-black hover:border-primary/45 transition-colors duration-300 z-10"
+          >
+            <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-primary/25 via-transparent to-transparent pointer-events-none z-10" />
+            <video
+              src="/VID_20260712_230114_219.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+          </motion.div>
 
-            return (
-              <motion.div
-                key={index}
-                style={motionStyle}
-                className="relative w-full aspect-9/16 rounded-2xl overflow-hidden border border-zinc-200/60 dark:border-zinc-800/60 shadow-2xl shadow-zinc-900/15 dark:shadow-black/50 bg-black group hover:border-primary/45 transition-colors duration-300"
-              >
-                <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-primary/25 via-transparent to-transparent pointer-events-none z-10" />
-                <video
-                  src={src}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="absolute inset-0 w-full h-full object-cover z-0"
-                />
-              </motion.div>
-            );
-          })}
+          {/* --- Center Card --- */}
+          <motion.div
+            style={{
+              scale: centerScale,
+            }}
+            className="relative w-[32%] sm:w-[34%] aspect-9/16 rounded-2xl overflow-hidden border-2 border-primary/50 shadow-2xl shadow-primary/10 dark:shadow-primary/5 bg-black z-20 mx-[-3%]"
+          >
+            <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-primary/30 via-transparent to-transparent pointer-events-none z-10" />
+            <video
+              src="/VID_20260712_230119_762.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+          </motion.div>
+
+          {/* --- Right Card --- */}
+          <motion.div
+            style={{
+              rotateY: rightRotateY,
+              x: rightX,
+              scale: rightScale,
+              transformOrigin: "left center",
+            }}
+            className="relative w-[28%] sm:w-[30%] aspect-9/16 rounded-2xl overflow-hidden border border-zinc-200/60 dark:border-zinc-800/60 shadow-2xl shadow-zinc-900/15 dark:shadow-black/50 bg-black hover:border-primary/45 transition-colors duration-300 z-10"
+          >
+            <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-primary/25 via-transparent to-transparent pointer-events-none z-10" />
+            <video
+              src="/VID_20260712_230138_054.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover z-0"
+            />
+          </motion.div>
         </motion.div>
       </div>
 

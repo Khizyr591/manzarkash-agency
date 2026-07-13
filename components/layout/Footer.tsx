@@ -196,14 +196,7 @@ export default function Footer() {
                     Portfolio
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="/pricing"
-                    className="hover:text-primary transition-colors"
-                  >
-                    Pricing & Packages
-                  </a>
-                </li>
+
                 <li>
                   <a
                     href="/contact"
