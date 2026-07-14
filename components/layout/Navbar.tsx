@@ -57,7 +57,7 @@ export default function Navbar() {
   const navLinks: NavLink[] = [
     { label: "Home", href: "/", num: "01" },
     { label: "About", href: "/about", num: "02" },
-    { label: "Founder", href: "/#founder", num: "03" },
+    { label: "Founder", href: "/founder", num: "03" },
     { label: "Case Studies", href: "/case-studies", num: "04" },
     { label: "Portfolio", href: "/portfolio", num: "05" },
     {
