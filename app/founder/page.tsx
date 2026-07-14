@@ -57,9 +57,9 @@ export default function FounderPage() {
 
           <div className={`${styles.container} relative z-10`}>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-              
+
               {/* Left Column: Intro */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -35 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
@@ -105,7 +105,7 @@ export default function FounderPage() {
               </motion.div>
 
               {/* Right Column: High Quality Styled Image */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
@@ -114,17 +114,17 @@ export default function FounderPage() {
                 <div className="relative group">
                   {/* Glowing visual effect behind image */}
                   <div className="absolute -inset-1.5 rounded-3xl bg-linear-to-tr from-primary to-orange-500 opacity-20 dark:opacity-30 blur-lg group-hover:opacity-40 transition-opacity duration-700 pointer-events-none" />
-                  
+
                   {/* Animated boundary elements */}
                   <div className="absolute inset-0 border border-primary/20 border-dashed rounded-3xl animate-[spin_120s_linear_infinite] pointer-events-none scale-102" />
-                  
+
                   <div className="relative w-80 h-80 sm:w-96 sm:h-96 rounded-3xl border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-2xl bg-zinc-100 dark:bg-zinc-900">
-                    <img 
-                      src="/founder.jpg" 
-                      alt="Muhammad Bilal - Founder of Manzarkash Digital" 
+                    <img
+                      src="/founder.jpg"
+                      alt="Muhammad Bilal - Founder of Manzarkash Digital"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
                     />
-                    
+
                     {/* Dark gradient overlay at the bottom */}
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 pt-16 flex flex-col justify-end text-left pointer-events-none">
                       <p className="text-xs font-mono tracking-widest text-primary font-bold uppercase">
@@ -146,8 +146,8 @@ export default function FounderPage() {
         <section className="py-20 md:py-28 relative w-full border-b border-zinc-150 dark:border-zinc-900">
           <div className={styles.container}>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -169,7 +169,7 @@ export default function FounderPage() {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -203,7 +203,7 @@ export default function FounderPage() {
               </p>
             </div>
 
-            <motion.div 
+            <motion.div
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -235,15 +235,15 @@ export default function FounderPage() {
         </section>
 
         {/* Interactive Quote / Callout Section */}
-        <section className="py-24 text-center relative w-full overflow-hidden">
+        <section className="py-24 text-center relative w-full overflow-hidden border-t border-zinc-150 dark:border-zinc-900">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none opacity-10 bg-primary/20 blur-[140px]" />
-          
-          <div className={`${styles.container} max-w-4xl space-y-8 relative z-10`}>
-            <FiMessageSquare className="w-12 h-12 text-primary/40 mx-auto" />
-            <h2 className="font-michroma text-xl sm:text-3xl leading-relaxed text-zinc-900 dark:text-white max-w-3xl mx-auto italic font-normal">
+
+          <div className={`${styles.container} max-w-4xl space-y-6 relative z-10`}>
+            <Eyebrow>FOUNDER CONVICTION</Eyebrow>
+            <blockquote className="font-michroma text-lg sm:text-2xl leading-relaxed text-zinc-900 dark:text-white max-w-3xl mx-auto italic font-light block pt-4">
               "Digital success is built on high-ROI marketing strategies and high-performance technology. We align user acquisition campaigns and robust web architectures under one unified growth workflow."
-            </h2>
-            <div className="space-y-1">
+            </blockquote>
+            <div className="space-y-1 pt-2">
               <p className="font-michroma text-sm text-primary uppercase font-bold tracking-widest">
                 Muhammad Bilal
               </p>
@@ -251,7 +251,7 @@ export default function FounderPage() {
                 Founder, Manzarkash Digital Agency
               </p>
             </div>
-            
+
             <div className="pt-6">
               <Button
                 href="https://wa.me/923313936011"
