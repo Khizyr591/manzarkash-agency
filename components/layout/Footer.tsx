@@ -51,7 +51,7 @@ export default function Footer() {
           <div className="lg:col-span-5 space-y-6">
             <a
               href="/"
-              className={`${styles.heading_5} !text-xl md:!text-2xl !tracking-widest text-black dark:text-white`}
+              className={`${styles.heading_5} text-xl! md:text-2xl! tracking-widest! text-black dark:text-white`}
               aria-label="Manzarkash — Home"
             >
               MANZARKASH DIGITAL<span className="text-primary font-bold">.</span>
@@ -89,12 +89,12 @@ export default function Footer() {
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div className="space-y-4">
               <h4
-                className={`${styles.caption_text} !font-bold uppercase tracking-wider text-black dark:text-white`}
+                className={`${styles.caption_text} font-bold! uppercase tracking-wider text-black dark:text-white`}
               >
                 Services
               </h4>
               <ul
-                className={`space-y-2 text-zinc-500 dark:text-zinc-400 ${styles.span_text} !text-sm`}
+                className={`space-y-2 text-zinc-500 dark:text-zinc-400 ${styles.span_text} text-sm!`}
               >
                 <li>
                   <a
@@ -157,12 +157,12 @@ export default function Footer() {
 
             <div className="space-y-4">
               <h4
-                className={`${styles.caption_text} !font-bold uppercase tracking-wider text-black dark:text-white`}
+                className={`${styles.caption_text} font-bold! uppercase tracking-wider text-black dark:text-white`}
               >
                 Agency
               </h4>
               <ul
-                className={`space-y-2 text-zinc-500 dark:text-zinc-400 ${styles.span_text} !text-sm`}
+                className={`space-y-2 text-zinc-500 dark:text-zinc-400 ${styles.span_text} text-sm!`}
               >
                 <li>
                   <a
@@ -174,7 +174,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/#founder"
+                    href="/founder"
                     className="hover:text-primary transition-colors"
                   >
                     About Founder
@@ -211,17 +211,17 @@ export default function Footer() {
 
             <div className="space-y-4 col-span-2 sm:col-span-1">
               <h4
-                className={`${styles.caption_text} !font-bold uppercase tracking-wider text-black dark:text-white`}
+                className={`${styles.caption_text} font-bold! uppercase tracking-wider text-black dark:text-white`}
               >
                 Contact
               </h4>
               <p
-                className={`text-zinc-500 dark:text-zinc-400 leading-relaxed ${styles.span_text} !text-sm`}
+                className={`text-zinc-500 dark:text-zinc-400 leading-relaxed ${styles.span_text} text-sm!`}
               >
                 Office: SB-9, 13/C Main University Rd, Block 13-C Gulshan-e-Iqbal, Pakistan
               </p>
               <div
-                className={`space-y-1.5 pt-2 text-zinc-500 dark:text-zinc-400 ${styles.span_text} !text-sm`}
+                className={`space-y-1.5 pt-2 text-zinc-500 dark:text-zinc-400 ${styles.span_text} text-sm!`}
               >
                 <p>
                   Email:{" "}
@@ -253,11 +253,10 @@ export default function Footer() {
           className="mt-16 border-t border-zinc-100 dark:border-zinc-900/60 pt-16 overflow-hidden select-none"
         >
           <div
-            className={`text-[8.2vw] font-bold tracking-tighter leading-none text-primary/40 dark:text-primary/30 font-michroma text-center uppercase transition-all duration-1000 ease-out flex justify-center gap-[0.2vw] ${
-              isVisible
-                ? "translate-y-0 opacity-100 scale-100 skew-y-0"
-                : "translate-y-full opacity-0 scale-95 skew-y-6"
-            }`}
+            className={`text-[8.2vw] font-bold tracking-tighter leading-none text-primary/40 dark:text-primary/30 font-michroma text-center uppercase transition-all duration-1000 ease-out flex justify-center gap-[0.2vw] ${isVisible
+              ? "translate-y-0 opacity-100 scale-100 skew-y-0"
+              : "translate-y-full opacity-0 scale-95 skew-y-6"
+              }`}
             style={{ transformOrigin: "center top" }}
           >
             {words[wordIndex].split("").map((letter, index) => (

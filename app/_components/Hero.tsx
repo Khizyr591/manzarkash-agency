@@ -13,9 +13,6 @@ import Button from "@/components/ui/Button";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import HeroCursor from "@/components/ui/HeroCursor";
 
-const YT_SRC =
-  "https://www.youtube.com/embed/dhgoVb4X6uI?autoplay=1&mute=1&loop=1&playlist=dhgoVb4X6uI&controls=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3";
-
 const containerVariants = {
   hidden: {},
   visible: {
@@ -31,6 +28,44 @@ const itemVariants = {
     transition: { duration: 0.8, ease: "easeOut" },
   },
 } as const;
+
+const SafeVideo = ({ src, className }: { src: string; className?: string }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      const video = videoRef.current;
+      video.muted = true;
+      video.defaultMuted = true;
+
+      const playVideo = () => {
+        video.play().catch(() => {
+          // Ignore autoplay restriction failures
+        });
+      };
+
+      playVideo();
+
+      video.addEventListener("loadedmetadata", playVideo);
+      return () => {
+        video.removeEventListener("loadedmetadata", playVideo);
+      };
+    }
+  }, [src]);
+
+  return (
+    <video
+      ref={videoRef}
+      src={src.replace(/ /g, "%20")}
+      className={className}
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="metadata"
+    />
+  );
+};
 
 export default function Hero() {
   const [activeTooltip, setActiveTooltip] = useState(0);
@@ -222,13 +257,9 @@ export default function Hero() {
               </svg>
             </span>{" "}
             brands people{" "}
-            <span className="inline-block w-[32px] h-[56px] sm:w-[48px] sm:h-[84px] md:w-[64px] md:h-[112px] lg:w-[80px] lg:h-[140px] mx-1.5 md:mx-3 rounded-xl bg-black align-middle overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/40 hover:shadow-primary/10 transition-all duration-300 transform hover:scale-105 shadow-lg relative select-none">
-              <video
-                src="/VID_20260712_230114_219.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
+            <span className="inline-block w-[56px] h-[98px] sm:w-[64px] sm:h-[112px] md:w-[80px] md:h-[140px] lg:w-[96px] lg:h-[168px] mx-1.5 md:mx-3 rounded-xl bg-black align-middle overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/40 hover:shadow-primary/10 transition-all duration-300 transform hover:scale-105 shadow-lg relative select-none">
+              <SafeVideo
+                src="/1%20BTS%20MINE.mp4"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </span>{" "}
@@ -321,12 +352,8 @@ export default function Hero() {
             className="relative w-[28%] sm:w-[30%] aspect-9/16 rounded-2xl overflow-hidden border border-zinc-200/60 dark:border-zinc-800/60 shadow-2xl shadow-zinc-900/15 dark:shadow-black/50 bg-black hover:border-primary/45 transition-colors duration-300 z-10"
           >
             <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-primary/25 via-transparent to-transparent pointer-events-none z-10" />
-            <video
-              src="/VID_20260712_230114_219.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
+            <SafeVideo
+              src="/2 BTS.mp4"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
           </motion.div>
@@ -339,12 +366,8 @@ export default function Hero() {
             className="relative w-[32%] sm:w-[34%] aspect-9/16 rounded-2xl overflow-hidden border-2 border-primary/50 shadow-2xl shadow-primary/10 dark:shadow-primary/5 bg-black z-20 mx-[-3%]"
           >
             <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-primary/30 via-transparent to-transparent pointer-events-none z-10" />
-            <video
-              src="/VID_20260712_230119_762.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
+            <SafeVideo
+              src="/1%20BTS%20MINE.mp4"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
           </motion.div>
@@ -360,12 +383,8 @@ export default function Hero() {
             className="relative w-[28%] sm:w-[30%] aspect-9/16 rounded-2xl overflow-hidden border border-zinc-200/60 dark:border-zinc-800/60 shadow-2xl shadow-zinc-900/15 dark:shadow-black/50 bg-black hover:border-primary/45 transition-colors duration-300 z-10"
           >
             <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-primary/25 via-transparent to-transparent pointer-events-none z-10" />
-            <video
-              src="/VID_20260712_230138_054.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
+            <SafeVideo
+              src="/BTS EDIT.mp4"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
           </motion.div>

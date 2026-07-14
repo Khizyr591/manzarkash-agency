@@ -49,29 +49,31 @@ export default function Founder() {
               <Button href="#contact" variant="primary">
                 Work With Us
               </Button>
-              <Button href="/portfolio" variant="outline">
-                Explore Portfolio
+              <Button href="/founder" variant="outline">
+                Read Bilal&apos;s Story
               </Button>
             </div>
           </div>
 
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full border border-zinc-200 dark:border-zinc-800 flex items-center justify-center p-4 bg-zinc-50 dark:bg-zinc-900/40 shadow-xl overflow-hidden group">
-              <div className="absolute inset-0 rounded-full opacity-5 bg-radial from-primary to-transparent blur-md group-hover:opacity-10 transition-opacity duration-700" />
-              <div className="text-center space-y-4 relative z-10 p-6">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto text-primary">
-                  <FiTrendingUp className="w-8 h-8" />
+            <div className="relative group">
+              <div className="absolute -inset-1.5 rounded-3xl bg-linear-to-tr from-primary to-orange-500 opacity-20 dark:opacity-30 blur-lg group-hover:opacity-40 transition-opacity duration-700 pointer-events-none" />
+              <div className="absolute inset-0 border border-primary/20 border-dashed rounded-3xl animate-[spin_120s_linear_infinite] pointer-events-none scale-102" />
+              <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-3xl border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-2xl bg-zinc-50 dark:bg-zinc-900/40">
+                <img
+                  src="/founder.jpg"
+                  alt="Muhammad Bilal"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-6 text-left pointer-events-none">
+                  <p className="text-[10px] font-mono tracking-widest text-primary font-bold uppercase">
+                    Muhammad Bilal
+                  </p>
+                  <h3 className="font-michroma text-xs text-white tracking-wide uppercase mt-1">
+                    Founder & Director
+                  </h3>
                 </div>
-                <h3 className="font-michroma text-lg font-bold text-zinc-800 dark:text-zinc-100 tracking-wide uppercase">
-                  MANZARKASH DIGITAL
-                </h3>
-                <p className="text-[10px] font-mono tracking-widest text-zinc-450 dark:text-zinc-500 uppercase leading-relaxed max-w-[200px] mx-auto">
-                  ESTABLISHED IN 2021
-                  <br />
-                  PAKISTAN
-                </p>
               </div>
-              <div className="absolute inset-0 border border-primary/20 border-dashed rounded-full animate-[spin_60s_linear_infinite]" />
             </div>
           </div>
         </div>
