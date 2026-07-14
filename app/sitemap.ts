@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/services/seo", priority: 0.8, changeFrequency: "monthly" },
     { path: "/services/social-media", priority: 0.8, changeFrequency: "monthly" },
     { path: "/services/whatsapp-automation", priority: 0.8, changeFrequency: "monthly" },
-    { path: "/services/branding-packaging", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/services/branding", priority: 0.8, changeFrequency: "monthly" },
     { path: "/contact", priority: 0.7, changeFrequency: "yearly" },
   ];
 

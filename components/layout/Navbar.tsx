@@ -69,7 +69,7 @@ export default function Navbar() {
         { label: "Performance Ads", href: "/services/marketing-ads", desc: "Meta, Google, TikTok campaigns" },
         { label: "SEO & Content", href: "/services/seo", desc: "Technical SEO + local search" },
         { label: "Product Visuals", href: "/services/product-visuals", desc: "Studio-lit catalog & motion" },
-        { label: "Branding & Packaging", href: "/services/branding-packaging", desc: "Identity systems & pack design" },
+        { label: "Branding", href: "/services/branding", desc: "Identity systems & guidelines" },
         { label: "Social Media", href: "/services/social-media", desc: "Content & community growth" },
         { label: "WhatsApp Automation", href: "/services/whatsapp-automation", desc: "Cloud API bots & funnels" },
       ],
