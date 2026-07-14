@@ -111,16 +111,16 @@ export default function Services() {
       href: "/services/whatsapp-automation",
     },
     {
-      title: "Branding & Packaging Design",
-      desc: "Identity systems and print-ready packaging that make your product unmistakable on shelf and on-screen — from wordmark to dieline.",
+      title: "Branding & Identity Design",
+      desc: "Comprehensive visual systems and guidelines that establish an unmistakable identity across both digital and print channels.",
       points: [
         "Logo Suite & Typographic Scale",
         "Brand Color & Voice Guidelines",
-        "Print-Ready Packaging Dielines",
+        "Style Guides & Presentation Decks",
         "Working Figma Design System",
       ],
-      icon: <FiPackage className="w-6 h-6" />,
-      href: "/services/branding-packaging",
+      icon: <FiLayout className="w-6 h-6" />,
+      href: "/services/branding",
     },
   ];
 

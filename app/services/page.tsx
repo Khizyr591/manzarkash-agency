@@ -8,7 +8,7 @@ import {
   FiTrendingUp,
   FiCode,
   FiMessageSquare,
-  FiPackage,
+  FiLayout,
   FiArrowRight,
 } from "react-icons/fi";
 import Navbar from "@/components/layout/Navbar";
@@ -84,13 +84,13 @@ export default function ServicesPage() {
       highlights: ["Conversational Chatbot Flows", "E-Commerce Database Integrations", "Automatic Order Tracking Bot", "Agent Fallback Routing Webhooks"]
     },
     {
-      id: "branding-packaging",
-      title: "Branding & Packaging Design",
-      desc: "Identity systems and print-ready packaging design. From wordmark to dielines, we ship brand systems that hold up on-shelf and on a phone-sized product tile.",
-      icon: <FiPackage className="w-6 h-6 text-primary" />,
-      href: "/services/branding-packaging",
+      id: "branding",
+      title: "Branding & Identity Design",
+      desc: "Comprehensive visual systems and guidelines. We ship complete brand identity suites that hold up across both digital storefronts and physical print channels.",
+      icon: <FiLayout className="w-6 h-6 text-primary" />,
+      href: "/services/branding",
       glowColor: "rgba(217, 70, 239, 0.15)",
-      highlights: ["Logo Suite & Typographic Scale", "Brand Color & Voice Guidelines", "Print-Ready Packaging Dielines", "Working Figma Design System"]
+      highlights: ["Logo Suite & Typographic Scale", "Brand Color & Voice Guidelines", "Style Guides & Presentation Decks", "Working Figma Design System"]
     }
   ];
 

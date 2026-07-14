@@ -146,10 +146,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/services/branding-packaging"
+                    href="/services/branding"
                     className="hover:text-primary transition-colors"
                   >
-                    Branding & Packaging Design
+                    Branding Design
                   </a>
                 </li>
               </ul>

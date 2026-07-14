@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import {
   FiFeather,
-  FiPackage,
   FiLayers,
   FiBookOpen,
+  FiImage,
   FiArrowRight,
   FiCheck,
 } from "react-icons/fi";
@@ -15,25 +15,25 @@ import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import styles from "@/lib/styles";
 
-export default function BrandingPackagingPage() {
+export default function BrandingPage() {
   const steps = [
     {
       num: "01",
       title: "Discovery & Positioning",
-      desc: "Interviews with founders, competitor teardowns, and a shelf-audit for retail-facing brands. We surface the emotional territory only your brand can own before a single mark is drawn.",
+      desc: "Interviews with founders, competitor teardowns, and market audits. We surface the emotional territory only your brand can own before a single mark is drawn.",
       icon: <FiFeather className="w-5 h-5 text-primary" />,
     },
     {
       num: "02",
       title: "Identity System",
-      desc: "Logo suite, typographic scale, color palettes (screen + Pantone/CMYK), iconography, motion principles, and voice-of-brand guidelines — delivered as a working design system, not a static PDF.",
+      desc: "Logo suite, typographic scale, color palettes, iconography, motion principles, and voice-of-brand guidelines — delivered as a working design system, not a static PDF.",
       icon: <FiLayers className="w-5 h-5 text-primary" />,
     },
     {
       num: "03",
-      title: "Packaging & Structure",
-      desc: "Dielines, print-ready artwork, structural mockups for boxes, sleeves, bottles, and labels. Sampled and proofed with regional printers in Pakistan before mass production.",
-      icon: <FiPackage className="w-5 h-5 text-primary" />,
+      title: "Visual Assets & Touchpoints",
+      desc: "Bespoke print collateral, stationery design, digital mockups, campaign guidelines, and custom social templates to build the brand out to all its core touchpoints.",
+      icon: <FiImage className="w-5 h-5 text-primary" />,
     },
     {
       num: "04",
@@ -46,10 +46,10 @@ export default function BrandingPackagingPage() {
   const outcomes = [
     "Logo suite (primary, secondary, monogram, monochrome)",
     "Typographic scale with licensed brand fonts",
-    "Print-ready packaging dielines & artwork (PDF/AI)",
+    "Social media templates & digital banner files (Figma/AI)",
     "Screen + print color specifications (HEX, RGB, CMYK, Pantone)",
     "Working Figma design system + brand guideline PDF",
-    "Physical proofing samples from regional printers",
+    "Bespoke style guides & brand presentation templates",
   ];
 
   const concepts = [
@@ -82,10 +82,10 @@ export default function BrandingPackagingPage() {
             <Eyebrow>BRAND DESIGN</Eyebrow>
             <h1 className={`${styles.heading_1} !text-4xl sm:!text-6xl !leading-[1.1] text-white uppercase tracking-wider`}>
               BRANDING <br />
-              <span className="text-primary">& PACKAGING DESIGN</span>
+              <span className="text-primary">& IDENTITY SYSTEMS</span>
             </h1>
             <p className={`${styles.paragraph} text-zinc-400 max-w-2xl mx-auto italic font-light`}>
-              Identity systems and print-ready packaging that make your product unmistakable on a Pakistan or UAE shelf — and on a phone-sized product tile.
+              Identity systems and design guidelines that make your product unmistakable across both digital storefronts and physical print channels.
             </p>
           </div>
         </section>
@@ -126,7 +126,7 @@ export default function BrandingPackagingPage() {
             <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
               <Eyebrow>OUR WORKFLOW</Eyebrow>
               <h2 className={`${styles.heading_2} text-white uppercase`}>
-                FROM POSITIONING TO PACKED PRODUCT
+                FROM POSITIONING TO DIGITAL DELIVERY
               </h2>
               <p className={`${styles.paragraph} text-zinc-400 max-w-2xl mx-auto font-light`}>
                 A four-phase process, each phase gated by founder sign-off before we move to the next.
@@ -197,19 +197,19 @@ export default function BrandingPackagingPage() {
                   KHAAS ATTIRE (PAKISTAN)
                 </h3>
                 <p className="text-xs text-zinc-400 font-poppins font-light leading-relaxed">
-                  We rebuilt Khaas Attire&apos;s identity from wordmark through packaging — new logo suite, custom typography, and dielines for their premium unstitched fabric boxes. Retail conversion on physical packaging lifted 34% within the first quarter.
+                  We rebuilt Khaas Attire&apos;s brand identity from wordmark upwards — creating a new logo suite, custom typography, and consistent color guidelines. Their refreshed digital storefront presence lifted conversions by 34% within the first quarter.
                 </p>
                 <div className="pt-2 flex items-center justify-between border-t border-zinc-800">
                   <div>
-                    <span className="text-3xl font-michroma font-bold text-primary">+34%</span>
+                    <span className="text-3xl font-michroma font-bold text-primary">34%</span>
                     <p className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase mt-0.5">
-                      IN-STORE CONVERSION
+                      CONVERSION IMPROVEMENT
                     </p>
                   </div>
                   <div>
                     <span className="text-3xl font-michroma font-bold text-primary">2.1×</span>
                     <p className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase mt-0.5">
-                      UNBOXING SHARE RATE
+                      BRAND RETENTION RATE
                     </p>
                   </div>
                 </div>
@@ -225,8 +225,8 @@ export default function BrandingPackagingPage() {
               MAKE YOUR BRAND<br />
               <span className="text-primary">UNMISTAKABLE.</span>
             </h2>
-            <p className={`${styles.paragraph} text-zinc-405 max-w-2xl mx-auto font-light`}>
-              Book a brand audit call. We&apos;ll review your current identity, packaging, and shelf presence — and scope a rebrand roadmap you can act on.
+            <p className={`${styles.paragraph} text-zinc-400 max-w-2xl mx-auto font-light`}>
+              Book a brand audit call. We&apos;ll review your current identity, typographic scaling, and visual guidelines — and scope a brand design roadmap you can act on.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
