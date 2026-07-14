@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BrandLogos } from "@/components/ui/BrandLogos";
 import Eyebrow from "@/components/ui/Eyebrow";
+import styles from "@/lib/styles";
 
 export default function ClientLogos() {
   const groups = [
@@ -30,7 +31,7 @@ export default function ClientLogos() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-14 relative z-10 flex flex-col items-center gap-3">
         <Eyebrow>OUR CLIENT NETWORK</Eyebrow>
-        <h2 className="text-3xl md:text-5xl font-michroma font-bold text-center bg-linear-to-b from-white via-zinc-100 to-zinc-500 bg-clip-text text-transparent tracking-tight leading-normal">
+        <h2 className={`${styles.heading_2} uppercase text-center bg-linear-to-b from-white via-zinc-100 to-zinc-500 bg-clip-text text-transparent`}>
           Trusted by the best companies
         </h2>
         <p className="text-zinc-400 text-center font-poppins text-sm md:text-base mt-2 max-w-xl mx-auto tracking-wide">

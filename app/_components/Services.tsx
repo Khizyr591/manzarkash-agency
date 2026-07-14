@@ -138,7 +138,9 @@ export default function Services() {
           className="text-center max-w-3xl mx-auto space-y-4 mb-16 md:mb-24"
         >
           <Eyebrow>OUR SERVICES</Eyebrow>
-          <h2 className={styles.heading_2}>ROI-DRIVEN DIGITAL CAPABILITIES</h2>
+          <h2 className={`${styles.heading_2} bg-linear-to-b from-zinc-900 via-zinc-800 to-zinc-500 dark:from-white dark:via-zinc-200 dark:to-zinc-500 bg-clip-text text-transparent`}>
+            ROI-DRIVEN DIGITAL CAPABILITIES
+          </h2>
           <p className={styles.paragraph}>
             Engineered to remove bottlenecks and scale customer acquisition
             channels smoothly.
