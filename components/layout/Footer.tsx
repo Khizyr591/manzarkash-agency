@@ -130,6 +130,14 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
+                    href="/services/production-video-ads"
+                    className="hover:text-primary transition-colors"
+                  >
+                    Production & Video Ads
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="/services/ecommerce"
                     className="hover:text-primary transition-colors"
                   >

@@ -68,6 +68,7 @@ export default function Navbar() {
         { label: "E-Commerce Engineering", href: "/services/ecommerce", desc: "Shopify Plus & Next.js storefronts" },
         { label: "Performance Ads", href: "/services/marketing-ads", desc: "Meta, Google, TikTok campaigns" },
         { label: "SEO & Content", href: "/services/seo", desc: "Technical SEO + local search" },
+        { label: "Production & Video Ads", href: "/services/production-video-ads", desc: "Direct-response video creatives & hooks" },
         { label: "Product Visuals", href: "/services/product-visuals", desc: "Studio-lit catalog & motion" },
         { label: "Branding", href: "/services/branding", desc: "Identity systems & guidelines" },
         { label: "Social Media", href: "/services/social-media", desc: "Content & community growth" },
