@@ -10,6 +10,7 @@ import {
   FiPackage,
   FiCheck,
   FiArrowRight,
+  FiVideo,
 } from "react-icons/fi";
 import { motion } from "framer-motion";
 import styles from "@/lib/styles";
@@ -85,6 +86,18 @@ export default function Services() {
       ],
       icon: <FiTrendingUp className="w-6 h-6" />,
       href: "/services/seo",
+    },
+    {
+      title: "Production & Video Ads",
+      desc: "High-retention video creatives and direct-response hooks designed to scale campaign ROAS and engagement.",
+      points: [
+        "Hook & Storyboard Development",
+        "Dynamic Captions & Motion Design",
+        "Direct-Response Video Retainers",
+        "Platform-Optimized Creator Shoots",
+      ],
+      icon: <FiVideo className="w-6 h-6" />,
+      href: "/services/production-video-ads",
     },
     {
       title: "E-Commerce & Custom Portfolios",

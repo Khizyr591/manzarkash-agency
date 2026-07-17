@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/services/marketing-ads", priority: 0.8, changeFrequency: "monthly" },
     { path: "/services/product-visuals", priority: 0.8, changeFrequency: "monthly" },
     { path: "/services/seo", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/services/production-video-ads", priority: 0.8, changeFrequency: "monthly" },
     { path: "/services/social-media", priority: 0.8, changeFrequency: "monthly" },
     { path: "/services/whatsapp-automation", priority: 0.8, changeFrequency: "monthly" },
     { path: "/services/branding", priority: 0.8, changeFrequency: "monthly" },

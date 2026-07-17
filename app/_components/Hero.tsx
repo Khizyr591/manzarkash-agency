@@ -11,7 +11,6 @@ import {
 import styles from "@/lib/styles";
 import Button from "@/components/ui/Button";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
-import HeroCursor from "@/components/ui/HeroCursor";
 
 const containerVariants = {
   hidden: {},
@@ -72,8 +71,6 @@ export default function Hero() {
   const [mounted, setMounted] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
 
-  const [isHoveringHero, setIsHoveringHero] = useState(false);
-
   useEffect(() => {
     setMounted(true);
     const timer = setInterval(() => {
@@ -122,9 +119,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      onMouseEnter={() => setIsHoveringHero(true)}
-      onMouseLeave={() => setIsHoveringHero(false)}
-      className="relative overflow-visible min-h-screen flex flex-col bg-linear-to-b from-transparent to-zinc-50/50 dark:to-zinc-950/20 md:cursor-none"
+      className="relative overflow-visible min-h-screen flex flex-col bg-linear-to-b from-transparent to-zinc-50/50 dark:to-zinc-950/20"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div
@@ -391,7 +386,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {mounted && <HeroCursor isHovering={isHoveringHero} />}
     </section>
   );
 }

@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { FiMail, FiMapPin, FiCheck } from "react-icons/fi";
+import { FiMail, FiMapPin, FiCheck, FiChevronDown } from "react-icons/fi";
 import { motion } from "framer-motion";
 import styles from "@/lib/styles";
 import Eyebrow from "@/components/ui/Eyebrow";
@@ -30,8 +30,9 @@ export default function Contact() {
     name: "",
     email: "",
     website: "",
+    service: "custom",
     market: "both",
-    budget: "under-1000",
+    budget: "50000",
     message: ""
   });
   const [submitted, setSubmitted] = useState(false);
@@ -44,8 +45,9 @@ export default function Contact() {
         name: "",
         email: "",
         website: "",
+        service: "custom",
         market: "both",
-        budget: "under-1000",
+        budget: "50000",
         message: ""
       });
       setSubmitted(false);
@@ -170,7 +172,7 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <motion.div variants={itemVariants} className="space-y-2">
-                    <label className={styles.label_text}>Website URL (Optional)</label>
+                    <label className={styles.label_text}>Your Niche / Current Website URL (if any)</label>
                     <input
                       type="url"
                       value={formData.website}
@@ -182,29 +184,76 @@ export default function Contact() {
 
                   <motion.div variants={itemVariants} className="space-y-2">
                     <label className={styles.label_text}>Target Audience Focus</label>
-                    <select
-                      value={formData.market}
-                      onChange={(e) => setFormData({ ...formData, market: e.target.value })}
-                      className={`w-full px-4 py-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all ${styles.input_text}`}
-                    >
-                      <option value="pakistan">Pakistan market</option>
-                      <option value="uae">UAE market</option>
-                      <option value="both">Both markets (Pakistan & UAE)</option>
-                    </select>
+                    <div className="relative w-full">
+                      <select
+                        value={formData.market}
+                        onChange={(e) => setFormData({ ...formData, market: e.target.value })}
+                        className={`w-full px-4 py-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none pr-10 ${styles.input_text}`}
+                      >
+                        <option value="pakistan">Pakistan market (Domestic)</option>
+                        <option value="gulf">Gulf / Middle East (UAE, KSA, GCC)</option>
+                        <option value="western">Western Markets (US, UK, EU, Canada)</option>
+                        <option value="global">Global / Cross-Border Audience</option>
+                      </select>
+                      <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-zinc-500 dark:text-zinc-400">
+                        <FiChevronDown className="w-4 h-4" />
+                      </div>
+                    </div>
                   </motion.div>
                 </div>
 
                 <motion.div variants={itemVariants} className="space-y-2">
-                  <label className={styles.label_text}>Monthly Budget Scope</label>
-                  <select
+                  <label className={styles.label_text}>Services Required</label>
+                  <div className="relative w-full">
+                    <select
+                      value={formData.service}
+                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                      className={`w-full px-4 py-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none pr-10 ${styles.input_text}`}
+                    >
+                      <option value="custom">Custom Solution</option>
+                      <option value="ecommerce">E-Commerce Engineering</option>
+                      <option value="marketing-ads">Performance Ads & Marketing</option>
+                      <option value="seo">SEO & Content Solutions</option>
+                      <option value="production-video-ads">Production & Video Ads</option>
+                      <option value="product-visuals">Product Visuals & Creatives</option>
+                      <option value="branding">Branding & Identity Design</option>
+                      <option value="social-media">Social Media Handling</option>
+                      <option value="whatsapp-automation">WhatsApp Automation</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-zinc-500 dark:text-zinc-400">
+                      <FiChevronDown className="w-4 h-4" />
+                    </div>
+                  </div>
+                </motion.div>
+
+                <motion.div variants={itemVariants} className="space-y-3">
+                  <div className="flex justify-between items-baseline">
+                    <label className={styles.label_text}>Monthly Budget Scope (PKR)</label>
+                    <span className="text-sm font-mono font-bold text-primary">
+                      {(() => {
+                        const num = parseInt(formData.budget, 10);
+                        if (num >= 500000) return "PKR 500,000+ (5 Lac+)";
+                        if (num >= 100000) {
+                          const lacs = (num / 100000).toFixed(1).replace(/\.0$/, "");
+                          return `PKR ${num.toLocaleString()} (${lacs} Lac)`;
+                        }
+                        return `PKR ${num.toLocaleString()}`;
+                      })()}
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min="50000"
+                    max="500000"
+                    step="25000"
                     value={formData.budget}
                     onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className={`w-full px-4 py-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all ${styles.input_text}`}
-                  >
-                    <option value="under-1000">Under $1,000 / month (or equivalent PKR)</option>
-                    <option value="1000-5000">$1,000 - $5,000 / month</option>
-                    <option value="5000-plus">$5,000+ / month (Enterprise)</option>
-                  </select>
+                    className="w-full h-2 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-primary focus:outline-none"
+                  />
+                  <div className="flex justify-between text-[10px] text-zinc-400 dark:text-zinc-500 font-mono">
+                    <span>PKR 50,000 (50k)</span>
+                    <span>PKR 500,000+ (5 Lac+)</span>
+                  </div>
                 </motion.div>
 
                 <motion.div variants={itemVariants} className="space-y-2">

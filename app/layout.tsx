@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Michroma, Poppins } from "next/font/google";
 import "./globals.css";
 import Preloader from "@/components/layout/Preloader";
+import HeroCursor from "@/components/ui/HeroCursor";
 
 const michroma = Michroma({
   weight: "400",
@@ -108,6 +109,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <Preloader>{children}</Preloader>
+        <HeroCursor />
       </body>
     </html>
   );

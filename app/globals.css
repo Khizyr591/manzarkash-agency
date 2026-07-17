@@ -147,3 +147,9 @@ h6 {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@media (min-width: 768px) {
+  body, a, button, select, [role="button"] {
+    cursor: none !important;
+  }
+}

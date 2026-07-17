@@ -10,6 +10,7 @@ import {
   FiMessageSquare,
   FiLayout,
   FiArrowRight,
+  FiVideo,
 } from "react-icons/fi";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -64,6 +65,15 @@ export default function ServicesPage() {
       href: "/services/seo",
       glowColor: "rgba(16, 185, 129, 0.15)",
       highlights: ["Local Search Domination", "Core Web Vitals Speed Hardening", "Competitor Keyword Scoping", "High-Authority Link Outreach"]
+    },
+    {
+      id: "production-video-ads",
+      title: "Production & Video Ads",
+      desc: "High-retention video creatives designed to scale paid campaigns. We handle complete scripting, hook editing, dynamic motion graphics, and creator content management.",
+      icon: <FiVideo className="w-6 h-6 text-primary" />,
+      href: "/services/production-video-ads",
+      glowColor: "rgba(239, 68, 68, 0.15)",
+      highlights: ["Hook & Angle Development", "Dynamic Subtitle & Motion Graphic SFX", "Direct-Response Scriptwriting", "Platform-Optimized Creator Assets"]
     },
     {
       id: "ecommerce",
