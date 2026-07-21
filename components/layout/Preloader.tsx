@@ -53,7 +53,7 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
               <span
                 className={`${styles.heading_6} text-[10px]! md:text-xs! tracking-[0.2em] text-zinc-500 uppercase`}
               >
-                Manzarkash Digital
+                Manzarkash
               </span>
               <span
                 className={`${styles.caption_text} text-[10px]! md:text-xs! tracking-[0.2em] text-zinc-500 uppercase font-light!`}
@@ -68,16 +68,24 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-                className={`${styles.heading_1} !text-lg min-[360px]:!text-xl min-[480px]:!text-2xl sm:!text-4xl md:!text-6xl lg:!text-7xl tracking-[0.18em] text-white font-normal text-center select-none mr-[-0.18em]`}
+                className={`${styles.heading_1} text-lg! min-[360px]:text-xl! min-[480px]:text-2xl! sm:text-4xl! md:text-6xl! lg:text-7xl! tracking-[0.18em] text-white font-normal text-center select-none mr-[-0.18em]`}
               >
-                MANZARKASH DIGITAL
+                MANZARKASH
               </motion.h2>
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 1.4, ease: "easeInOut", delay: 0.3 }}
-                className="h-[2px] bg-primary w-24 sm:w-36 mt-6 origin-center shadow-[0_0_8px_#f54e0e]"
+                className="h-0.5 bg-primary w-full max-w-60 min-[360px]:max-w-75 sm:max-w-120 md:max-w-175 lg:max-w-205 mt-6 origin-center shadow-[0_0_8px_#f54e0e]"
               />
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+                className="text-[10px] sm:text-xs md:text-sm font-mono tracking-[0.35em] text-zinc-400 uppercase mt-4 text-center mr-[-0.35em]"
+              >
+                DIGITAL MARKETING AGENCY
+              </motion.p>
             </div>
 
 
@@ -89,7 +97,7 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
                   Est. 2024 - {currentYear} / Pakistan
                 </span>
                 <p
-                  className={`${styles.caption_text} !text-zinc-400 !leading-relaxed !font-light`}
+                  className={`${styles.caption_text} text-zinc-400! leading-relaxed! font-light!`}
                 >
                   Scaling brands through performance marketing campaigns, search optimization (SEO), and custom web apps.
                 </p>
@@ -109,7 +117,7 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
                   </span>
                 </div>
 
-                <div className="w-56 sm:w-72 h-[3px] bg-zinc-900 rounded-full overflow-hidden relative">
+                <div className="w-56 sm:w-72 h-0.75 bg-zinc-900 rounded-full overflow-hidden relative">
                   <motion.div
                     className="absolute inset-y-0 left-0 bg-primary shadow-[0_0_8px_rgba(245,78,14,0.5)]"
                     style={{ width: `${progress}%` }}

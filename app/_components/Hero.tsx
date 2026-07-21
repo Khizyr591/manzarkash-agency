@@ -11,6 +11,7 @@ import {
 import styles from "@/lib/styles";
 import Button from "@/components/ui/Button";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import SafeVideo from "@/components/ui/SafeVideo";
 
 const containerVariants = {
   hidden: {},
@@ -27,44 +28,6 @@ const itemVariants = {
     transition: { duration: 0.8, ease: "easeOut" },
   },
 } as const;
-
-const SafeVideo = ({ src, className }: { src: string; className?: string }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      const video = videoRef.current;
-      video.muted = true;
-      video.defaultMuted = true;
-
-      const playVideo = () => {
-        video.play().catch(() => {
-          // Ignore autoplay restriction failures
-        });
-      };
-
-      playVideo();
-
-      video.addEventListener("loadedmetadata", playVideo);
-      return () => {
-        video.removeEventListener("loadedmetadata", playVideo);
-      };
-    }
-  }, [src]);
-
-  return (
-    <video
-      ref={videoRef}
-      src={src.replace(/ /g, "%20")}
-      className={className}
-      autoPlay
-      loop
-      muted
-      playsInline
-      preload="metadata"
-    />
-  );
-};
 
 export default function Hero() {
   const [activeTooltip, setActiveTooltip] = useState(0);
@@ -254,7 +217,7 @@ export default function Hero() {
             brands people{" "}
             <span className="inline-block w-[56px] h-[98px] sm:w-[64px] sm:h-[112px] md:w-[80px] md:h-[140px] lg:w-[96px] lg:h-[168px] mx-1.5 md:mx-3 rounded-xl bg-black align-middle overflow-hidden border border-zinc-200/50 dark:border-zinc-800/50 hover:border-primary/40 hover:shadow-primary/10 transition-all duration-300 transform hover:scale-105 shadow-lg relative select-none">
               <SafeVideo
-                src="/1%20BTS%20MINE.mp4"
+                src="/UGC Lushly.mp4"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </span>{" "}
@@ -348,7 +311,7 @@ export default function Hero() {
           >
             <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-primary/25 via-transparent to-transparent pointer-events-none z-10" />
             <SafeVideo
-              src="/2 BTS.mp4"
+              src="/fashion shoot BTS 2.mp4"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
           </motion.div>
@@ -362,7 +325,7 @@ export default function Hero() {
           >
             <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-primary/30 via-transparent to-transparent pointer-events-none z-10" />
             <SafeVideo
-              src="/1%20BTS%20MINE.mp4"
+              src="/Fashion Shoot BTS 4.mp4"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
           </motion.div>
@@ -379,7 +342,7 @@ export default function Hero() {
           >
             <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-primary/25 via-transparent to-transparent pointer-events-none z-10" />
             <SafeVideo
-              src="/BTS EDIT.mp4"
+              src="/fashion shoot BTS 3.mp4"
               className="absolute inset-0 w-full h-full object-cover z-0"
             />
           </motion.div>

@@ -54,7 +54,7 @@ export default function Footer() {
               className={`${styles.heading_5} text-xl! md:text-2xl! tracking-widest! text-black dark:text-white`}
               aria-label="Manzarkash — Home"
             >
-              MANZARKASH DIGITAL<span className="text-primary font-bold">.</span>
+              MANZARKASH<span className="text-primary font-bold">.</span>
             </a>
             <p
               className={`${styles.paragraph_sm} text-zinc-500 dark:text-zinc-400 italic max-w-sm`}
