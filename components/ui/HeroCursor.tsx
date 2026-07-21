@@ -73,10 +73,10 @@ export default function HeroCursor() {
       const target = e.target as HTMLElement;
       if (!target) return;
 
-      const interactiveEl = target.closest("a") || 
-                            target.closest("button") || 
-                            target.closest('[role="button"]') ||
-                            (window.getComputedStyle(target).cursor === "pointer" ? target : null);
+      const interactiveEl = target.closest("a") ||
+        target.closest("button") ||
+        target.closest('[role="button"]') ||
+        (window.getComputedStyle(target).cursor === "pointer" ? target : null);
 
       if (interactiveEl) {
         setStickyElement(interactiveEl as HTMLElement);
@@ -135,7 +135,7 @@ export default function HeroCursor() {
             animate={{
               opacity: isHovering ? 0 : 1,
             }}
-            className="absolute w-[48px] h-[48px] rounded-full border border-primary/50 bg-primary/5 shadow-[0_0_15px_rgba(245,78,14,0.18)] flex items-center justify-center"
+            className="absolute w-12 h-12 rounded-full border border-primary/50 bg-primary/5 shadow-[0_0_15px_rgba(245,78,14,0.18)] flex items-center justify-center"
           >
             {/* Center target crosshair inside default ring */}
             <div className="w-1.5 h-1.5 rounded-full bg-primary/45" />
@@ -158,7 +158,7 @@ export default function HeroCursor() {
             transition={{ duration: 0.2 }}
             className="absolute inset-0 w-full h-full flex items-center justify-center"
           >
-            <div className="absolute inset-4 rounded-full bg-[radial-gradient(circle_at_center,rgba(245,78,14,0.12)_0%,rgba(10,10,10,0.85)_80%)] backdrop-blur-[4px] border border-primary/35 shadow-[0_0_25px_rgba(245,78,14,0.25)]" />
+            <div className="absolute inset-4 rounded-full bg-[radial-gradient(circle_at_center,rgba(245,78,14,0.12)_0%,rgba(10,10,10,0.85)_80%)] backdrop-blur-xs border border-primary/35 shadow-[0_0_25px_rgba(245,78,14,0.25)]" />
             <svg viewBox="0 0 100 100" className="w-full h-full animate-spin [animation-duration:10s] drop-shadow-[0_3px_10px_rgba(245,78,14,0.35)] relative z-10">
               <defs>
                 <path
@@ -174,18 +174,18 @@ export default function HeroCursor() {
               </text>
             </svg>
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
-              <motion.svg 
+              <motion.svg
                 animate={{
                   scale: isClicking ? 0.7 : 1,
                   rotate: isClicking ? 45 : 0,
                 }}
                 transition={{ duration: 0.2 }}
-                className="w-6 h-6 text-primary" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="3.2" 
-                strokeLinecap="round" 
+                className="w-6 h-6 text-primary"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3.2"
+                strokeLinecap="round"
                 strokeLinejoin="round"
               >
                 <line x1="7" y1="17" x2="17" y2="7" />

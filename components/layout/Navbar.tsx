@@ -147,7 +147,7 @@ export default function Navbar() {
               className={`${styles.heading_5} text-lg! sm:text-xl! md:text-2xl! tracking-widest! text-black dark:text-white shrink-0`}
               aria-label="Manzarkash Digital Agency — Home"
             >
-              MANZARKASH DIGITAL<span className="text-primary">.</span>
+              MANZARKASH<span className="text-primary">.</span>
             </a>
 
             <div className="hidden lg:flex items-center gap-7">
@@ -255,7 +255,7 @@ export default function Navbar() {
               }}
             >
               <div
-                className="absolute top-0 left-0 right-0 h-[2px] z-10"
+                className="absolute top-0 left-0 right-0 h-0.5 z-10"
                 style={{
                   background:
                     "linear-gradient(90deg, transparent, #f54e0e 40%, #fb923c 70%, transparent)",
@@ -279,7 +279,7 @@ export default function Navbar() {
                   <span
                     className={`${styles.heading_5} text-[0.95rem]! sm:text-[1.1rem]! tracking-widest! text-white leading-none`}
                   >
-                    MANZARKASH DIGITAL<span className="text-primary">.</span>
+                    MANZARKASH<span className="text-primary">.</span>
                   </span>
                 </div>
 
