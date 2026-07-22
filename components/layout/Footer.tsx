@@ -234,10 +234,10 @@ export default function Footer() {
                 <p>
                   Email:{" "}
                   <a
-                    href="mailto:info@manzarkash.com"
+                    href="mailto:manzarkashdigitalagency@gmail.com"
                     className="hover:text-primary transition-colors text-black dark:text-white font-semibold"
                   >
-                    info@manzarkash.com
+                    manzarkashdigitalagency@gmail.com
                   </a>
                 </p>
                 <p>

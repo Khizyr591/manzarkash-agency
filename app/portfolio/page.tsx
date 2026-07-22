@@ -9,19 +9,23 @@ import {
   FiCpu, 
   FiExternalLink, 
   FiArrowRight,
-  FiAward
+  FiAward,
+  FiBookOpen,
+  FiFileText,
+  FiFilm
 } from "react-icons/fi";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import styles from "@/lib/styles";
+import PdfPreviewModal from "@/components/ui/PdfPreviewModal";
 
 interface Project {
   id: string;
   title: string;
   client: string;
-  category: "development" | "marketing" | "photography" | "automation";
+  category: "development" | "marketing" | "photography" | "automation" | "branding" | "production";
   categoryLabel: string;
   metric: string;
   metricLabel: string;
@@ -30,13 +34,26 @@ interface Project {
   tech: string[];
   color: string;
   icon: React.ReactNode;
+  websiteUrl?: string;
+  pdfUrl?: string;
+  pdfLabel?: string;
+  videoUrl?: string;
+  videoLabel?: string;
 }
 
 export default function PortfolioPage() {
   const [filter, setFilter] = useState<string>("all");
+  const [selectedMedia, setSelectedMedia] = useState<{
+    url: string;
+    title: string;
+    websiteUrl?: string;
+    mediaType?: "pdf" | "video";
+  } | null>(null);
 
   const categories = [
     { id: "all", label: "ALL WORK" },
+    { id: "branding", label: "BRANDING & IDENTITY" },
+    { id: "production", label: "CREATIVE & VIDEO PRODUCTION" },
     { id: "photography", label: "CREATIVE AD DESIGN" },
     { id: "development", label: "WEB ENGINEERING" },
     { id: "marketing", label: "SEO & PERFORMANCE ADS" },
@@ -44,6 +61,134 @@ export default function PortfolioPage() {
   ];
 
   const projects: Project[] = [
+    {
+      id: "newbury",
+      title: "Bespoke Brand Identity & Web Storefront",
+      client: "Newbury UAE",
+      category: "branding",
+      categoryLabel: "Branding & Web Engineering",
+      metric: "100%",
+      metricLabel: "Bespoke Brandbook Guidelines",
+      desc: "Designed and engineered the signature brand identity system and responsive web platform for Newbury UAE. Authored the comprehensive brandbook guidelines defining wordmark typography, color scales, and visual hierarchy.",
+      deliverables: [
+        "Full brandbook guidelines PDF",
+        "Custom web storefront engineering",
+        "Responsive UI/UX design system",
+        "Multi-touchpoint collateral guidelines",
+      ],
+      tech: ["Brand Identity", "Brandbook PDF", "Next.js", "TailwindCSS", "Figma"],
+      color: "rgba(245, 78, 14, 0.18)",
+      icon: <FiBookOpen className="w-5 h-5 text-primary" />,
+      websiteUrl: "https://www.newbury.ae/",
+      pdfUrl: "/branding/Newbury Brandbook Final.pdf",
+      pdfLabel: "View Brandbook PDF",
+    },
+    {
+      id: "clutec",
+      title: "Enterprise Rebrand & Technical Web Architecture",
+      client: "Clutec Technology",
+      category: "branding",
+      categoryLabel: "Enterprise Web & Branding",
+      metric: "21.9MB",
+      metricLabel: "Full Web Architecture Deck",
+      desc: "Architected a multi-tiered brand guideline system (5.5MB) and complete 21.9MB technical web architecture design blueprint mapping enterprise recycling & technology workflows.",
+      deliverables: [
+        "5.5MB Clutec Branding Guideline System",
+        "21.9MB Technical Web Architecture Deck",
+        "Enterprise UI/UX Design System",
+        "Corporate Brand Positioning",
+      ],
+      tech: ["Enterprise Branding", "PDF Architecture", "Figma", "TailwindCSS"],
+      color: "rgba(59, 130, 246, 0.18)",
+      icon: <FiFileText className="w-5 h-5 text-primary" />,
+      pdfUrl: "/Clutec Website.pdf",
+      pdfLabel: "View Web Architecture PDF",
+    },
+    {
+      id: "herradura-villas",
+      title: "Luxury Real Estate & Villa Hospitality Guidelines",
+      client: "Herradura Villas",
+      category: "branding",
+      categoryLabel: "Luxury Hospitality & Branding",
+      metric: "7.5MB",
+      metricLabel: "Brand Document Guideline",
+      desc: "Developed a luxury real estate brand document to communicate exclusivity to ultra-high-net-worth investors — detailing typography, villa collateral guidelines, and color specs.",
+      deliverables: [
+        "7.5MB Herradura Villas Brand Document",
+        "Villa Collateral & Print Guidelines",
+        "Luxury Color Palette & Typography",
+        "Investor Presentation System",
+      ],
+      tech: ["Luxury Branding", "Brand Document PDF", "Typography", "Figma"],
+      color: "rgba(251, 146, 60, 0.18)",
+      icon: <FiBookOpen className="w-5 h-5 text-primary" />,
+      pdfUrl: "/branding/HV Brand Document.pdf",
+      pdfLabel: "View HV Brand PDF",
+    },
+    {
+      id: "lushly",
+      title: "UGC Video Campaign & Frozen Treat E-Commerce Funnels",
+      client: "Lushly (lushly.pk)",
+      category: "production",
+      categoryLabel: "Visual & FMCG Video Production",
+      metric: "+240%",
+      metricLabel: "UGC Video Conversion Rate",
+      desc: "Produced and edited authentic, high-converting UGC video campaign assets for Lushly — Pakistan's premier frozen fruit ice lollies brand (lushly.pk) — optimizing TikTok and Instagram Reels video ads to boost direct-to-consumer sales.",
+      deliverables: [
+        "High-Definition UGC Video Campaign",
+        "TikTok & Instagram Reel Cutdowns",
+        "FMCG Creative Scripting & Styling",
+        "Performance E-Commerce Integration",
+      ],
+      tech: ["UGC Production", "Video Editing", "TikTok Ads", "Meta Ads", "Shopify"],
+      color: "rgba(236, 72, 153, 0.18)",
+      icon: <FiFilm className="w-5 h-5 text-primary" />,
+      websiteUrl: "https://lushly.pk/",
+      videoUrl: "/UGC Lushly.mp4",
+      videoLabel: "Watch Lushly UGC Video",
+    },
+    {
+      id: "guzel",
+      title: "Seasonal Fashion Video Campaign & BTS",
+      client: "Guzel Fashion",
+      category: "production",
+      categoryLabel: "Creative Video Production",
+      metric: "4 BTS",
+      metricLabel: "Full Campaign Reel Cuts",
+      desc: "Directed on-location behind-the-scenes video coverage across 4 multi-cut vertical and horizontal video edits, powering organic Instagram feeds and high-fashion social ads.",
+      deliverables: [
+        "4 Multi-Cut Fashion Shoot BTS Videos",
+        "Vertical Reel & Horizontal Cuts",
+        "On-Location Creative Direction",
+        "Social Content Suite",
+      ],
+      tech: ["Fashion Production", "Video Editing", "Premiere Pro", "CapCut"],
+      color: "rgba(168, 85, 247, 0.18)",
+      icon: <FiFilm className="w-5 h-5 text-primary" />,
+      videoUrl: "/Fashion Shoot BTS.mp4",
+      videoLabel: "Watch Fashion BTS Video",
+    },
+    {
+      id: "fsbi",
+      title: "Commercial Video Production & Investor Content",
+      client: "For Sale By Investors",
+      category: "production",
+      categoryLabel: "Creative Video Production",
+      metric: "5.0MB",
+      metricLabel: "Commercial Video Asset",
+      desc: "Produced high-impact commercial video assets and behind-the-scenes shoots to anchor digital platform launches and investor presentation funnels.",
+      deliverables: [
+        "Commercial Production Video Asset",
+        "Music & Video Shoot Production",
+        "Investor Pitch Video Collateral",
+        "Social Micro-Video Assets",
+      ],
+      tech: ["Commercial Production", "Video Editing", "After Effects", "Figma"],
+      color: "rgba(16, 185, 129, 0.18)",
+      icon: <FiFilm className="w-5 h-5 text-primary" />,
+      videoUrl: "/Music Shoot BTS.mp4",
+      videoLabel: "Watch Commercial Video",
+    },
     {
       id: "zylora",
       title: "Custom Shopify Engine & Global Growth",
@@ -161,6 +306,16 @@ export default function PortfolioPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black text-zinc-900 dark:text-zinc-50 transition-colors duration-300">
+      {selectedMedia && (
+        <PdfPreviewModal
+          isOpen={!!selectedMedia}
+          onClose={() => setSelectedMedia(null)}
+          pdfUrl={selectedMedia.url}
+          title={selectedMedia.title}
+          websiteUrl={selectedMedia.websiteUrl}
+          mediaType={selectedMedia.mediaType}
+        />
+      )}
       <Navbar />
 
       <main className="flex flex-col">
@@ -284,6 +439,54 @@ export default function PortfolioPage() {
                           ))}
                         </div>
                       </div>
+
+                      {(proj.websiteUrl || proj.pdfUrl || proj.videoUrl) && (
+                        <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-zinc-200/50 dark:border-zinc-800/50">
+                          {proj.websiteUrl && (
+                            <a
+                              href={proj.websiteUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-mono bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-semibold hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-colors"
+                            >
+                              <span>Visit Live Website</span>
+                              <FiExternalLink className="w-3.5 h-3.5" />
+                            </a>
+                          )}
+                          {proj.pdfUrl && (
+                            <button
+                              onClick={() =>
+                                setSelectedMedia({
+                                  url: proj.pdfUrl!,
+                                  title: `${proj.client} — Brand & Architecture Document`,
+                                  websiteUrl: proj.websiteUrl,
+                                  mediaType: "pdf",
+                                })
+                              }
+                              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-mono bg-primary/10 hover:bg-primary text-primary hover:text-white border border-primary/20 font-semibold transition-all cursor-pointer"
+                            >
+                              <FiFileText className="w-3.5 h-3.5" />
+                              <span>{proj.pdfLabel || "View PDF Document"}</span>
+                            </button>
+                          )}
+                          {proj.videoUrl && (
+                            <button
+                              onClick={() =>
+                                setSelectedMedia({
+                                  url: proj.videoUrl!,
+                                  title: `${proj.client} — Campaign Video Asset`,
+                                  websiteUrl: proj.websiteUrl,
+                                  mediaType: "video",
+                                })
+                              }
+                              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-mono bg-zinc-800 hover:bg-primary text-zinc-200 hover:text-white border border-zinc-700 font-semibold transition-all cursor-pointer"
+                            >
+                              <FiFilm className="w-3.5 h-3.5 text-primary group-hover:text-white" />
+                              <span>{proj.videoLabel || "Watch Video Asset"}</span>
+                            </button>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </motion.div>
                 ))}

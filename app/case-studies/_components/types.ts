@@ -11,4 +11,10 @@ export type CaseStudy = {
   stack: string[];
   summary: string;
   outcomes: string[];
+  websiteUrl?: string;
+  pdfUrl?: string;
+  pdfLabel?: string;
+  videoUrl?: string;
+  videoLabel?: string;
+  logoUrl?: string;
 };

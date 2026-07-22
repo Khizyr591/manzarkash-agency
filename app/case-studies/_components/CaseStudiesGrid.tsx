@@ -2,24 +2,34 @@
 
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiArrowUpRight, FiCheck } from "react-icons/fi";
+import { FiArrowUpRight, FiCheck, FiExternalLink, FiFileText, FiFilm } from "react-icons/fi";
 import styles from "@/lib/styles";
 import type { CaseStudy } from "./types";
+import PdfPreviewModal from "@/components/ui/PdfPreviewModal";
 
-const MARKETS = ["All", "Pakistan", "UAE"] as const;
+const MARKETS = ["All", "Pakistan", "UAE", "International"] as const;
 const CATEGORIES = [
   "All",
+  "Branding & Web Engineering",
+  "Enterprise Web & Branding",
+  "Luxury Hospitality & Branding",
+  "Visual Production",
+  "Creative Production",
   "E-Commerce Engineering",
   "Performance Ads",
   "SEO & Content",
-  "Visual Production",
   "WhatsApp Automation",
-  "Creative Production",
 ] as const;
 
 export default function CaseStudiesGrid({ cases }: { cases: CaseStudy[] }) {
   const [market, setMarket] = useState<(typeof MARKETS)[number]>("All");
   const [category, setCategory] = useState<(typeof CATEGORIES)[number]>("All");
+  const [selectedMedia, setSelectedMedia] = useState<{
+    url: string;
+    title: string;
+    websiteUrl?: string;
+    mediaType?: "pdf" | "video";
+  } | null>(null);
 
   const filtered = useMemo(
     () =>
@@ -33,6 +43,17 @@ export default function CaseStudiesGrid({ cases }: { cases: CaseStudy[] }) {
 
   return (
     <section className="py-16 md:py-24 relative w-full border-b border-zinc-150 dark:border-zinc-900">
+      {selectedMedia && (
+        <PdfPreviewModal
+          isOpen={!!selectedMedia}
+          onClose={() => setSelectedMedia(null)}
+          pdfUrl={selectedMedia.url}
+          title={selectedMedia.title}
+          websiteUrl={selectedMedia.websiteUrl}
+          mediaType={selectedMedia.mediaType}
+        />
+      )}
+
       <div className={styles.container}>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
           <div className="flex flex-wrap gap-2">
@@ -50,7 +71,7 @@ export default function CaseStudiesGrid({ cases }: { cases: CaseStudy[] }) {
               </button>
             ))}
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 max-w-2xl">
             {CATEGORIES.map((c) => (
               <button
                 key={c}
@@ -96,7 +117,19 @@ export default function CaseStudiesGrid({ cases }: { cases: CaseStudy[] }) {
                         {c.category}
                       </span>
                     </div>
-                    <FiArrowUpRight className="w-5 h-5 text-zinc-400 group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                    {c.websiteUrl ? (
+                      <a
+                        href={c.websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-zinc-400 hover:text-primary transition-colors"
+                        title="Visit website"
+                      >
+                        <FiArrowUpRight className="w-5 h-5 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                      </a>
+                    ) : (
+                      <FiArrowUpRight className="w-5 h-5 text-zinc-400 group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all" />
+                    )}
                   </div>
 
                   <div className="space-y-3">
@@ -150,6 +183,54 @@ export default function CaseStudiesGrid({ cases }: { cases: CaseStudy[] }) {
                       </span>
                     ))}
                   </div>
+
+                  {(c.websiteUrl || c.pdfUrl || c.videoUrl) && (
+                    <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-zinc-200/60 dark:border-zinc-800/60">
+                      {c.websiteUrl && (
+                        <a
+                          href={c.websiteUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-mono bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-semibold hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-colors"
+                        >
+                          <span>Visit Live Website</span>
+                          <FiExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      )}
+                      {c.pdfUrl && (
+                        <button
+                          onClick={() =>
+                            setSelectedMedia({
+                              url: c.pdfUrl!,
+                              title: `${c.client} — Brand & Architecture Document`,
+                              websiteUrl: c.websiteUrl,
+                              mediaType: "pdf",
+                            })
+                          }
+                          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-mono bg-primary/10 hover:bg-primary text-primary hover:text-white border border-primary/20 font-semibold transition-all cursor-pointer"
+                        >
+                          <FiFileText className="w-3.5 h-3.5" />
+                          <span>{c.pdfLabel || "View PDF Document"}</span>
+                        </button>
+                      )}
+                      {c.videoUrl && (
+                        <button
+                          onClick={() =>
+                            setSelectedMedia({
+                              url: c.videoUrl!,
+                              title: `${c.client} — Campaign Video Asset`,
+                              websiteUrl: c.websiteUrl,
+                              mediaType: "video",
+                            })
+                          }
+                          className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-mono bg-zinc-800 hover:bg-primary text-zinc-200 hover:text-white border border-zinc-700 font-semibold transition-all cursor-pointer"
+                        >
+                          <FiFilm className="w-3.5 h-3.5 text-primary group-hover:text-white" />
+                          <span>{c.videoLabel || "Watch Video Asset"}</span>
+                        </button>
+                      )}
+                    </div>
+                  )}
                 </div>
               </motion.article>
             ))}
