@@ -44,7 +44,7 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Send EmailJS admin notification email to info@manzarkash.com
+      // Send EmailJS admin notification email to manzarkashdigitalagency@gmail.com
       await sendAdminNotificationEmail(formData);
     } catch (err) {
       console.error("EmailJS notification error:", err);
@@ -106,8 +106,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className={`${styles.caption_text} text-zinc-500!`}>Email Us Directly</p>
-                    <a href="mailto:info@manzarkash.com" className={`hover:text-primary transition-colors ${styles.label_text} text-sm! text-black dark:text-white font-semibold`}>
-                      info@manzarkash.com
+                    <a href="mailto:manzarkashdigitalagency@gmail.com" className={`hover:text-primary transition-colors ${styles.label_text} text-sm! text-black dark:text-white font-semibold`}>
+                      manzarkashdigitalagency@gmail.com
                     </a>
                   </div>
                 </div>

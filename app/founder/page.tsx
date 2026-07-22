@@ -95,7 +95,7 @@ export default function FounderPage() {
                     <span>LinkedIn</span>
                   </a>
                   <a
-                    href="mailto:info@manzarkash.com"
+                    href="mailto:manzarkashdigitalagency@gmail.com"
                     className="flex items-center gap-2 text-sm font-poppins text-zinc-500 hover:text-primary transition-colors"
                   >
                     <FiMail className="w-4 h-4" />

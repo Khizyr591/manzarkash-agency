@@ -72,7 +72,7 @@ export async function sendAdminNotificationEmail(data: ContactFormData): Promise
       dateStyle: "full",
       timeStyle: "short",
     }),
-    to_email: "info@manzarkash.com",
+    to_email: "manzarkashdigitalagency@gmail.com",
     admin_recipient: "Manzarkash Leadership Team",
   };
 
