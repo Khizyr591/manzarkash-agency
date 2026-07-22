@@ -2,10 +2,11 @@
 
 import { useState, FormEvent } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { FiMail, FiMapPin, FiCheck, FiChevronDown } from "react-icons/fi";
+import { FiMail, FiMapPin, FiCheck, FiChevronDown, FiLoader } from "react-icons/fi";
 import { motion } from "framer-motion";
 import styles from "@/lib/styles";
 import Eyebrow from "@/components/ui/Eyebrow";
+import { sendAdminNotificationEmail } from "@/lib/emailjs";
 
 const containerVariants = {
   hidden: {},
@@ -33,25 +34,36 @@ export default function Contact() {
     service: "custom",
     market: "both",
     budget: "50000",
-    message: ""
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        website: "",
-        service: "custom",
-        market: "both",
-        budget: "50000",
-        message: ""
-      });
-      setSubmitted(false);
-    }, 3000);
+    setIsSubmitting(true);
+
+    try {
+      // Send EmailJS admin notification email to info@manzarkash.com
+      await sendAdminNotificationEmail(formData);
+    } catch (err) {
+      console.error("EmailJS notification error:", err);
+    } finally {
+      setIsSubmitting(false);
+      setSubmitted(true);
+      setTimeout(() => {
+        setFormData({
+          name: "",
+          email: "",
+          website: "",
+          service: "custom",
+          market: "both",
+          budget: "50000",
+          message: "",
+        });
+        setSubmitted(false);
+      }, 4000);
+    }
   };
 
   return (
@@ -270,12 +282,20 @@ export default function Contact() {
 
                 <motion.button
                   variants={itemVariants}
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.99 }}
+                  whileHover={{ scale: isSubmitting ? 1 : 1.01 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.99 }}
                   type="submit"
-                  className={`w-full py-4 text-center text-white bg-primary hover:bg-primary/90 rounded-xl transition-all shadow-md shadow-primary/10 hover:shadow-primary/20 duration-300 ${styles.button_text}`}
+                  disabled={isSubmitting}
+                  className={`w-full py-4 text-center text-white bg-primary hover:bg-primary/90 disabled:opacity-75 rounded-xl transition-all shadow-md shadow-primary/10 hover:shadow-primary/20 duration-300 ${styles.button_text} flex items-center justify-center gap-2`}
                 >
-                  Send Strategy Request
+                  {isSubmitting ? (
+                    <>
+                      <FiLoader className="w-5 h-5 animate-spin" />
+                      <span>Dispatching Request...</span>
+                    </>
+                  ) : (
+                    <span>Send Strategy Request</span>
+                  )}
                 </motion.button>
               </motion.form>
             )}

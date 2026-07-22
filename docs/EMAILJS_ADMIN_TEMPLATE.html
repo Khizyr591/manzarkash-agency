@@ -1,0 +1,402 @@
+<!--
+===================================================================
+EMAILJS DASHBOARD TEMPLATE CONFIGURATION
+===================================================================
+SUBJECT LINE FOR EMAILJS DASHBOARD:
+New Lead Request: {{from_name}} — {{service_name}}
+(Or use: {{subject}})
+
+TO EMAIL: info@manzarkash.com
+REPLY TO: {{from_email}}
+===================================================================
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Lead Request: {{from_name}} — {{service_name}}</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #09090b;
+      font-family:
+        &quot;Poppins&quot;,
+        -apple-system,
+        BlinkMacSystemFont,
+        &quot;Segoe UI&quot;,
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      color: #e4e4e7;
+      -webkit-font-smoothing: antialiased;
+    "
+  >
+    <table
+      width="100%"
+      border="0"
+      cellspacing="0"
+      cellpadding="0"
+      style="background-color: #09090b; padding: 40px 15px"
+    >
+      <tr>
+        <td align="center">
+          <!-- Main Card Container (Sharp Borders: border-radius 0) -->
+          <table
+            width="560"
+            border="0"
+            cellspacing="0"
+            cellpadding="0"
+            style="
+              background-color: #121215;
+              border-radius: 0px;
+              border: 1px solid #27272a;
+              overflow: hidden;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            "
+          >
+            <!-- Header (Sharp Accent Bar) -->
+            <tr>
+              <td
+                style="
+                  padding: 32px 32px 24px 32px;
+                  border-bottom: 1px solid #27272a;
+                  border-top: 3px solid #f54e0e;
+                "
+              >
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <span
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 18px;
+                          font-weight: 700;
+                          color: #ffffff;
+                          letter-spacing: 1px;
+                          text-transform: uppercase;
+                        "
+                      >
+                        MANZARKASH <span style="color: #f54e0e">AGENCY</span>
+                      </span>
+                    </td>
+                    <td align="right">
+                      <span
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 11px;
+                          font-weight: 600;
+                          color: #f54e0e;
+                          background-color: rgba(245, 78, 14, 0.1);
+                          border: 1px solid rgba(245, 78, 14, 0.25);
+                          border-radius: 0px;
+                          padding: 4px 10px;
+                          text-transform: uppercase;
+                        "
+                      >
+                        NEW AUDIT REQUEST
+                      </span>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Content Body -->
+            <tr>
+              <td style="padding: 32px">
+                <p
+                  style="
+                    margin: 0 0 24px 0;
+                    font-family: &quot;Poppins&quot;, sans-serif;
+                    font-size: 14px;
+                    color: #a1a1aa;
+                    font-weight: 400;
+                    line-height: 1.6;
+                  "
+                >
+                  You received a new strategy request from
+                  <strong style="color: #ffffff">{{from_name}}</strong>.
+                </p>
+
+                <!-- Subject Summary Banner (Sharp Borders: border-radius 0) -->
+                <div
+                  style="
+                    background-color: #18181c;
+                    border-left: 3px solid #f54e0e;
+                    border-radius: 0px;
+                    padding: 14px 18px;
+                    margin-bottom: 24px;
+                  "
+                >
+                  <span
+                    style="
+                      font-family: &quot;Poppins&quot;, sans-serif;
+                      font-size: 11px;
+                      color: #71717a;
+                      font-weight: 600;
+                      text-transform: uppercase;
+                      letter-spacing: 0.5px;
+                      display: block;
+                    "
+                    >SUBJECT</span
+                  >
+                  <span
+                    style="
+                      font-family: &quot;Poppins&quot;, sans-serif;
+                      font-size: 14px;
+                      color: #ffffff;
+                      font-weight: 600;
+                      display: block;
+                      margin-top: 2px;
+                    "
+                  >
+                    New Lead Request: {{from_name}} — {{service_name}}
+                  </span>
+                </div>
+
+                <!-- Lead Details List (Sharp Borders: border-radius 0) -->
+                <table
+                  width="100%"
+                  border="0"
+                  cellspacing="0"
+                  cellpadding="0"
+                  style="
+                    background-color: #18181c;
+                    border-radius: 0px;
+                    border: 1px solid #27272a;
+                    padding: 20px;
+                    margin-bottom: 24px;
+                  "
+                >
+                  <tr>
+                    <td style="padding-bottom: 14px">
+                      <span
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 11px;
+                          color: #71717a;
+                          font-weight: 600;
+                          text-transform: uppercase;
+                          letter-spacing: 0.5px;
+                          display: block;
+                          margin-bottom: 2px;
+                        "
+                        >Name</span
+                      >
+                      <span
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 15px;
+                          color: #ffffff;
+                          font-weight: 500;
+                        "
+                        >{{from_name}}</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-bottom: 14px">
+                      <span
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 11px;
+                          color: #71717a;
+                          font-weight: 600;
+                          text-transform: uppercase;
+                          letter-spacing: 0.5px;
+                          display: block;
+                          margin-bottom: 2px;
+                        "
+                        >Email</span
+                      >
+                      <a
+                        href="mailto:{{from_email}}"
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 15px;
+                          color: #f54e0e;
+                          font-weight: 500;
+                          text-decoration: none;
+                        "
+                        >{{from_email}}</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-bottom: 14px">
+                      <span
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 11px;
+                          color: #71717a;
+                          font-weight: 600;
+                          text-transform: uppercase;
+                          letter-spacing: 0.5px;
+                          display: block;
+                          margin-bottom: 2px;
+                        "
+                        >Website / Niche</span
+                      >
+                      <a
+                        href="{{website_url}}"
+                        target="_blank"
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 14px;
+                          color: #38bdf8;
+                          text-decoration: none;
+                        "
+                        >{{website_url}}</a
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-bottom: 14px">
+                      <span
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 11px;
+                          color: #71717a;
+                          font-weight: 600;
+                          text-transform: uppercase;
+                          letter-spacing: 0.5px;
+                          display: block;
+                          margin-bottom: 2px;
+                        "
+                        >Service Requested</span
+                      >
+                      <span
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 14px;
+                          color: #ffffff;
+                          font-weight: 500;
+                        "
+                        >{{service_name}}</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-bottom: 14px">
+                      <span
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 11px;
+                          color: #71717a;
+                          font-weight: 600;
+                          text-transform: uppercase;
+                          letter-spacing: 0.5px;
+                          display: block;
+                          margin-bottom: 2px;
+                        "
+                        >Target Market</span
+                      >
+                      <span
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 14px;
+                          color: #ffffff;
+                          font-weight: 500;
+                        "
+                        >{{target_market}}</span
+                      >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 11px;
+                          color: #71717a;
+                          font-weight: 600;
+                          text-transform: uppercase;
+                          letter-spacing: 0.5px;
+                          display: block;
+                          margin-bottom: 2px;
+                        "
+                        >Monthly Budget</span
+                      >
+                      <span
+                        style="
+                          font-family: &quot;Poppins&quot;, sans-serif;
+                          font-size: 15px;
+                          color: #f54e0e;
+                          font-weight: 600;
+                        "
+                        >{{budget_range}}</span
+                      >
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Project Brief (Sharp Borders: border-radius 0) -->
+                <div>
+                  <span
+                    style="
+                      font-family: &quot;Poppins&quot;, sans-serif;
+                      font-size: 11px;
+                      color: #71717a;
+                      font-weight: 600;
+                      text-transform: uppercase;
+                      letter-spacing: 0.5px;
+                      display: block;
+                      margin-bottom: 8px;
+                    "
+                    >Project Brief</span
+                  >
+                  <div
+                    style="
+                      background-color: #18181c;
+                      border-radius: 0px;
+                      border: 1px solid #27272a;
+                      padding: 18px;
+                      font-family: &quot;Poppins&quot;, sans-serif;
+                      font-size: 14px;
+                      color: #d4d4d8;
+                      line-height: 1.7;
+                      white-space: pre-wrap;
+                    "
+                  >
+                    {{message}}
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td
+                style="
+                  padding: 20px 32px;
+                  background-color: #09090b;
+                  border-top: 1px solid #27272a;
+                  text-align: center;
+                "
+              >
+                <span
+                  style="
+                    font-family: &quot;Poppins&quot;, sans-serif;
+                    font-size: 12px;
+                    color: #52525b;
+                  "
+                >
+                  Received at {{submitted_at}} • Sent to info@manzarkash.com
+                </span>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

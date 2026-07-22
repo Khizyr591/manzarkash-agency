@@ -87,11 +87,11 @@ export default function ProductionVideoAdsPage() {
       badge: "SFX & Sound On",
     },
     {
-      title: "UGC Creator Review - Lushly",
+      title: "UGC Creator Review - Lushly (lushly.pk)",
       category: "UGC Product Review",
       format: "9:16 Direct Response",
       src: "/UGC Lushly.mp4",
-      badge: "Unboxing & Review",
+      badge: "Unboxing & Taste Test",
     },
   ];
 

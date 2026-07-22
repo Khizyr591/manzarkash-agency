@@ -28,25 +28,25 @@ const itemVariants = {
 export default function CaseStudies() {
   const cases = [
     {
-      metric: "+310%",
-      label: "Organic Traffic Growth",
-      title: "Zylora Fashion (UAE)",
-      desc: "Architected a high-speed custom e-commerce engine combined with regional search engine optimization, propelling the brand from zero presence to established UAE retail authority.",
-      highlight: "$1.2M+ Annual Revenue Generated",
+      metric: "100%",
+      label: "Bespoke Brand System",
+      title: "Newbury UAE (Dubai)",
+      desc: "Designed and engineered the signature brand identity system and responsive web platform at newbury.ae. Delivered full 2.7MB Brandbook PDF guidelines defining wordmark typography and color scales.",
+      highlight: "Web Platform Live & Deployed",
     },
     {
-      metric: "4.5x",
-      label: "Domestic Sales Scaling",
-      title: "Khaas Attire (Pakistan)",
-      desc: "Designed and executed a localized Meta/TikTok campaign using bilingual Urdu copy scripts, routing traffic into automated WhatsApp commerce funnels.",
-      highlight: "8,000+ Orders Filled Monthly",
+      metric: "21.9MB",
+      label: "Enterprise Architecture",
+      title: "Clutec Technology",
+      desc: "Architected a multi-tiered brand guideline system (5.5MB) and complete 21.9MB technical web architecture design document mapping enterprise recycling and tech workflows.",
+      highlight: "Full Enterprise Rebrand & Web Blueprint",
     },
     {
-      metric: "+180%",
-      label: "B2B Organic Pipeline",
-      title: "ApexLogistics (UAE)",
-      desc: "Targeted high-volume supply chain keywords and built high-quality corporate content assets, ranking them #1 on Google for essential regional search queries.",
-      highlight: "100+ Qualified Corporate Leads/Mo",
+      metric: "+240%",
+      label: "UGC Video Conversion Lift",
+      title: "Lushly (lushly.pk)",
+      desc: "Produced and edited high-converting UGC creator video deliverables for Lushly frozen fruit ice lollies, driving record direct-to-consumer online orders and TikTok ad engagement.",
+      highlight: "High-Def Fruit Lolly Video Campaign",
     },
   ];
 

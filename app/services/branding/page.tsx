@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FiFeather,
@@ -8,14 +9,19 @@ import {
   FiImage,
   FiArrowRight,
   FiCheck,
+  FiExternalLink,
+  FiFileText,
 } from "react-icons/fi";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import styles from "@/lib/styles";
+import PdfPreviewModal from "@/components/ui/PdfPreviewModal";
 
 export default function BrandingPage() {
+  const [selectedPdf, setSelectedPdf] = useState<{ url: string; title: string; websiteUrl?: string } | null>(null);
+
   const steps = [
     {
       num: "01",
@@ -72,6 +78,15 @@ export default function BrandingPage() {
 
   return (
     <div className="min-h-screen bg-black text-zinc-50 dark selection:bg-primary selection:text-white">
+      {selectedPdf && (
+        <PdfPreviewModal
+          isOpen={!!selectedPdf}
+          onClose={() => setSelectedPdf(null)}
+          pdfUrl={selectedPdf.url}
+          title={selectedPdf.title}
+          websiteUrl={selectedPdf.websiteUrl}
+        />
+      )}
       <Navbar />
 
       <main className="flex flex-col">
@@ -80,7 +95,7 @@ export default function BrandingPage() {
 
           <div className={`${styles.container} text-center space-y-6 max-w-4xl relative z-10`}>
             <Eyebrow>BRAND DESIGN</Eyebrow>
-            <h1 className={`${styles.heading_1} !text-4xl sm:!text-6xl !leading-[1.1] text-white uppercase tracking-wider`}>
+            <h1 className={`${styles.heading_1} text-4xl! sm:text-6xl! leading-[1.1]! text-white uppercase tracking-wider`}>
               BRANDING <br />
               <span className="text-primary">& IDENTITY SYSTEMS</span>
             </h1>
@@ -188,28 +203,60 @@ export default function BrandingPage() {
                 </ul>
               </div>
 
-              <div className="lg:col-span-6 p-8 rounded-3xl bg-zinc-900/60 border border-zinc-800/80 space-y-6 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full pointer-events-none blur-[40px]" />
-                <span className="px-3 py-1 rounded-md text-[9px] font-mono bg-primary/10 border border-primary/20 text-primary font-bold tracking-wider uppercase">
-                  CASE STUDY IN FOCUS
-                </span>
-                <h3 className="font-michroma text-lg sm:text-xl font-bold text-white uppercase tracking-wide">
-                  KHAAS ATTIRE (PAKISTAN)
-                </h3>
-                <p className="text-xs text-zinc-400 font-poppins font-light leading-relaxed">
-                  We rebuilt Khaas Attire&apos;s brand identity from wordmark upwards — creating a new logo suite, custom typography, and consistent color guidelines. Their refreshed digital storefront presence lifted conversions by 34% within the first quarter.
-                </p>
-                <div className="pt-2 flex items-center justify-between border-t border-zinc-800">
+              <div className="lg:col-span-6 p-8 rounded-3xl bg-zinc-900/60 border border-zinc-800/80 space-y-6 relative overflow-hidden flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 rounded-md text-[9px] font-mono bg-primary/10 border border-primary/20 text-primary font-bold tracking-wider uppercase">
+                      BRANDING & WEB CASE STUDY
+                    </span>
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+                      UAE MARKET
+                    </span>
+                  </div>
+                  <h3 className="font-michroma text-lg sm:text-xl font-bold text-white uppercase tracking-wide">
+                    NEWBURY UAE — BRANDBOOK & WEB PLATFORM
+                  </h3>
+                  <p className="text-xs text-zinc-400 font-poppins font-light leading-relaxed">
+                    We developed Newbury&apos;s complete brand identity system and engineered their official responsive web platform at <strong className="text-white">newbury.ae</strong>. The full 2.7MB Brandbook defines typography, color palettes, and digital asset rules.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2.5 pt-2">
+                    <a
+                      href="https://www.newbury.ae/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono bg-white text-black font-bold hover:bg-primary hover:text-white transition-colors"
+                    >
+                      <span>Visit Live Website (newbury.ae)</span>
+                      <FiExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                    <button
+                      onClick={() =>
+                        setSelectedPdf({
+                          url: "/Newbury Brandbook Final.pdf",
+                          title: "Newbury UAE — Brandbook & Identity System",
+                          websiteUrl: "https://www.newbury.ae/",
+                        })
+                      }
+                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-mono bg-primary/20 hover:bg-primary text-primary hover:text-white border border-primary/30 font-bold transition-all cursor-pointer"
+                    >
+                      <FiFileText className="w-3.5 h-3.5" />
+                      <span>Preview Brandbook PDF</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div className="pt-6 mt-4 flex items-center justify-between border-t border-zinc-800">
                   <div>
-                    <span className="text-3xl font-michroma font-bold text-primary">34%</span>
+                    <span className="text-3xl font-michroma font-bold text-primary">100%</span>
                     <p className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase mt-0.5">
-                      CONVERSION IMPROVEMENT
+                      Bespoke Brand System
                     </p>
                   </div>
-                  <div>
-                    <span className="text-3xl font-michroma font-bold text-primary">2.1×</span>
+                  <div className="text-right">
+                    <span className="text-3xl font-michroma font-bold text-white">Live</span>
                     <p className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase mt-0.5">
-                      BRAND RETENTION RATE
+                      Web Platform Deployed
                     </p>
                   </div>
                 </div>
@@ -221,7 +268,7 @@ export default function BrandingPage() {
         <section className="py-20 md:py-28 text-center relative w-full overflow-hidden bg-black border-t border-zinc-900">
           <div className={`${styles.container} max-w-3xl space-y-8 relative z-10`}>
             <Eyebrow>START A REBRAND</Eyebrow>
-            <h2 className={`${styles.heading_2} !text-3xl sm:!text-5xl text-white uppercase !leading-tight`}>
+            <h2 className={`${styles.heading_2} text-3xl! sm:text-5xl! text-white uppercase !leading-tight`}>
               MAKE YOUR BRAND<br />
               <span className="text-primary">UNMISTAKABLE.</span>
             </h2>
