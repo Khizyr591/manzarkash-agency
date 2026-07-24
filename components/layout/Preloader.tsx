@@ -99,7 +99,7 @@ export default function Preloader({ children }: { children: React.ReactNode }) {
                 <p
                   className={`${styles.caption_text} text-zinc-400! leading-relaxed! font-light!`}
                 >
-                  Scaling brands through performance marketing campaigns, search optimization (SEO), and custom web apps.
+                  Scaling brands through high-conversion video ads production, studio product photography, and performance marketing.
                 </p>
               </div>
 

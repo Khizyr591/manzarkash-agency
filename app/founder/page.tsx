@@ -66,7 +66,7 @@ export default function FounderPage() {
                 className="lg:col-span-7 space-y-6 text-left"
               >
                 <Eyebrow>ABOUT THE FOUNDER</Eyebrow>
-                <h1 className={`${styles.heading_1} !text-4xl sm:!text-6xl !leading-[1.1] text-zinc-900 dark:text-white uppercase`}>
+                <h1 className={`${styles.heading_1} text-4xl! sm:text-6xl! leading-[1.1]! text-zinc-900 dark:text-white uppercase`}>
                   MUHAMMAD BILAL
                   <br />
                   <span className="text-primary">FOUNDER & DIRECTOR</span>
@@ -126,7 +126,7 @@ export default function FounderPage() {
                     />
 
                     {/* Dark gradient overlay at the bottom */}
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 pt-16 flex flex-col justify-end text-left pointer-events-none">
+                    <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/80 via-black/20 to-transparent p-6 pt-16 flex flex-col justify-end text-left pointer-events-none">
                       <p className="text-xs font-mono tracking-widest text-primary font-bold uppercase">
                         Manzarkash Digital
                       </p>
@@ -221,10 +221,10 @@ export default function FounderPage() {
                     <div className="w-12 h-12 rounded-2xl bg-primary/5 dark:bg-primary/10 flex items-center justify-center">
                       {phil.icon}
                     </div>
-                    <h3 className={`${styles.heading_4} !text-lg text-zinc-900 dark:text-white font-bold`}>
+                    <h3 className={`${styles.heading_4} text-lg! text-zinc-900 dark:text-white font-bold`}>
                       {phil.title}
                     </h3>
-                    <p className={`${styles.span_text} !text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed font-light`}>
+                    <p className={`${styles.span_text} text-sm! text-zinc-500 dark:text-zinc-400 leading-relaxed font-light`}>
                       {phil.desc}
                     </p>
                   </div>
@@ -236,7 +236,7 @@ export default function FounderPage() {
 
         {/* Interactive Quote / Callout Section */}
         <section className="py-24 text-center relative w-full overflow-hidden border-t border-zinc-150 dark:border-zinc-900">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none opacity-10 bg-primary/20 blur-[140px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-125 rounded-full pointer-events-none opacity-10 bg-primary/20 blur-[140px]" />
 
           <div className={`${styles.container} max-w-4xl space-y-6 relative z-10`}>
             <Eyebrow>FOUNDER CONVICTION</Eyebrow>

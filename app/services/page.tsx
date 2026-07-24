@@ -31,13 +31,22 @@ interface ServiceItem {
 export default function ServicesPage() {
   const services: ServiceItem[] = [
     {
+      id: "production-video-ads",
+      title: "Video Ads Production",
+      desc: "High-retention commercial video ads designed to scale campaign performance. We manage custom storyboarding, high-quality campaign shooting, and UGC creators to produce direct-response creatives.",
+      icon: <FiVideo className="w-6 h-6 text-primary" />,
+      href: "/services/production-video-ads",
+      glowColor: "rgba(239, 68, 68, 0.15)",
+      highlights: ["Direct-Response Hook Editing", "Campaign Video Retainers", "Outbound Content Scripting", "Bilingual Ad Creative Shoots"]
+    },
+    {
       id: "product-visuals",
-      title: "Creative Ad & Graphic Design",
-      desc: "High-converting visual assets and video ad creatives. We design graphics, banners, and layout structures that capture customer attention and drive campaign conversions.",
-      icon: <FiTarget className="w-6 h-6 text-primary" />,
+      title: "Product Photography & Visuals",
+      desc: "Studio-lit catalog shoots and product lifestyle photography. We style and capture premium visual assets and design high-converting graphic ad layouts to highlight product value.",
+      icon: <FiCamera className="w-6 h-6 text-primary" />,
       href: "/services/product-visuals",
       glowColor: "rgba(245, 78, 14, 0.15)",
-      highlights: ["Social Ad Banner Design", "Direct-Response Mockups", "Display Graphics Assets", "A/B Testing Optimization"]
+      highlights: ["Studio-Lit Product Shoots", "Lifestyle Product Photography", "Direct-Response Banners", "A/B Layout Optimization"]
     },
     {
       id: "marketing-ads",
@@ -65,15 +74,6 @@ export default function ServicesPage() {
       href: "/services/seo",
       glowColor: "rgba(16, 185, 129, 0.15)",
       highlights: ["Local Search Domination", "Core Web Vitals Speed Hardening", "Competitor Keyword Scoping", "High-Authority Link Outreach"]
-    },
-    {
-      id: "production-video-ads",
-      title: "Production & Video Ads",
-      desc: "High-retention video creatives designed to scale paid campaigns. We handle complete scripting, hook editing, dynamic motion graphics, and creator content management.",
-      icon: <FiVideo className="w-6 h-6 text-primary" />,
-      href: "/services/production-video-ads",
-      glowColor: "rgba(239, 68, 68, 0.15)",
-      highlights: ["Hook & Angle Development", "Dynamic Subtitle & Motion Graphic SFX", "Direct-Response Scriptwriting", "Platform-Optimized Creator Assets"]
     },
     {
       id: "ecommerce",

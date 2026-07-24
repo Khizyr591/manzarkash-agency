@@ -12,35 +12,35 @@ export default function ProductVisualsPage() {
   const steps = [
     {
       num: "01",
-      title: "Concept & Storyboarding",
-      desc: "We research your audience, establish a high-ROI visual tone, and create detailed ad layout boards before design begins.",
+      title: "Concept & Art Direction",
+      desc: "We align on your brand's visual identity, curate backgrounds and props, plan camera angles, and prepare premium studio lighting layouts.",
       icon: <FiFeather className="w-5 h-5 text-primary" />
     },
     {
       num: "02",
-      title: "Layout & Graphic Design",
-      desc: "Our design team styles layouts, choosing brand colors and typography that trigger interest and increase clicks.",
+      title: "High-End Studio Shoot",
+      desc: "We shoot high-resolution catalog images, macro product details, and beautifully styled lifestyle scenes using professional production gear.",
       icon: <FiGrid className="w-5 h-5 text-primary" />
     },
     {
       num: "03",
-      title: "Asset Styling & Production",
-      desc: "We compile static graphics, video loops, and dynamic motion assets focused entirely on conversion performance.",
+      title: "Premium Retouching",
+      desc: "Our editors adjust lighting curves, optimize color profiles, erase blemishes, and perform high-end editing to make your products stand out.",
       icon: <FiTarget className="w-5 h-5 text-primary" />
     },
     {
       num: "04",
-      title: "A/B Testing & Optimization",
-      desc: "Every creative asset is optimized for load speed, color profiles, and tested for CTR optimization.",
+      title: "Ad Design & Delivery",
+      desc: "We combine your flawless product photos with high-converting direct-response layouts, typography scales, and ad creatives.",
       icon: <FiSliders className="w-5 h-5 text-primary" />
     }
   ];
 
   const outcomes = [
-    "High-converting social ad creatives (banners, carousels, stories)",
-    "Direct-response micro-video layouts & dynamic motion clips",
-    "Optimized display graphics for search and landing headers",
-    "Figma design source files matching official brand guidelines"
+    "High-resolution studio-lit catalog photos for e-commerce stores",
+    "Engaging lifestyle product visuals and custom contextual staging",
+    "High-converting direct-response ad templates (banners, carousels, stories)",
+    "Fully retouched, print-ready, and speed-optimized visual assets"
   ];
 
   return (
@@ -52,13 +52,13 @@ export default function ProductVisualsPage() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,78,14,0.06)_0%,transparent_60%)] pointer-events-none" />
           
           <div className={`${styles.container} text-center space-y-6 max-w-4xl relative z-10`}>
-            <Eyebrow>CREATIVE AD DESIGN</Eyebrow>
-            <h1 className={`${styles.heading_1} !text-4xl sm:!text-6xl !leading-[1.1] text-white uppercase tracking-wider`}>
-              CREATIVE AD DESIGN <br />
-              <span className="text-primary">& ASSET PRODUCTION</span>
+            <Eyebrow>PRODUCT PHOTOGRAPHY & VISUALS</Eyebrow>
+            <h1 className={`${styles.heading_1} text-4xl! sm:text-6xl! leading-[1.1]! text-white uppercase tracking-wider`}>
+              PRODUCT PHOTOGRAPHY <br />
+              <span className="text-primary">& AD DESIGN</span>
             </h1>
             <p className={`${styles.paragraph} text-zinc-400 max-w-2xl mx-auto italic font-light`}>
-              We design high-converting visual assets and video ad creatives that capture attention and drive sales for your campaigns.
+              High-end studio-lit catalog shoots, product lifestyle scenes, and conversion-focused graphic layouts built for premium brands.
             </p>
           </div>
         </section>

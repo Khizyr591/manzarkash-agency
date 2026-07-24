@@ -59,7 +59,7 @@ export default function Footer() {
             <p
               className={`${styles.paragraph_sm} text-zinc-500 dark:text-zinc-400 italic max-w-sm`}
             >
-              Manzarkash Digital Agency is a Pakistan performance marketing and conversion engineering agency scaling brand ventures through high-ROI advertising campaigns, SEO, custom web applications, and WhatsApp automation.
+              Manzarkash Digital Agency is a Pakistan performance marketing and conversion engineering agency scaling brand ventures through premium video ads production, studio product photography, paid advertising campaigns, and custom e-commerce web applications.
             </p>
             <div className="flex items-center gap-4">
               <a
@@ -101,7 +101,7 @@ export default function Footer() {
                     href="/services/product-visuals"
                     className="hover:text-primary transition-colors"
                   >
-                    Creative Ad Design
+                    Product Photography & Visuals
                   </a>
                 </li>
                 <li>
@@ -133,7 +133,7 @@ export default function Footer() {
                     href="/services/production-video-ads"
                     className="hover:text-primary transition-colors"
                   >
-                    Production & Video Ads
+                    Video Ads Production
                   </a>
                 </li>
                 <li>
@@ -289,9 +289,17 @@ export default function Footer() {
         </div>
 
         <div
-          className={`mt-12 md:mt-16 pt-8 border-t border-zinc-200/50 dark:border-zinc-800/50 text-center text-zinc-500 ${styles.caption_text}`}
+          className={`mt-12 md:mt-16 pt-8 border-t border-zinc-200/50 dark:border-zinc-800/50 flex flex-col md:flex-row items-center justify-between text-zinc-500 gap-4 ${styles.caption_text}`}
         >
           <p>© {currentYear} Manzarkash. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a href="/privacy" className="hover:text-primary transition-colors">
+              Privacy Policy
+            </a>
+            <a href="/terms" className="hover:text-primary transition-colors">
+              Terms & Conditions
+            </a>
+          </div>
         </div>
       </div>
     </footer>
