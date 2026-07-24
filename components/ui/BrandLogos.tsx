@@ -54,7 +54,7 @@ export const BrandLogos: Record<string, ComponentType> = {
         src="/client_logos/newbury.png"
         alt="Newbury UAE"
         fill
-        className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+        className="object-contain brightness-0 invert hover:brightness-100 hover:invert-0 opacity-75 hover:opacity-100 transition-all duration-300"
       />
     </div>
   ),
@@ -64,7 +64,7 @@ export const BrandLogos: Record<string, ComponentType> = {
         src="/client_logos/Clutec.png"
         alt="Clutec"
         fill
-        className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+        className="object-contain brightness-0 invert hover:brightness-100 hover:invert-0 opacity-75 hover:opacity-100 transition-all duration-300"
       />
     </div>
   ),
@@ -74,7 +74,7 @@ export const BrandLogos: Record<string, ComponentType> = {
         src="/client_logos/Herradura Villas.png"
         alt="Herradura Villas"
         fill
-        className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+        className="object-contain brightness-0 invert hover:brightness-100 hover:invert-0 opacity-75 hover:opacity-100 transition-all duration-300"
       />
     </div>
   ),
@@ -84,7 +84,7 @@ export const BrandLogos: Record<string, ComponentType> = {
         src="/client_logos/for sale by investors.png"
         alt="For Sale By Investors"
         fill
-        className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+        className="object-contain brightness-0 invert hover:brightness-100 hover:invert-0 opacity-75 hover:opacity-100 transition-all duration-300"
       />
     </div>
   ),
@@ -104,7 +104,7 @@ export const BrandLogos: Record<string, ComponentType> = {
         src="/client_logos/Guzel.png"
         alt="Guzel"
         fill
-        className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+        className="object-contain brightness-0 invert hover:brightness-100 hover:invert-0 opacity-75 hover:opacity-100 transition-all duration-300"
       />
     </div>
   ),

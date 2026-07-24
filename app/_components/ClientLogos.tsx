@@ -75,15 +75,26 @@ export default function ClientLogos() {
             >
               <div className="absolute inset-0 bg-linear-to-b from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-3xl" />
 
-              {/* Logo Container - Authentic full-color client logos */}
+              {/* Logo Container - Monochromatic white, transitioning to color on hover (except Lushly) */}
               <div className="w-full h-24 relative flex items-center justify-center p-2 mb-4">
                 <div className="relative w-full h-full">
-                  <Image
-                    src={client.src}
-                    alt={client.alt}
-                    fill
-                    className="object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 drop-shadow-sm"
-                  />
+                  {client.name.toLowerCase().includes("lushly") ? (
+                    /* Lushly stays in its original full brand colors */
+                    <Image
+                      src={client.src}
+                      alt={client.alt}
+                      fill
+                      className="object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 drop-shadow-sm"
+                    />
+                  ) : (
+                    /* Other logos are monochromatic white, transitioning to their original colors on hover */
+                    <Image
+                      src={client.src}
+                      alt={client.alt}
+                      fill
+                      className="object-contain brightness-0 invert group-hover:brightness-100 group-hover:invert-0 opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 drop-shadow-sm"
+                    />
+                  )}
                 </div>
               </div>
 
