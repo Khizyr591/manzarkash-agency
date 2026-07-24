@@ -64,7 +64,7 @@ export default function AboutPage() {
               DEFINING THE <span className="text-primary">DIGITAL SCENERY</span>
             </h1>
             <p className={`${styles.paragraph} text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto italic font-light`}>
-              Manzarkash Digital Agency is a premium growth marketing and web engineering agency delivering visual ad design, conversion copywriting, paid ad campaigns, search engine optimization (SEO), and automated web solutions to brands in Pakistan.
+              Manzarkash Digital Agency is a premium growth marketing and web engineering agency delivering high-retention video ads production, studio product photography, paid advertising campaigns, and custom e-commerce web applications to brands in Pakistan and the UAE.
             </p>
           </div>
           <div className="absolute inset-0 bg-linear-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />

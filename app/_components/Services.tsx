@@ -11,6 +11,7 @@ import {
   FiCheck,
   FiArrowRight,
   FiVideo,
+  FiCamera,
 } from "react-icons/fi";
 import { motion } from "framer-motion";
 import styles from "@/lib/styles";
@@ -40,15 +41,27 @@ const itemVariants = {
 export default function Services() {
   const services = [
     {
-      title: "Creative Ad & Graphic Design",
-      desc: "High-converting visual assets and video ad creatives that capture customer attention and drive campaign conversions.",
+      title: "Video Ads Production",
+      desc: "High-retention commercial video ads, direct-response hooks, and custom brand campaign shoots designed to scale ROAS.",
       points: [
-        "Social Ad Layout & Banner Design",
-        "Direct-Response Asset Styling",
-        "High-Fidelity UI & Display Graphics",
-        "Creative Storyboarding & Assets",
+        "Hook & Storyboard Development",
+        "Dynamic Captions & Motion Graphics",
+        "Direct-Response Video Retainers",
+        "Platform-Optimized Campaign Shoots",
       ],
-      icon: <FiLayout className="w-6 h-6" />,
+      icon: <FiVideo className="w-6 h-6" />,
+      href: "/services/production-video-ads",
+    },
+    {
+      title: "Product Photography & Visuals",
+      desc: "Studio-lit catalog shoots, product lifestyle scenes, and high-converting graphic ad layouts built for premium retail brands.",
+      points: [
+        "Studio-Lit Catalog Photography",
+        "Lifestyle Product Shoots & Styling",
+        "High-Fidelity Ad Banners & Layouts",
+        "A/B Testing & Optimization",
+      ],
+      icon: <FiCamera className="w-6 h-6" />,
       href: "/services/product-visuals",
     },
     {
@@ -86,18 +99,6 @@ export default function Services() {
       ],
       icon: <FiTrendingUp className="w-6 h-6" />,
       href: "/services/seo",
-    },
-    {
-      title: "Production & Video Ads",
-      desc: "High-retention video creatives and direct-response hooks designed to scale campaign ROAS and engagement.",
-      points: [
-        "Hook & Storyboard Development",
-        "Dynamic Captions & Motion Design",
-        "Direct-Response Video Retainers",
-        "Platform-Optimized Creator Shoots",
-      ],
-      icon: <FiVideo className="w-6 h-6" />,
-      href: "/services/production-video-ads",
     },
     {
       title: "E-Commerce & Custom Portfolios",

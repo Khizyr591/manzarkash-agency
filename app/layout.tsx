@@ -17,26 +17,26 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Manzarkash Digital Agency | Performance Marketing & Web Engineering Pakistan",
-  description: "Manzarkash Digital Agency scales brand ventures in Pakistan with high-ROI advertising campaigns, search engine optimization (SEO), custom e-commerce web development, and smart WhatsApp automation.",
+  title: "Manzarkash Digital Agency | Video Ads Production, Product Photography & Performance Marketing",
+  description: "Manzarkash scales brand ventures in Pakistan and the UAE with high-retention video ads production, studio-lit product photography, and data-driven performance marketing campaigns.",
   keywords: [
+    "video ads production Pakistan",
+    "product photography Pakistan",
+    "e-commerce product photography",
+    "commercial video production",
     "digital marketing agency Pakistan",
     "growth marketing Pakistan",
     "performance marketing agency Pakistan",
-    "SEO agency Pakistan",
-    "ads campaign Pakistan",
     "whatsapp automation Pakistan",
-    "custom e-commerce websites",
-    "portfolio websites Pakistan",
-    "digital agency Pakistan"
+    "custom e-commerce websites"
   ],
   metadataBase: new URL("https://manzarkash.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Manzarkash Digital Agency | Performance Marketing & Web Engineering Pakistan",
-    description: "Manzarkash Digital Agency scales brand ventures in Pakistan with high-ROI advertising campaigns, search engine optimization (SEO), custom e-commerce web development, and smart WhatsApp automation.",
+    title: "Manzarkash Digital Agency | Video Ads Production, Product Photography & Performance Marketing",
+    description: "Manzarkash scales brand ventures in Pakistan and the UAE with high-retention video ads production, studio-lit product photography, and data-driven performance marketing campaigns.",
     url: "https://manzarkash.com",
     siteName: "Manzarkash Digital Agency",
     images: [
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Manzarkash Digital Agency - Performance Marketing & Engineering",
+        alt: "Manzarkash Digital Agency - Video Ads Production & Product Photography",
       },
     ],
     locale: "en_US",
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Manzarkash Digital Agency | Performance Marketing & Web Engineering Pakistan",
-    description: "Manzarkash Digital Agency scales brand ventures in Pakistan with high-ROI advertising campaigns, search engine optimization (SEO), custom e-commerce web development, and smart WhatsApp automation.",
+    title: "Manzarkash Digital Agency | Video Ads Production, Product Photography & Performance Marketing",
+    description: "Manzarkash scales brand ventures in Pakistan and the UAE with high-retention video ads production, studio-lit product photography, and data-driven performance marketing campaigns.",
     images: ["/og-image.jpg"],
   },
 };
